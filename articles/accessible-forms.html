@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible Forms: Labels, Errors, Grouping & Autocomplete | Designing for Accessibility</title>
+  <meta name="description" content="Field grouping, error messaging, inline vs. summary errors, autocomplete attributes, and required vs. optional conventions. The form design decisions that determine whether users can actually complete your flows." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/accessible-forms.html" />
+  <meta property="og:title" content="Accessible Forms: Labels, Errors, Grouping & Autocomplete" />
+  <meta property="og:description" content="Field grouping, error messaging, inline vs. summary errors, autocomplete attributes, and required vs. optional conventions." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/accessible-forms.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Accessible Forms: Labels, Errors, Grouping & Autocomplete",
+    "description": "Field grouping, error messaging, inline vs. summary errors, autocomplete attributes, and required vs. optional conventions.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-05-28",
+    "dateModified": "2026-05-28",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/accessible-forms.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Design & Visual",
+        "item": "https://www.designingforaccessibility.com/index.html#topics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Accessible Forms",
+        "item": "https://www.designingforaccessibility.com/articles/accessible-forms.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body style="--page-accent: #a78bfa; --page-accent-dark: #5b21b6;">
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics" role="menuitem">Topics</a>
+    <a href="../index.html#articles" role="menuitem">Articles</a>
+    <a href="ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="../index.html#topics">Design &amp; Visual Elements</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Accessible Forms</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Design &amp; Visual Elements</div>
+    <h1>Accessible Forms:<br>Labels, Errors, Grouping &amp; Autocomplete</h1>
+    <p class="article-header-sub">
+      Field grouping, error messaging, inline vs. summary errors, autocomplete attributes, and required vs. optional conventions. The form design decisions that determine whether users can actually complete your flows.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-05-28">May 2026</time></strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>13 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> <strong>Design &amp; Visual Elements</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="why-forms-fail">
+            Why Forms Fail Accessibility
+            <a href="#why-forms-fail" class="section-anchor" aria-label="Link to why forms fail section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Forms are where accessibility problems hurt the most. A low-contrast paragraph is frustrating. A broken form is a dead end. If a user cannot complete a checkout, submit an application, or create an account, the rest of your product doesn't matter. They're out.
+          </p>
+          <p>
+            The WebAIM Million, an annual accessibility audit of the top one million homepages, consistently finds that form inputs with missing labels are among the five most common WCAG failures, year after year. And that's just the homepage. Inside products, behind logins, the situation is usually worse.
+          </p>
+          <p>
+            What makes forms hard isn't that the requirements are complicated. Most of the failures are mundane: a label that floats away on focus and leaves a screen reader user with no context, an error message that appears visually but isn't announced, a group of radio buttons that make no sense without knowing what question they're answering. These are design decisions, not implementation gaps. They happen in Figma before a developer writes a single line.
+          </p>
+          <p>
+            This article covers the five form design decisions that matter most for accessibility: field grouping, label placement, error messaging patterns, inline versus summary error strategies, autocomplete attributes, and the required versus optional convention debate. Get these right, and most of your form accessibility work is done.
+          </p>
+
+          <h2 id="field-grouping">
+            Field Grouping with Fieldset and Legend
+            <a href="#field-grouping" class="section-anchor" aria-label="Link to field grouping section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            When sighted users look at a form with three fields (First Name, Last Name, Date of Birth), the visual layout tells them how those fields relate. The proximity, the heading above, the visual grouping: it's all self-evident. Screen reader users don't have that. They navigate field by field, hearing only the label for each input in sequence.
+          </p>
+          <p>
+            This is where <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> earn their keep. A <code>&lt;fieldset&gt;</code> groups related fields semantically, and the <code>&lt;legend&gt;</code> provides the group's name. Screen readers announce both together: "Personal Information group, First Name." Without this, a user hears "First Name" with no context about which section of the form they're in.
+          </p>
+          <p>
+            The most critical use case is radio buttons and checkboxes. A set of radio buttons with labels like "Yes" and "No" is meaningless without context. The question itself, "Do you want to receive marketing emails?", must be the legend of the fieldset. Without it, a screen reader user hears "Yes" and has no idea what they're agreeing to.
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;fieldset&gt;
+  &lt;legend&gt;Do you want to receive marketing emails?&lt;/legend&gt;
+  &lt;label&gt;
+    &lt;input type="radio" name="marketing" value="yes"&gt; Yes
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;input type="radio" name="marketing" value="no"&gt; No
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+          <p>
+            Fieldsets aren't just for radio buttons. Address blocks, payment card details, date of birth fields split across day/month/year inputs. Any logical grouping of fields that belongs together conceptually should be wrapped in a fieldset with a meaningful legend. The visual styling is up to you; the <code>&lt;fieldset&gt;</code> border can be reset to <code>none</code> in CSS without losing the semantic benefit.
+          </p>
+          <div class="callout callout-info">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Design Note</span>
+            <p>If your design uses a visual heading above a group of fields (like "Billing Address"), the developer needs to know that this heading is also the legend for those fields, not a decorative heading above a plain <code>&lt;div&gt;</code>. Annotate your Figma files with this distinction. It's not obvious without the instruction.</p>
+          </div>
+
+          <h2 id="labels">
+            Labels: Placement, Persistence, and Association
+            <a href="#labels" class="section-anchor" aria-label="Link to labels section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Every form field needs a visible, persistent label. This seems obvious. It isn't obvious enough, because placeholder text is still being used as a substitute for labels on live products every single day.
+          </p>
+          <p>
+            <strong>Placeholders are not labels.</strong> When a user focuses a field, the placeholder disappears. At the exact moment the user is trying to fill in the field, the prompt that told them what to enter is gone. This is especially harmful for users with cognitive disabilities, short-term memory difficulties, or anyone filling in a long form. By the time they're three fields in, they've lost context on the first.
+          </p>
+          <p>
+            Placeholders also fail contrast requirements. WCAG requires 4.5:1 contrast for text. Placeholder text is typically styled at far lower contrast by browser default, and even when designers increase it, the lighter styling signals "optional hint," not "required field label." Many users skip fields they think are already filled in because the placeholder text looks like content.
+          </p>
+          <p>
+            If you need a hint inside the field, like an example value or a format guide, use it as real hint text below or above the input, not as the placeholder. Reserve the placeholder for genuinely optional example content (like "e.g. 01/01/1990") that supplements a real, visible label. Never use it as a replacement.
+          </p>
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Common Mistake</span>
+            <p>
+              Floating labels, where the label starts inside the field and animates above it on focus, look elegant but have real accessibility risks. They only work if the label remains visible after the user types. If the label ever disappears or overlaps entered content, it fails. Test floating labels with a screen magnifier at 200% zoom, where the label animation can take the label off-screen.
+            </p>
+          </div>
+          <p>
+            Label placement matters for more than aesthetics. Research and eye-tracking studies consistently show that labels placed <strong>above</strong> their fields perform best: they sit in the natural reading path, they're visible before the user focuses the input, and they don't compete with the input itself. Left-aligned labels work too, but the horizontal distance between label and input creates a scanning gap for users who zoom or use reflow layouts.
+          </p>
+          <p>
+            On the implementation side, labels must be programmatically associated with their inputs using either a <code>for</code>/<code>id</code> pairing or by wrapping the input inside the label element. A visual label positioned near a field with no semantic connection is invisible to assistive technology.
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;!-- Explicit association --&gt;
+&lt;label for="email"&gt;Email address&lt;/label&gt;
+&lt;input type="email" id="email" name="email" /&gt;
+
+&lt;!-- Implicit association (label wraps input) --&gt;
+&lt;label&gt;
+  Email address
+  &lt;input type="email" name="email" /&gt;
+&lt;/label&gt;</code></pre>
+
+          <h2 id="error-messaging">
+            Error Messaging Patterns
+            <a href="#error-messaging" class="section-anchor" aria-label="Link to error messaging section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Error messages are one of the most consequential pieces of writing in any form. When something goes wrong, the message is the only thing standing between the user completing the task and abandoning it entirely. And yet they're almost always written last, by whoever is closest to a deadline, with the least amount of user testing.
+          </p>
+          <p>
+            An accessible error message does five things: it identifies the field in error, explains what went wrong, says what format or value is expected, avoids blame, and tells the user exactly how to fix it. "Invalid input" does none of these. "Enter your date of birth in DD/MM/YYYY format" does all of them.
+          </p>
+          <p>
+            From a WCAG perspective (Success Criterion 3.3.1), errors must be identified in text. Color alone is not enough. A red border on an input communicates error visually, but a screen reader won't announce it unless the error is described in text and that text is associated with the field. The visual indicator and the accessible announcement are two separate things, and both are required.
+          </p>
+          <p>
+            Error messages should be positioned immediately below the field they describe. Not above, not in a sidebar, not at the top of the page and nowhere near the field. The message needs to be adjacent to the problem. Place error messages between the input and the next field so keyboard users navigating linearly encounter them in the right order.
+          </p>
+          <p>
+            Use <code>aria-describedby</code> to associate the error message with its input. This means when a screen reader user focuses the field, they hear both the label and the error together. Without this, the error message exists in the DOM but has no relationship to the field it's describing.
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;label for="dob"&gt;Date of birth&lt;/label&gt;
+&lt;input
+  type="text"
+  id="dob"
+  name="dob"
+  aria-describedby="dob-error"
+  aria-invalid="true"
+/&gt;
+&lt;span id="dob-error" role="alert"&gt;
+  Enter your date of birth in DD/MM/YYYY format
+&lt;/span&gt;</code></pre>
+          <p>
+            The <code>aria-invalid="true"</code> attribute signals to assistive technology that the field is in an error state, which changes how screen readers announce the field. Remove it (or set it to <code>"false"</code>) once the error is resolved. Leaving <code>aria-invalid="true"</code> on a valid field will confuse users.
+          </p>
+
+          <h2 id="inline-vs-summary">
+            Inline Errors vs. Error Summaries
+            <a href="#inline-vs-summary" class="section-anchor" aria-label="Link to inline vs summary errors section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            There are two places errors can appear: inline (next to the field that failed) and in a summary (at the top of the form, listing all errors). Both have a role. The question is understanding when each approach works and when it fails.
+          </p>
+          <p>
+            <strong>Inline errors</strong> are the right default for most forms. They appear adjacent to the field, they're immediately scannable by sighted users, and when linked via <code>aria-describedby</code>, they're announced when screen reader users focus the invalid field. For short forms, a single page with five to ten fields, inline errors are almost always the better choice. Users can see at a glance what needs fixing without scrolling anywhere.
+          </p>
+          <p>
+            <strong>Error summaries</strong> are essential for long or multi-section forms. When a form has twenty fields across multiple sections and a user submits with eight errors, inline messages below each field don't help them understand the scope of the problem or navigate to the specific issues efficiently. An error summary at the top, listing all errors with links to each field, solves this. The user sees the full picture immediately, and each link in the summary jumps them directly to the problem field.
+          </p>
+          <p>
+            When using a summary, move focus to it on form submission failure. If the page doesn't scroll and focus doesn't move, screen reader users have no way of knowing errors occurred. The summary container should receive programmatic focus (using <code>tabindex="-1"</code> and <code>focus()</code> via JavaScript) so it's announced immediately after submission.
+          </p>
+          <div class="callout callout-green">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"/></svg> Best Practice</span>
+            <p>
+              Use both together on long forms: an error summary at the top for orientation and navigation, plus inline messages beside each field for correction. The summary tells users what's wrong and where. The inline message tells them exactly how to fix it. They serve different cognitive purposes.
+            </p>
+          </div>
+          <p>
+            One more consideration: when to show errors. Validating on submission is the safest default because users have finished expressing their intent before you tell them they're wrong. Validating on blur (when a field loses focus) can work for format-specific fields like email or date of birth, but only if you don't flag an error while the user is still typing. Aggressive inline validation that fires on every keystroke creates noise, interrupts screen reader users mid-entry, and makes forms feel hostile.
+          </p>
+
+          <h2 id="autocomplete">
+            Autocomplete Attributes
+            <a href="#autocomplete" class="section-anchor" aria-label="Link to autocomplete attributes section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The <code>autocomplete</code> attribute is one of the most underused accessibility tools in form design. WCAG 1.3.5 (Identify Input Purpose) requires it on fields that collect personal information, not as a nice enhancement, but as a Level AA requirement. And yet most forms are shipped without it.
+          </p>
+          <p>
+            The purpose of <code>autocomplete</code> is to let browsers and password managers pre-fill fields based on saved user data. For users with motor disabilities or cognitive impairments, filling in a long address form or creating a new account manually is a significant effort. Autocomplete removes that effort by letting the browser do it. For users with dyslexia, it removes the cognitive load of transcribing information they've already given somewhere else.
+          </p>
+          <p>
+            The attribute takes specific token values defined in the HTML specification. These aren't arbitrary strings; they're a controlled vocabulary that browsers and assistive technologies understand. Common values include:
+          </p>
+          <table class="levels-table" aria-label="Common autocomplete attribute values">
+            <thead>
+              <tr>
+                <th scope="col">Field</th>
+                <th scope="col">autocomplete value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First name</td>
+                <td><code>given-name</code></td>
+              </tr>
+              <tr>
+                <td>Last name</td>
+                <td><code>family-name</code></td>
+              </tr>
+              <tr>
+                <td>Full name</td>
+                <td><code>name</code></td>
+              </tr>
+              <tr>
+                <td>Email address</td>
+                <td><code>email</code></td>
+              </tr>
+              <tr>
+                <td>Phone number</td>
+                <td><code>tel</code></td>
+              </tr>
+              <tr>
+                <td>Street address</td>
+                <td><code>street-address</code></td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td><code>address-level2</code></td>
+              </tr>
+              <tr>
+                <td>Postcode / ZIP</td>
+                <td><code>postal-code</code></td>
+              </tr>
+              <tr>
+                <td>Country</td>
+                <td><code>country-name</code></td>
+              </tr>
+              <tr>
+                <td>Credit card number</td>
+                <td><code>cc-number</code></td>
+              </tr>
+              <tr>
+                <td>Current password</td>
+                <td><code>current-password</code></td>
+              </tr>
+              <tr>
+                <td>New password</td>
+                <td><code>new-password</code></td>
+              </tr>
+              <tr>
+                <td>One-time code</td>
+                <td><code>one-time-code</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Setting <code>autocomplete="off"</code> on personal information fields to "prevent autofill for security reasons" is a pattern worth pushing back on. It breaks assistive technology, forces manual entry, and doesn't actually improve security in the way teams typically assume. The one legitimate use case for disabling autocomplete is OTP fields where you're managing the input yourself, and even then, <code>one-time-code</code> is the right value, not <code>off</code>.
+          </p>
+          <p>
+            As a designer, your job is to document the intended autocomplete value alongside the field in your handoff. Developers can't guess what token to use for an ambiguous field labelled "Name": is it <code>name</code>, <code>given-name</code>, or something else? The design spec should tell them.
+          </p>
+
+          <h2 id="required-optional">
+            Required vs. Optional: Conventions That Actually Work
+            <a href="#required-optional" class="section-anchor" aria-label="Link to required vs optional section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The asterisk. Every designer knows it. "Required fields are marked with an asterisk," usually in a note at the top of the form that most users never read, in a font size small enough to miss, placed before a form with forty fields where thirty-eight have asterisks. At that point, what is the asterisk actually communicating?
+          </p>
+          <p>
+            The GDS (UK Government Design System) guidance on this is the clearest in the industry: if most fields in a form are required, mark the optional ones instead. The asterisk convention breaks down when required is the norm. It adds visual noise, creates cognitive overhead, and is often missed by screen reader users unless it's explicitly described.
+          </p>
+          <p>
+            For accessible implementation, the asterisk must be supplemented by text. A screen reader doesn't announce "asterisk" as "required" by default. The field's accessible name or the associated description needs to explicitly include the word "required," either in the label itself, in an <code>aria-required="true"</code> attribute, or via an associated description that says so.
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;!-- The asterisk is decorative; aria-required carries the semantic meaning --&gt;
+&lt;label for="email"&gt;
+  Email address &lt;span aria-hidden="true"&gt;*&lt;/span&gt;
+&lt;/label&gt;
+&lt;input type="email" id="email" name="email" aria-required="true" /&gt;</code></pre>
+          <p>
+            Note <code>aria-hidden="true"</code> on the asterisk itself. Without it, some screen readers will announce "asterisk" as part of the label, which is confusing. The <code>aria-required="true"</code> attribute does the work semantically; the asterisk is purely visual.
+          </p>
+          <p>
+            The most honest approach to required fields is to question whether you need them all. The best accessibility improvement to a required field is removing the requirement. Every field you can make optional, or eliminate entirely, reduces the cognitive and motor load on users. WCAG 3.3.7 (Redundant Entry) in WCAG 2.2 addresses this directly: don't ask users for information you've already collected.
+          </p>
+          <p>
+            If you do use the asterisk convention, the legend or explanatory note about it must appear <strong>before</strong> the first required field in the reading order, not after the form header or after the first input. It must also be visible to assistive technology. Don't hide it with <code>aria-hidden</code> or rely on the visual styling alone to communicate meaning.
+          </p>
+
+          <h2 id="putting-it-together">
+            Putting It Together
+            <a href="#putting-it-together" class="section-anchor" aria-label="Link to putting it together section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Accessible forms don't require a different design process. They require the same design process, done more completely. The label was already there; it just needed to be visible and persistent. The error was already planned; it just needed to be positioned and associated. The grouping was already implied visually; it just needed a semantic container.
+          </p>
+          <p>
+            Here's a practical checklist for every form you design:
+          </p>
+          <ul>
+            <li><strong>Every field has a visible, persistent label</strong> placed above the input, not inside it as a placeholder.</li>
+            <li><strong>Related fields are grouped</strong> with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code>, especially radio buttons and checkboxes.</li>
+            <li><strong>Error messages appear inline</strong>, below the field they describe, and are linked via <code>aria-describedby</code>. Long forms also include an error summary that receives focus on submission failure.</li>
+            <li><strong>Fields collecting personal information</strong> have documented <code>autocomplete</code> values in the design handoff.</li>
+            <li><strong>Required fields</strong> use <code>aria-required="true"</code>. The asterisk (if used) is hidden from screen readers and the explanatory note precedes the first required field.</li>
+            <li><strong>Validation timing</strong> is on blur or submission, never on every keystroke.</li>
+            <li><strong>All interactive states are designed</strong>: default, focus, error, disabled, and success.</li>
+          </ul>
+          <p>
+            Forms are one of the areas where accessibility and usability are most aligned. The patterns that help screen reader users, clear labels, explicit error messages, and logical grouping, are the same patterns that help every user. A well-labelled field is easier to understand for everyone. An error message that tells you how to fix the problem helps everyone. You're not designing for an edge case. You're designing for human memory and attention, which are limited regardless of disability.
+          </p>
+
+          <h3>Official Resources</h3>
+          <div class="ext-links">
+            <a href="https://www.w3.org/WAI/WCAG22/quickref/#labels-or-instructions" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">WCAG 3.3.2: Labels or Instructions</div>
+                <div class="ext-link-desc">The WCAG success criterion requiring labels and instructions for user input.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.w3.org/WAI/WCAG22/quickref/#identify-input-purpose" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">WCAG 1.3.5: Identify Input Purpose</div>
+                <div class="ext-link-desc">The criterion requiring autocomplete tokens on personal information fields.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">HTML Spec: Autocomplete Tokens</div>
+                <div class="ext-link-desc">The full list of valid autocomplete attribute values from the WHATWG HTML specification.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://design-system.service.gov.uk/patterns/error-messages/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">GOV.UK Design System: Error Messages</div>
+                <div class="ext-link-desc">Practical, well-tested error message guidance from the UK Government Design System.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#why-forms-fail" class="toc-link active" id="toc-why-fail">
+                <span class="toc-link-dot"></span>Why Forms Fail
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#field-grouping" class="toc-link" id="toc-grouping">
+                <span class="toc-link-dot"></span>Field Grouping
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#labels" class="toc-link" id="toc-labels">
+                <span class="toc-link-dot"></span>Labels
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#error-messaging" class="toc-link" id="toc-errors">
+                <span class="toc-link-dot"></span>Error Messaging
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#inline-vs-summary" class="toc-link" id="toc-inline">
+                <span class="toc-link-dot"></span>Inline vs. Summary Errors
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#autocomplete" class="toc-link" id="toc-autocomplete">
+                <span class="toc-link-dot"></span>Autocomplete Attributes
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#required-optional" class="toc-link" id="toc-required">
+                <span class="toc-link-dot"></span>Required vs. Optional
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#putting-it-together" class="toc-link" id="toc-checklist">
+                <span class="toc-link-dot"></span>Checklist
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Topic</div>
+          <p>Part of the <strong>Design &amp; Visual Elements</strong> series. Covers the form design decisions that determine whether users can actually complete your flows.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">Forms</span>
+            <span class="sidebar-tag">Labels</span>
+            <span class="sidebar-tag">WCAG 3.3.1</span>
+            <span class="sidebar-tag">WCAG 1.3.5</span>
+            <span class="sidebar-tag">Autocomplete</span>
+            <span class="sidebar-tag">Error Messages</span>
+            <span class="sidebar-tag">ARIA</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Articles</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="design-visual.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Design &amp; Visual Elements</div>
+                <div class="related-cat">Design &amp; Visual</div>
+              </div>
+            </a>
+            <a href="screen-readers-aria.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Screen Readers &amp; ARIA</div>
+                <div class="related-cat">Screen Readers &amp; ARIA</div>
+              </div>
+            </a>
+            <a href="ux-accessibility-fails-design-stage.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Why Accessibility Fails at the Design Stage</div>
+                <div class="related-cat">UX Perspective</div>
+              </div>
+            </a>
+            <a href="testing-evaluation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Testing &amp; Evaluation</div>
+                <div class="related-cat">Testing &amp; Evaluation</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="design-visual.html" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Previous</div>
+        <div class="article-nav-title">Design &amp; Visual Elements</div>
+      </div>
+    </a>
+    <a href="screen-readers-aria.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">Screen Readers &amp; ARIA</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>

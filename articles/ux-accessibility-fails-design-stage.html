@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Accessibility Fails at the Design Stage | Designing for Accessibility</title>
+  <meta name="description" content="The Figma decisions that create downstream compliance problems no developer can fix. Learn how accessibility is decided at design time, not in code." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/ux-accessibility-fails-design-stage.html" />
+  <meta property="og:title" content="Why Accessibility Fails at the Design Stage" />
+  <meta property="og:description" content="The Figma decisions that create downstream compliance problems no developer can fix." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/ux-accessibility-fails-design-stage.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Accessibility Fails at the Design Stage",
+    "description": "The Figma decisions that create downstream compliance problems no developer can fix.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-02-15",
+    "dateModified": "2026-03-09",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/ux-accessibility-fails-design-stage.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UX Perspectives",
+        "item": "https://www.designingforaccessibility.com/articles/ux-perspectives.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Why Accessibility Fails at the Design Stage",
+        "item": "https://www.designingforaccessibility.com/articles/ux-accessibility-fails-design-stage.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics" role="menuitem">Topics</a>
+    <a href="../index.html#articles" role="menuitem">Articles</a>
+    <a href="ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="ux-perspectives.html">UX Perspectives</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Why Accessibility Fails at Design</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> UX Perspective</div>
+    <h1>Why Accessibility Fails at the Design Stage</h1>
+    <p class="article-header-sub">
+      The Figma decisions that create downstream compliance problems no developer can fix.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-09">November 2025</time></strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>8 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <strong>UX Perspective</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="the-design-gap">
+            The Design Gap
+            <a href="#the-design-gap" class="section-anchor" aria-label="Link to the design gap section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Accessibility fails most often at the design stage, not in code. By the time a Figma file reaches engineering, the critical accessibility decisions: color contrast, focus order, heading hierarchy, and interaction patterns, have already been made and are expensive to undo. Treating accessibility as a developer or QA problem means fixing issues that were baked in months earlier, at the highest possible cost.
+          </p>
+          <p>
+            The uncomfortable truth: most WCAG failures are not developer mistakes. They're designer choices baked into the visual foundation. A designer picks a color palette that fails contrast requirements. A designer creates interactive components without defining focus states. A designer invents a custom accordion interaction without documenting keyboard navigation. The developer then inherits these decisions and has to either implement them as designed (failing WCAG) or risk deviating from the spec.
+          </p>
+          <p>
+            The design gap exists because designers aren't trained in accessibility. They weren't taught how to think about keyboard navigation in design school. They've never heard of ARIA roles. They don't know what a focus indicator should look like or why it matters. So they make decisions in isolation, driven purely by aesthetics or interaction flow, without considering the downstream impact.
+          </p>
+
+          <h2 id="color-decisions">
+            Color Decisions That Haunt You
+            <a href="#color-decisions" class="section-anchor" aria-label="Link to color decisions section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Color contrast is one of the easiest accessibility criteria to verify, but one of the hardest to fix after the fact. A designer spends three weeks perfecting a color palette that looks beautiful on their screen. By the time QA runs it through a contrast checker and fails WCAG AA at 3.8:1 instead of 4.5:1, the entire visual identity has been locked in.
+          </p>
+          <p>
+            What happens next? Either the product ships non-compliant, or the designer and developer go back and forth trying to find a new shade that maintains the aesthetic while hitting the contrast target. Both outcomes are preventable.
+          </p>
+          <p>
+            <strong>The solution is built into design tools.</strong> Tools like Stark (a Figma plugin) let designers check contrast ratios in real time while they're building the palette. The A11y Annotation Kit helps designers document accessibility decisions directly in their Figma file. But most teams don't use these tools because they don't know they exist, or accessibility isn't part of the design workflow yet.
+          </p>
+          <p>
+            If you're leading a design team, adding contrast checking to your design system tooling is non-negotiable. It's not a nice-to-have. It's the difference between shipping compliant and shipping broken.
+          </p>
+
+          <h2 id="missing-states">
+            Missing Interaction States
+            <a href="#missing-states" class="section-anchor" aria-label="Link to missing interaction states section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Here's a pattern I see constantly: a designer hands off a button component with the default state and the hover state. That's it. What about the focus state? The active state? The disabled state? The error state? What does the button look like when it's loading?
+          </p>
+          <p>
+            If the design file doesn't define these states explicitly, developers have to invent them. And when developers invent interaction states without guidance, you get inconsistency. One button might have a 2px focus outline. Another might have a 3px outline. One might be blue. Another might be green. The focus indicator on one component might be too thin to see.
+          </p>
+          <p>
+            This sounds like a minor detail, but it's critical for accessibility. Users who navigate by keyboard rely entirely on visible focus indicators to know where they are. If the focus state is unclear or missing, they're lost. Users with mobility impairments who can't use a mouse depend on these states for feedback.
+          </p>
+          <p>
+            The fix is simple: document every interactive state in the design. If a component responds to hover, it needs a focus state in the same file. If a button can be disabled, show what that looks like. If a form field can error, design that state. This doesn't take much longer. It just requires thinking ahead instead of reacting later.
+          </p>
+
+          <h2 id="component-assumptions">
+            Component Assumptions
+            <a href="#component-assumptions" class="section-anchor" aria-label="Link to component assumptions section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Many design systems create custom components that don't have a direct HTML equivalent. A custom accordion. A custom dropdown. A custom carousel. A custom date picker. When designers build these in Figma, they're thinking about the visual interaction: what happens when you click, how content reveals or hides. They're not thinking about ARIA.
+          </p>
+          <p>
+            An accordion in Figma looks like a stack of collapsed sections with arrows. But in the accessibility world, an accordion is a widget with specific roles and attributes. The container needs <code>role="region"</code>. The button needs <code>aria-expanded</code>. The panel needs <code>aria-labelledby</code> and <code>role="region"</code> or correct nesting. If the designer doesn't document this, the developer has to guess or spend time researching ARIA patterns.
+          </p>
+          <p>
+            Icon-only buttons are another classic case. A designer creates a beautiful icon button with a magnifying glass. It looks great. But there's no visible text. When a developer implements it without an accessible label, screen reader users have no idea what it does. The button becomes <code>&lt;button&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/button&gt;</code> with no accessible name.
+          </p>
+          <p>
+            The rule of thumb: if your component doesn't have a clear semantic HTML structure, document the accessibility requirements in the design file. Don't rely on developers to figure it out. The best custom components have ARIA documentation attached.
+          </p>
+
+          <h2 id="fixing-upstream">
+            Fixing It Upstream
+            <a href="#fixing-upstream" class="section-anchor" aria-label="Link to fixing it upstream section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The best time to plan accessibility is when you're designing, not after QA fails the audit. Here's a practical checklist for accessibility-aware design:
+          </p>
+          <ul>
+            <li><strong>Document ARIA roles in Figma.</strong> If your component needs a role attribute, write it in the design file. Add a comment or use the annotation kit. Developers will thank you.</li>
+            <li><strong>Include focus management notes.</strong> For modals, popovers, and complex interactions, document where focus should move. Should it trap inside the modal? Should it return to the trigger button when closed?</li>
+            <li><strong>Create explicit keyboard navigation specs.</strong> Don't assume developers know that Tab moves through fields, Escape closes the modal, Arrow Keys navigate the menu. Write it down. Include it in the handoff.</li>
+            <li><strong>Check color contrast during design.</strong> Use Stark or similar tools. Don't hand off a palette that fails WCAG.</li>
+            <li><strong>Define all interactive states.</strong> Include hover, focus, active, disabled, error, and loading states for every interactive element.</li>
+            <li><strong>Label icon-only buttons and images.</strong> Add a note about what the accessible name should be. Don't make developers guess.</li>
+          </ul>
+          <p>
+            When accessibility is baked into the design workflow, it doesn't slow you down. It actually makes handoffs cleaner because developers have the information they need upfront. They don't have to send the design back asking questions about focus states or ARIA roles.
+          </p>
+          <p>
+            The product also ends up more accessible because the design was created with accessibility in mind from day one, not bolted on as an afterthought. That's the goal: make accessibility a design concern, not a developer burden.
+          </p>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#the-design-gap" class="toc-link active" id="toc-gap">
+                <span class="toc-link-dot"></span>The Design Gap
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#color-decisions" class="toc-link" id="toc-color">
+                <span class="toc-link-dot"></span>Color Decisions
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#missing-states" class="toc-link" id="toc-states">
+                <span class="toc-link-dot"></span>Missing Interaction States
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#component-assumptions" class="toc-link" id="toc-components">
+                <span class="toc-link-dot"></span>Component Assumptions
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#fixing-upstream" class="toc-link" id="toc-upstream">
+                <span class="toc-link-dot"></span>Fixing It Upstream
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Perspective</div>
+          <p>Accessibility often fails because decisions are made at design time, not dev time. Learn how to shift left.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">Design</span>
+            <span class="sidebar-tag">Figma</span>
+            <span class="sidebar-tag">WCAG</span>
+            <span class="sidebar-tag">Upstream</span>
+            <span class="sidebar-tag">States</span>
+            <span class="sidebar-tag">ARIA</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Articles</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="accessibility-quick-wins.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Accessibility Quick Wins</div>
+                <div class="related-cat">UX Perspective</div>
+              </div>
+            </a>
+            <a href="design-visual.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Design & Visual Elements</div>
+                <div class="related-cat">Design & Visual</div>
+              </div>
+            </a>
+            <a href="screen-readers-aria.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Screen Readers & ARIA</div>
+                <div class="related-cat">Screen Readers & ARIA</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="accessibility-quick-wins.html" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Previous</div>
+        <div class="article-nav-title">Accessibility Quick Wins</div>
+      </div>
+    </a>
+    <a href="ux-government-saas-sales.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">Government SaaS: Accessibility as a Sales Requirement</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

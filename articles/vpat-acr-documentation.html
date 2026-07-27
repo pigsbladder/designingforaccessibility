@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPAT & ACR Documentation: Templates, Legal Disclaimer & Complete Guide | Designing for Accessibility</title>
+  <meta name="description" content="Learn how to write, submit, and maintain a VPAT (Voluntary Product Accessibility Template). Covers VPAT 2.5 templates, legal disclaimer examples, WCAG conformance levels, Section 508, and ACR best practices." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/vpat-acr-documentation.html" />
+  <meta property="og:title" content="VPAT & ACR Documentation: The Complete Guide" />
+  <meta property="og:description" content="Everything you need to write, submit, and maintain a Voluntary Product Accessibility Template: from first-time filers to enterprise compliance teams." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/vpat-acr-documentation.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "VPAT & ACR Documentation: The Complete Guide",
+    "description": "Everything you need to write, submit, and maintain a Voluntary Product Accessibility Template: from first-time filers to enterprise compliance teams.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-03-09",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/vpat-acr-documentation.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a VPAT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A VPAT (Voluntary Product Accessibility Template) is a standardized document that describes how a software product, website, or digital service meets accessibility standards such as WCAG and Section 508. It is created using the official template from the IT Industry Council (ITI) and, once completed, is formally called an Accessibility Conformance Report (ACR)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a VPAT and an ACR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A VPAT is the blank template; an ACR (Accessibility Conformance Report) is the completed document you produce by filling out that template. Think of the VPAT as the form and the ACR as your filled-in submission. The terms are commonly used interchangeably in procurement conversations, but technically the ACR is the deliverable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a VPAT legally required?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A VPAT is not legally required by statute, but it is effectively mandatory for selling software to U.S. federal agencies, federally funded universities, and many large enterprises. Section 508 requires federal agencies to procure accessible technology, and agencies enforce this by requesting a completed VPAT (ACR) during procurement. Without one, vendors are typically disqualified."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which VPAT edition should I use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VPAT 2.5 comes in four editions: WCAG (international web standard), Section 508 (U.S. federal), EU (European EN 301 549 standard), and INT (all three combined). Use the Section 508 edition for U.S. government sales, the EU edition for European public sector contracts, and the INT edition if you need to cover all markets in a single document. Most U.S. SaaS vendors submit the INT edition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to complete a VPAT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A first-time VPAT for a mid-size web application typically takes 3–6 weeks when done thoroughly. This includes 1–2 weeks of systematic testing across all WCAG criteria, 1–2 weeks writing remarks and documenting workarounds, and 1 week for review and sign-off. Hiring an accessibility consultant can reduce this to 2–3 weeks. Enterprise products with complex features or multiple platforms can take 2–3 months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'Partially Supports' mean in a VPAT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "'Partially Supports' means the product meets the accessibility criterion for some functionality or in some circumstances, but not all. It is one of five allowed conformance responses: Supports, Partially Supports, Does Not Support, Not Applicable, and Not Evaluated. When you mark a criterion as 'Partially Supports,' you must include specific remarks explaining what works, what doesn't, and any available workarounds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should a VPAT be updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A VPAT should be reviewed and updated after every major product release that changes UI, navigation, or interactive features. As a rule of thumb, a VPAT older than 12–18 months raises red flags with government procurement teams. Many organizations review their VPAT quarterly and do a full re-test annually or after any significant release."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I write a VPAT myself or do I need a consultant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can write a VPAT yourself if your team has accessibility testing expertise and understands WCAG criteria. However, many organizations hire accessibility consultants for the initial VPAT because an independent audit adds credibility and consultants catch issues internal teams miss. For government contracts above a certain value, a third-party audit is often expected. Subsequent updates can usually be handled internally once the first version is in place."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a VPAT legal disclaimer and what should it say?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A VPAT legal disclaimer is a statement at the top of an Accessibility Conformance Report (ACR) that clarifies the scope, limitations, and date of the evaluation. It should state: the product name and version evaluated, the date of the evaluation, the evaluator's name or organization, which edition of VPAT 2.5 was used, and a clarification that the report reflects the product at the time of testing and may not apply to future versions. Example: 'This Accessibility Conformance Report was prepared by [Company Name] on [Date]. It covers [Product Name] version [X.X] evaluated across [platforms/browsers]. This report is accurate as of the evaluation date. Future product updates may affect the conformance status described herein.'"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between WCAG Level A, AA, and AAA in a VPAT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG defines three conformance levels: Level A (minimum accessibility: must-fix issues that completely block users), Level AA (the legal and procurement standard, required by Section 508, EN 301 549, and most government contracts), and Level AAA (enhanced accessibility, best effort, not legally required). Most VPATs document conformance against WCAG 2.1 or 2.2 at Level AA. When procurement teams ask about 'VPAT level,' they are typically asking whether the product meets AA-level conformance across all relevant success criteria."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find official VPAT templates for government procurement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Official VPAT 2.5 templates are published by the Information Technology Industry Council (ITI) at itic.org. Four editions are available: WCAG, Section 508, EU EN 301 549, and the INT (combined) edition. For U.S. federal government procurement, use the Section 508 or INT edition. Section508.gov also provides supplemental guidance. Do not use unofficial or third-party VPAT templates; procurement teams expect the standard ITI format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I hire a VPAT creation service or write my VPAT in-house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For your first VPAT, especially for a federal or enterprise contract, hiring a professional VPAT creation service or accessibility consultant is strongly recommended. Independent auditors add credibility, surface issues internal teams miss, and produce reports that carry more weight in procurement. For ongoing updates after the initial VPAT is in place, in-house teams with accessibility testing expertise can usually maintain the document. Look for IAAP-certified consultants or firms specializing in Section 508 and WCAG auditing."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "VPAT & ACR",
+        "item": "https://www.designingforaccessibility.com/index.html#topics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "VPAT & ACR Documentation: The Complete Guide",
+        "item": "https://www.designingforaccessibility.com/articles/vpat-acr-documentation.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body style="--page-accent: #3b9eff; --page-accent-dark: #1d4ed8;">
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics" role="menuitem">Topics</a>
+    <a href="../index.html#articles" role="menuitem">Articles</a>
+    <a href="ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="../index.html#topics">VPAT & ACR Documentation</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">The Complete Guide</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> VPAT & ACR Documentation</div>
+    <h1>VPAT & ACR Documentation:<br>The Complete Guide</h1>
+    <p class="article-header-sub">
+      Everything you need to write, submit, and maintain a Voluntary Product Accessibility Template: from first-time filers to enterprise compliance teams.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-09">Updated March 2026</time></strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>15 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> <strong>VPAT & ACR Documentation</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="what-is-vpat">
+            What Is a VPAT?
+            <a href="#what-is-vpat" class="section-anchor" aria-label="Link to What Is a VPAT section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            A <strong>Voluntary Product Accessibility Template</strong> (pronounced "VEE-pat") is a standardized document that describes how a software product, website, or digital service meets (or doesn't meet) accessibility standards. It's created and maintained by the <strong>Information Technology Industry Council (ITI)</strong>, and it's the industry-standard way to communicate accessibility compliance.
+          </p>
+          <p>
+            The completed VPAT is formally called an <strong>Accessibility Conformance Report (ACR)</strong>. So you'll often hear these terms used interchangeably: you <em>write</em> a VPAT, and the result is an <em>ACR</em>. Think of the VPAT as the template and the ACR as your completed document.
+          </p>
+          <p>
+            The current edition is <strong>VPAT 2.5</strong>, released in 2021. It covers three major accessibility standards:
+          </p>
+          <ul>
+            <li><strong>WCAG 2.x</strong> (Web Content Accessibility Guidelines): the global standard for web accessibility</li>
+            <li><strong>Section 508 of the Rehabilitation Act</strong>: U.S. federal government accessibility requirements</li>
+            <li><strong>EN 301 549</strong>: European Union accessibility standard for ICT (Information and Communication Technology)</li>
+          </ul>
+
+          <h2 id="who-needs-vpat">
+            Who Needs a VPAT?
+            <a href="#who-needs-vpat" class="section-anchor" aria-label="Link to Who Needs a VPAT section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The short answer: if you're selling to government, higher education, or large enterprises, you likely need a VPAT. More precisely:
+          </p>
+          <ul>
+            <li><strong>Any software sold to the U.S. federal government</strong>: Section 508 compliance is required by law</li>
+            <li><strong>State government agencies</strong>: most states have accessibility requirements equivalent to or stricter than Section 508</li>
+            <li><strong>Universities and higher education institutions</strong>: typically required as part of ADA Title III compliance</li>
+            <li><strong>Large enterprise purchases</strong>: procurement teams increasingly require VPATs to evaluate vendor compliance</li>
+            <li><strong>Healthcare organizations</strong>: especially those receiving federal funding</li>
+            <li><strong>Financial services</strong>: increasing regulatory requirements around digital accessibility</li>
+          </ul>
+          <p>
+            The common trigger: <strong>a government RFP (Request for Proposal) or a procurement team's due diligence checklist</strong>. A missing or outdated VPAT can kill a deal before your sales team even gets a chance to pitch the product.
+          </p>
+
+          <h2 id="vpat-editions">
+            Which VPAT Edition Do I Need?
+            <a href="#vpat-editions" class="section-anchor" aria-label="Link to Which VPAT Edition Do I Need section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            VPAT 2.5 comes in four different editions. Each covers different standards and serves different markets. Choosing the right edition depends on where you're selling.
+          </p>
+
+          <table class="levels-table" aria-label="VPAT 2.5 editions comparison">
+            <thead>
+              <tr>
+                <th scope="col">Edition</th>
+                <th scope="col">Standards Covered</th>
+                <th scope="col">Best For</th>
+                <th scope="col">Typical Use Case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>WCAG Edition</strong></td>
+                <td>WCAG 2.1 and 2.2 only</td>
+                <td>Web products, SaaS platforms, digital services</td>
+                <td>Web-only products, especially private sector or international sales</td>
+              </tr>
+              <tr>
+                <td><strong>Section 508 Edition</strong></td>
+                <td>Section 508 standards (incorporates WCAG 2.0 AA)</td>
+                <td>U.S. federal government and contractors</td>
+                <td>Software sold to federal agencies</td>
+              </tr>
+              <tr>
+                <td><strong>EU EN 301 549 Edition</strong></td>
+                <td>European standard (similar to WCAG 2.1 AA)</td>
+                <td>Products sold in the European Union</td>
+                <td>SaaS with European customers, EU government contracts</td>
+              </tr>
+              <tr>
+                <td><strong>INT Edition (Combination)</strong></td>
+                <td>WCAG, Section 508, <em>and</em> EN 301 549</td>
+                <td>Enterprise SaaS serving multiple markets</td>
+                <td>Products sold to U.S. government and EU customers simultaneously</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Quick rule of thumb:</strong> If you're selling enterprise SaaS that touches U.S. government, federal contractors, or EU markets, use the <strong>INT Edition</strong>. If you're only targeting a single market, choose the appropriate edition. Most mature products end up using the INT Edition because it's future-proof. If you're already documenting compliance for three standards, adding more is minimal extra work.
+          </p>
+
+          <h2 id="conformance-levels">
+            What Are the VPAT Conformance Response Options?
+            <a href="#conformance-levels" class="section-anchor" aria-label="Link to VPAT Conformance Response Options section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            For each accessibility criterion, you mark the product's status with one of five response options. Understanding the difference between these options is critical. Vague responses create legal risk.
+          </p>
+
+          <table class="levels-table" aria-label="VPAT conformance response options">
+            <thead>
+              <tr>
+                <th scope="col">Response</th>
+                <th scope="col">What It Means</th>
+                <th scope="col">When to Use It</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Supports</strong></td>
+                <td>The product fully meets the criterion without exceptions. Testing confirms compliance across the product scope.</td>
+                <td>When you've tested and verified the feature works accessibly</td>
+              </tr>
+              <tr>
+                <td><strong>Partially Supports</strong></td>
+                <td>The product meets the criterion in some areas but not all. You must specify <em>exactly which parts</em> and <em>why</em> in the remarks.</td>
+                <td>Only when there's a legitimate reason and you explain it clearly</td>
+              </tr>
+              <tr>
+                <td><strong>Does Not Support</strong></td>
+                <td>The product does not meet the criterion. This is a compliance failure.</td>
+                <td>When a feature is inaccessible and won't be fixed in the near term</td>
+              </tr>
+              <tr>
+                <td><strong>Not Applicable</strong></td>
+                <td>The feature described by this criterion doesn't exist in the product.</td>
+                <td>Example: If your product has no video, WCAG 1.2 (video captions) is N/A</td>
+              </tr>
+              <tr>
+                <td><strong>Not Evaluated</strong></td>
+                <td>You haven't tested this criterion yet, but you acknowledge it applies to your product.</td>
+                <td>Rarely appropriate in final VPATs, but acceptable when submitting early drafts</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Critical rule:</strong> Never leave a criterion blank. If you don't know the status, mark it "Not Evaluated" rather than leaving it empty. Procurement teams view blank fields as red flags.
+          </p>
+
+          <h2 id="writing-vpat">
+            How Do You Write a VPAT Step by Step?
+            <a href="#writing-vpat" class="section-anchor" aria-label="Link to How to Write a VPAT section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Writing a VPAT is a methodical process that requires both technical testing and clear communication. Here's the step-by-step approach used by successful accessibility teams:
+          </p>
+
+          <h3>Step 1: Get the Official Template</h3>
+          <p>
+            Download the VPAT 2.5 template directly from <strong>itic.org</strong> (the Information Technology Industry Council). Don't use older versions or modified templates. Procurement teams expect the official format.
+          </p>
+
+          <h3>Step 2: Define Your Product Scope</h3>
+          <p>
+            Start with a clear statement of what you're documenting. Example:
+          </p>
+          <blockquote style="margin: 1.5em 0; padding: 1em; border-left: 4px solid var(--primary-600);">
+            "This ACR covers the web application dashboard of Product X, version 2.5.0, accessed via modern browsers (Chrome, Firefox, Safari, Edge from 2022 onward). Mobile app and legacy browser support are documented separately."
+          </blockquote>
+          <p>
+            Clear scope prevents misunderstandings about what you've actually tested.
+          </p>
+
+          <h3>Step 3: Test Each Criterion Systematically</h3>
+          <p>
+            This isn't just visual testing. You need to:
+          </p>
+          <ul>
+            <li>Test with keyboard navigation only (no mouse)</li>
+            <li>Test with at least one screen reader (NVDA or JAWS for Windows, VoiceOver for Mac/iOS)</li>
+            <li>Test color contrast using automated tools and manual verification</li>
+            <li>Check mobile accessibility and touch interactions</li>
+            <li>Review for focus management, ARIA implementations, and semantic HTML</li>
+          </ul>
+          <p>
+            Many teams use a combination of automated tools (Axe, Lighthouse, WAVE) and manual testing. Automated tools catch obvious issues; manual testing finds the subtle ones that break real user workflows.
+          </p>
+
+          <h3>Step 4: Write Honest, Specific Remarks</h3>
+          <p>
+            This is where VPATs separate good compliance teams from mediocre ones. For every "Partially Supports" response, write remarks that explain:
+          </p>
+          <ul>
+            <li>Which parts of the product support the criterion</li>
+            <li>Which parts don't, and why</li>
+            <li>Any workarounds users can employ</li>
+            <li>Timeline for fixes, if applicable</li>
+          </ul>
+          <p>
+            <strong>Bad example:</strong> "Partially Supports: some color contrast issues"<br>
+            <strong>Good example:</strong> "Partially Supports. Primary text meets WCAG AA contrast requirements (4.5:1 minimum). Secondary UI elements in the reporting module use a custom gray that measures 3.8:1 against the white background, failing the 4.5:1 requirement. This will be remediated in Q2 2026. Users can enable high-contrast mode in settings as a temporary workaround."
+          </p>
+
+          <h3>Step 5: Document Workarounds and Accommodations</h3>
+          <p>
+            If a feature is inaccessible but users have a workaround, document it. Examples:
+          </p>
+          <ul>
+            <li>"Custom data visualization doesn't support keyboard navigation, but the underlying data is available as an accessible CSV export"</li>
+            <li>"This legacy module doesn't meet WCAG 2.1 AA, but we provide phone support for users needing assistance"</li>
+            <li>"Mobile map interface is not fully keyboard-accessible; desktop version is fully accessible and recommended for users with mobility disabilities"</li>
+          </ul>
+          <p>
+            Workarounds don't replace accessibility fixes, but they demonstrate commitment to accommodating users.
+          </p>
+
+          <h3>Step 6: Sign and Date Your ACR</h3>
+          <p>
+            The VPAT should include the name and title of the person responsible for its accuracy. This creates accountability. Include a date, and update it whenever you refresh the document.
+          </p>
+
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Legal Risk Warning</span>
+            <p>
+              Vague or inaccurate VPATs create legal exposure. If you claim "Supports" but testing reveals the feature fails for screen reader users, you've made a false claim in a legal document. When in doubt about a criterion, either mark it "Partially Supports" with detailed remarks, or conduct more rigorous testing before claiming full support.
+            </p>
+          </div>
+
+          <h2 id="special-content">
+            How Do I Document Special Content Types in a VPAT?
+            <a href="#special-content" class="section-anchor" aria-label="Link to Special Content Types in a VPAT section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+
+          <h3>PDFs</h3>
+          <p>
+            PDFs receive special attention in accessibility compliance because they're widely distributed but notoriously difficult to make accessible:
+          </p>
+          <ul>
+            <li><strong>Must be tagged</strong> with proper heading hierarchy, list structure, and table structure</li>
+            <li><strong>Must have reading order</strong>: the logical flow of content must make sense to screen reader users</li>
+            <li><strong>Must pass color contrast</strong>: text on colored backgrounds must meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)</li>
+            <li><strong>Images must have alt text</strong>: convey the purpose or content of every image</li>
+            <li><strong>Forms must be properly structured</strong>: form fields must be labeled and properly associated</li>
+          </ul>
+          <p>
+            If your product includes PDFs, test them with a PDF accessibility tool (like PAC or Adobe Acrobat's accessibility checker) and a screen reader. Document the WCAG criteria specific to PDF accessibility in your VPAT.
+          </p>
+
+          <h3>Video Content</h3>
+          <p>
+            Video accessibility involves multiple layers:
+          </p>
+          <ul>
+            <li><strong>Captions are required</strong> (WCAG 1.2.2 AA): must be accurate, include speaker identification, and cover all dialogue and relevant audio</li>
+            <li><strong>Audio descriptions are required</strong> (WCAG 1.2.5 AA) for any visual information that isn't conveyed through dialogue, such as actions, expressions, scene changes</li>
+            <li><strong>Transcripts recommended</strong> (WCAG 1.2.1 A): provide a complete text transcript of all video content</li>
+            <li><strong>Video player must be accessible</strong>: keyboard controls, screen reader compatibility, caption toggle visibility</li>
+          </ul>
+          <p>
+            If your product has video, note which videos are captioned and which have audio descriptions. If some are missing, mark the criterion "Partially Supports" and commit to remediation.
+          </p>
+
+          <h3>Pre-Built Component Libraries</h3>
+          <p>
+            If your product uses third-party UI component libraries (like Material Design, Ant Design, React Bootstrap), document their accessibility status separately. Note:
+          </p>
+          <ul>
+            <li>Which library version you use</li>
+            <li>Which components are certified accessible</li>
+            <li>Any custom overrides to those components (which might introduce accessibility issues)</li>
+            <li>Whether you've tested those components in your actual implementation</li>
+          </ul>
+          <p>
+            Example VPAT remark: "Form inputs use Material-UI v5 components, which are WCAG 2.1 AA certified. Custom color themes apply a primary blue (#0066CC) on white backgrounds, which meets WCAG AA contrast requirements (4.75:1). All form error states include both icon and text labels, supporting users with color blindness."
+          </p>
+
+          <h3>Government-Specific Features</h3>
+          <p>
+            If your software serves government use cases, you may need to address:
+          </p>
+          <ul>
+            <li><strong>Government ID verification flows</strong>: ensure identity confirmation doesn't rely on visual patterns alone</li>
+            <li><strong>Digital signatures</strong>: must be keyboard and screen reader accessible</li>
+            <li><strong>Multi-factor authentication</strong>: WCAG 2.2 has specific criteria around cognitive load and accessibility during authentication</li>
+            <li><strong>Accessible PDF generation for official documents</strong>: certificates, licenses, notices must be tagged and structured</li>
+          </ul>
+
+          <h2 id="maintaining-vpat">
+            How Often Should a VPAT Be Updated?
+            <a href="#maintaining-vpat" class="section-anchor" aria-label="Link to How Often Should a VPAT Be Updated section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+
+          <h3>Version Your ACRs</h3>
+          <p>
+            Maintain a document history. When you update your VPAT, include version numbers and dates. Example naming convention:
+          </p>
+          <ul>
+            <li>ProductX-ACR-v2.5.0-March2026.pdf</li>
+            <li>ProductX-ACR-v2.4.0-December2025.pdf (previous version)</li>
+          </ul>
+          <p>
+            This way, procurement teams know exactly which product version the VPAT covers, and you have a record of compliance history.
+          </p>
+
+          <h3>Review After Major Releases</h3>
+          <p>
+            Accessibility compliance isn't a one-time checklist. When you release significant new features:
+          </p>
+          <ul>
+            <li>Review any new criteria affected by the feature</li>
+            <li>Re-test existing functionality that might have regressed</li>
+            <li>Update your VPAT remarks</li>
+            <li>Update the version number and date</li>
+          </ul>
+
+          <h3>Address the Audit Reality</h3>
+          <p>
+            Government customers often require independent third-party accessibility audits. When an audit finds issues:
+          </p>
+          <ul>
+            <li><strong>Fix the actual problem</strong>: update your code and re-test thoroughly</li>
+            <li><strong>Update your VPAT</strong>: change the conformance status and document the fix</li>
+            <li><strong>Provide evidence</strong>: save testing records that demonstrate the fix works</li>
+            <li><strong>Establish a timeline</strong>: if fixes aren't immediate, provide a concrete remediation date</li>
+          </ul>
+
+          <h3>Watch the Deadline: 12-18 Months</h3>
+          <p>
+            A VPAT older than 12-18 months raises red flags in procurement. Updated your major version? Released significant new features? Your old VPAT is no longer credible. Create a refresh schedule:
+          </p>
+          <ul>
+            <li>After every major version release (e.g., 2.0, 3.0)</li>
+            <li>After significant feature launches</li>
+            <li>Annually, at minimum, if you're selling to government</li>
+          </ul>
+
+          <h3>Implement Automated Regression Testing</h3>
+          <p>
+            Track accessibility compliance over time with automated tests. Tools like Axe, Cypress with accessibility plugins, or Deque's axe-core can be integrated into your CI/CD pipeline. This won't catch everything, but it will alert you to obvious regressions before they reach customers.
+          </p>
+
+          <div class="callout callout-dark">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> Cross-Reference: VPAT Lookup Tool</span>
+            <p>
+              Need help understanding a specific WCAG criterion for your VPAT? Use the <a href="../index.html#vpat-tool">VPAT Success Criteria Lookup Tool</a> to find plain-English explanations and specific documentation guidance for any WCAG criterion.
+            </p>
+          </div>
+
+          <h4>External Resources</h4>
+          <div class="ext-links">
+            <a href="https://www.itic.org/pubs/resources/vpat" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">ITI VPAT 2.5 Templates and Guidance</div>
+                <div class="ext-link-desc">Official VPAT 2.5 templates from the Information Technology Industry Council, including all four editions.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.section508.gov/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">Section 508.gov</div>
+                <div class="ext-link-desc">Official U.S. government resource for Section 508 compliance guidance, standards, and technical requirements.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">WCAG 2.2 Quick Reference</div>
+                <div class="ext-link-desc">W3C's customizable reference guide to WCAG 2.2 success criteria with detailed techniques and understanding documents.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+
+          <h2 id="wcag-conformance-levels">
+            What Are WCAG Conformance Levels in a VPAT? (A, AA, and AAA)
+            <a href="#wcag-conformance-levels" class="section-anchor" aria-label="Link to WCAG Conformance Levels section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            VPAT conformance responses (Supports, Partially Supports, etc.) describe <em>how</em> your product complies, but WCAG conformance levels describe <em>how much</em> is required. Understanding the difference is essential when completing or reviewing any VPAT.
+          </p>
+          <p>
+            WCAG organizes its success criteria into three levels:
+          </p>
+
+          <table class="levels-table" aria-label="WCAG conformance levels comparison">
+            <thead>
+              <tr>
+                <th scope="col">Level</th>
+                <th scope="col">What It Means</th>
+                <th scope="col">Required By</th>
+                <th scope="col">VPAT Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Level A</strong></td>
+                <td>Minimum baseline. Failures at this level completely block users with disabilities from accessing content.</td>
+                <td>All serious accessibility standards</td>
+                <td>Must be addressed; Level A failures are the most critical issues in a VPAT</td>
+              </tr>
+              <tr>
+                <td><strong>Level AA</strong></td>
+                <td>The legal and procurement standard. Covers the most common accessibility barriers for real users in real contexts.</td>
+                <td>Section 508, EN 301 549, ADA Title II (2024), most government contracts</td>
+                <td>This is the target level for virtually all VPATs submitted to U.S. federal agencies and enterprise procurement teams</td>
+              </tr>
+              <tr>
+                <td><strong>Level AAA</strong></td>
+                <td>Enhanced accessibility. Addresses edge cases and specific user needs. Not achievable for all content types.</td>
+                <td>Not legally required anywhere</td>
+                <td>Optional in a VPAT; document it if you meet it, but it's not expected by procurement</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>The practical implication:</strong> When procurement teams ask for a VPAT that shows "WCAG 2.1 AA compliance," they want documentation proving your product meets all Level A and Level AA success criteria, 50 criteria in total. Your VPAT should explicitly state which level you're targeting (typically AA) in the scope section.
+          </p>
+          <p>
+            If your product fails any Level AA criteria, mark those as "Partially Supports" or "Does Not Support" with honest, specific remarks. Claiming full AA conformance when Level A failures exist is a legal risk.
+          </p>
+
+          <h2 id="vpat-legal-disclaimer">
+            What Should a VPAT Legal Disclaimer Say?
+            <a href="#vpat-legal-disclaimer" class="section-anchor" aria-label="Link to VPAT Legal Disclaimer section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Every completed VPAT (ACR) should include a legal disclaimer at the top of the document. This disclaimer protects the vendor by clarifying scope, evaluation methodology, and the date of testing, and it signals professionalism to procurement reviewers.
+          </p>
+
+          <h3>What to Include in a VPAT Legal Disclaimer</h3>
+          <ul>
+            <li><strong>Product name and version</strong>: exactly which release was tested</li>
+            <li><strong>Evaluation date</strong>: the date testing was completed (not the date the document was written)</li>
+            <li><strong>Evaluator identity</strong>: the person or firm responsible for the report: internal team or third-party</li>
+            <li><strong>VPAT edition</strong>: which edition was used (WCAG, Section 508, EU, or INT)</li>
+            <li><strong>Evaluation scope</strong>: which platforms, browsers, and assistive technologies were tested</li>
+            <li><strong>Limitation clause</strong>: that the report reflects the product at the time of testing and future releases may differ</li>
+          </ul>
+
+          <h3>VPAT Legal Disclaimer Example</h3>
+          <p>Below is a standard legal disclaimer you can adapt for your own ACR:</p>
+
+          <blockquote style="margin: 1.5em 0; padding: 1em 1.25em; border-left: 4px solid var(--primary-600); font-size: 0.93em; line-height: 1.7;">
+            <strong>Accessibility Conformance Report: Legal Disclaimer</strong><br><br>
+            This Accessibility Conformance Report (ACR) was prepared by <em>[Company Name or Evaluator Name]</em> on <em>[Evaluation Date]</em>. It covers <em>[Product Name]</em>, version <em>[X.X.X]</em>, evaluated via desktop web browsers (Chrome, Firefox, Safari, Edge, 2023 and later releases) and mobile browsers on iOS 17 and Android 14. Screen reader testing was conducted using NVDA 2023.3 with Chrome, JAWS 2024 with Chrome, and VoiceOver with Safari on macOS and iOS.<br><br>
+            This report was completed using the <em>[VPAT 2.5 INT / Section 508 / WCAG / EU]</em> edition template, published by the Information Technology Industry Council (ITI).<br><br>
+            The information in this report is accurate as of the evaluation date. Subsequent product updates, configuration changes, or third-party integrations may affect the conformance status described herein. This report is not a legal guarantee of accessibility and does not constitute legal advice. Users relying on this report for procurement decisions should verify currency and scope with the vendor.
+          </blockquote>
+
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Keep the Disclaimer Accurate</span>
+            <p>
+              A disclaimer does not shield you from liability if the VPAT itself contains materially false conformance claims. The disclaimer clarifies scope and date; it does not excuse inaccurate "Supports" ratings for features that fail accessibility testing. Accuracy in the conformance table always matters more than the disclaimer language.
+            </p>
+          </div>
+
+          <h2 id="vpat-templates">
+            Where Can I Find Official VPAT Templates?
+            <a href="#vpat-templates" class="section-anchor" aria-label="Link to VPAT Templates section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The only authoritative source for official VPAT templates is the <strong>Information Technology Industry Council (ITI)</strong> at <a href="https://www.itic.org/pubs/resources/vpat" target="_blank" rel="noopener noreferrer">itic.org</a>. All four VPAT 2.5 editions are available there for free. Do not use modified templates, outdated versions, or templates from unofficial sources; procurement teams expect the standard ITI format, and deviations can flag your submission as non-compliant before it's even read.
+          </p>
+
+          <h3>The Four Official VPAT 2.5 Templates</h3>
+          <ul>
+            <li><strong>VPAT 2.5 WCAG Edition</strong>: for international or web-only contexts not covered by U.S. or EU law</li>
+            <li><strong>VPAT 2.5 Section 508 Edition</strong>: for U.S. federal government and federal contractor sales</li>
+            <li><strong>VPAT 2.5 EU EN 301 549 Edition</strong>: for products sold to EU public sector organizations</li>
+            <li><strong>VPAT 2.5 INT Edition</strong>: combines all three standards; the most common choice for enterprise SaaS vendors</li>
+          </ul>
+
+          <h3>Supplemental Resources for Government VPAT Templates</h3>
+          <ul>
+            <li><strong>Section508.gov</strong>: provides procurement guidance, sample language, and testing tools for U.S. federal agencies and contractors. Particularly useful for understanding how agencies evaluate the VPATs they receive.</li>
+            <li><strong>GSA's government-wide IT accessibility program</strong>: publishes VPAT guidance for vendors participating in federal procurement vehicles like GSA Schedule contracts.</li>
+            <li><strong>Existing published ACRs as reference</strong>: many large software vendors (Microsoft, Google, Adobe, Salesforce) publish their VPATs publicly. These serve as real-world examples of professional-grade ACRs and are a valuable reference for format and remark quality.</li>
+          </ul>
+
+          <div class="callout callout-dark">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> When to Hire a VPAT Creation Service</span>
+            <p>
+              For your first VPAT, especially ahead of a federal RFP or enterprise procurement, consider hiring an accessibility consultant or VPAT creation service. Look for firms or individuals certified by the <strong>International Association of Accessibility Professionals (IAAP)</strong>. An independent VPAT carries more weight with government buyers than a self-assessed one, and a qualified consultant will catch issues your internal team might overlook. Once your initial VPAT is established, in-house teams can usually handle subsequent updates.
+            </p>
+          </div>
+
+        <!-- FAQ SECTION -->
+        <section class="article-faq" id="faq" aria-labelledby="faq-heading">
+          <h2 class="faq-heading" id="faq-heading">Frequently Asked Questions</h2>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the difference between a VPAT and an ACR?</summary>
+            <div class="faq-answer">
+              <p>A <strong>VPAT</strong> (Voluntary Product Accessibility Template) is the blank standardized form published by the IT Industry Council (ITI). An <strong>ACR</strong> (Accessibility Conformance Report) is what you produce when you fill in that form for your specific product. Think of the VPAT as the template and the ACR as your completed document. The terms are used interchangeably in procurement conversations, but strictly speaking the ACR is the deliverable that gets submitted.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is a VPAT legally required?</summary>
+            <div class="faq-answer">
+              <p>A VPAT is not mandated by statute, but it is effectively required for selling software to U.S. federal agencies and federally funded organizations. Section 508 of the Rehabilitation Act requires federal agencies to procure accessible technology, and agencies enforce this by requesting a completed VPAT/ACR during procurement. Without one, vendors are routinely disqualified before pricing is even discussed.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Which VPAT edition should I use: WCAG, 508, EU, or INT?</summary>
+            <div class="faq-answer">
+              <p>Use the <strong>Section 508 edition</strong> for U.S. federal government sales. Use the <strong>EU edition</strong> for European public sector contracts under EN 301 549. Use the <strong>INT edition</strong> if you need to cover all three standards (WCAG, Section 508, and EN 301 549) in a single document, which most enterprise SaaS vendors do. The WCAG-only edition is for purely international contexts not covered by either U.S. or EU law.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How long does it take to complete a VPAT?</summary>
+            <div class="faq-answer">
+              <p>A first-time VPAT for a mid-size web application typically takes <strong>3–6 weeks</strong> when done thoroughly: 1–2 weeks of systematic testing against all relevant WCAG criteria, 1–2 weeks writing specific remarks and documenting workarounds, and at least one week for review and sign-off. Hiring an accessibility consultant can compress this to 2–3 weeks. Enterprise products with complex features, mobile apps, or multiple user roles can take 2–3 months.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What does "Partially Supports" mean on a VPAT?</summary>
+            <div class="faq-answer">
+              <p>"Partially Supports" is one of five allowed conformance responses in a VPAT. It means the product meets the accessibility criterion for some functionality or in some circumstances, but not all. The five responses are: <strong>Supports</strong>, <strong>Partially Supports</strong>, <strong>Does Not Support</strong>, <strong>Not Applicable</strong>, and <strong>Not Evaluated</strong>. Every "Partially Supports" entry must be accompanied by a specific remark explaining what works, what doesn't, and any available workarounds. Vague remarks are a legal risk.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How often should a VPAT be updated?</summary>
+            <div class="faq-answer">
+              <p>A VPAT should be reviewed after every major product release that changes UI, navigation, or interactive features. A VPAT older than <strong>12–18 months</strong> raises red flags with government procurement teams and may be rejected. Many organizations review their VPAT quarterly and conduct a full accessibility re-test annually. Always version and date your ACRs so buyers can see how recently it was validated.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I write a VPAT myself or do I need a third-party consultant?</summary>
+            <div class="faq-answer">
+              <p>You can write a VPAT internally if your team has accessibility testing expertise and understands WCAG criteria. However, many organizations engage an independent accessibility consultant for the first VPAT because a third-party audit carries more credibility with government buyers and consultants typically surface issues that internal teams overlook. For large federal contracts, an independent audit is often expected. Once an initial compliant VPAT is in place, subsequent updates can usually be handled in-house.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Does a VPAT cover mobile apps as well as web products?</summary>
+            <div class="faq-answer">
+              <p>Yes. A VPAT can and should document mobile app accessibility separately from the web product. VPAT 2.5 includes criteria for software applications as well as web content. When documenting a product that spans web, iOS, and Android, define the scope clearly at the top of the ACR; typically you document each platform separately in the same document, noting any platform-specific conformance differences.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is a VPAT legal disclaimer and what should it say?</summary>
+            <div class="faq-answer">
+              <p>A <strong>VPAT legal disclaimer</strong> is a statement placed at the top of an Accessibility Conformance Report (ACR) that clarifies the scope, evaluation methodology, date of testing, and limitations of the report. It should include: the product name and version evaluated, the evaluation date, the evaluator's name or organization, the VPAT 2.5 edition used, the platforms and assistive technologies tested, and a clause stating the report reflects the product at the time of testing and may not cover future releases. See the <a href="#vpat-legal-disclaimer">legal disclaimer section</a> above for a full example you can adapt.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the difference between WCAG Level A, AA, and AAA in a VPAT?</summary>
+            <div class="faq-answer">
+              <p>WCAG defines three conformance levels. <strong>Level A</strong> is the minimum; failures here completely block users with disabilities. <strong>Level AA</strong> is the legal standard required by Section 508, EN 301 549, and most government and enterprise procurement requirements; this is what virtually all VPATs are evaluated against. <strong>Level AAA</strong> is enhanced accessibility, not legally required, and not achievable for all content types. When a procurement team asks for a VPAT demonstrating "WCAG 2.1 AA" compliance, they want evidence your product meets all 50 Level A and AA success criteria.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Where can I download official VPAT templates for government procurement?</summary>
+            <div class="faq-answer">
+              <p>Official <strong>VPAT 2.5 templates</strong> are published for free by the Information Technology Industry Council (ITI) at <a href="https://www.itic.org/pubs/resources/vpat" target="_blank" rel="noopener noreferrer">itic.org</a>. Four editions are available: WCAG, Section 508, EU EN 301 549, and the INT (combined) edition. For U.S. federal government sales, use the <strong>Section 508</strong> or <strong>INT edition</strong>. Supplemental procurement guidance is available at <a href="https://www.section508.gov/" target="_blank" rel="noopener noreferrer">Section508.gov</a>. Do not use unofficial or modified templates; agencies expect the standard ITI format.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Should I hire a VPAT creation service or write my VPAT in-house?</summary>
+            <div class="faq-answer">
+              <p>For your first VPAT, especially ahead of a federal RFP or major enterprise procurement, hiring a professional <strong>VPAT creation service</strong> or accessibility consultant is strongly recommended. An independent audit carries more credibility with government buyers than a self-assessed report, and experienced consultants surface issues internal teams typically miss. For ongoing updates once your initial VPAT is established, in-house teams with accessibility testing skills can usually take over. Look for IAAP-certified consultants or firms specializing in Section 508 and WCAG auditing.</p>
+            </div>
+          </details>
+
+        </section>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#what-is-vpat" class="toc-link active" id="toc-what">
+                <span class="toc-link-dot"></span>What Is a VPAT?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#who-needs-vpat" class="toc-link" id="toc-who">
+                <span class="toc-link-dot"></span>Who Needs a VPAT?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#vpat-editions" class="toc-link" id="toc-editions">
+                <span class="toc-link-dot"></span>Which VPAT Edition Do I Need?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#conformance-levels" class="toc-link" id="toc-conformance">
+                <span class="toc-link-dot"></span>What Are the Conformance Response Options?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#writing-vpat" class="toc-link" id="toc-writing">
+                <span class="toc-link-dot"></span>How Do You Write a VPAT?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#special-content" class="toc-link" id="toc-special">
+                <span class="toc-link-dot"></span>How to Document Special Content
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#maintaining-vpat" class="toc-link" id="toc-maintaining">
+                <span class="toc-link-dot"></span>How Often to Update a VPAT?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#wcag-conformance-levels" class="toc-link" id="toc-levels">
+                <span class="toc-link-dot"></span>WCAG Levels A, AA &amp; AAA
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#vpat-legal-disclaimer" class="toc-link" id="toc-disclaimer">
+                <span class="toc-link-dot"></span>VPAT Legal Disclaimer Example
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#vpat-templates" class="toc-link" id="toc-templates">
+                <span class="toc-link-dot"></span>Where to Find VPAT Templates
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Topic</div>
+          <p>Part of the <strong>VPAT & ACR Documentation</strong> series for teams documenting and maintaining accessibility compliance.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">VPAT 2.5</span>
+            <span class="sidebar-tag">ACR</span>
+            <span class="sidebar-tag">Section 508</span>
+            <span class="sidebar-tag">ITI</span>
+            <span class="sidebar-tag">Conformance</span>
+            <span class="sidebar-tag">Legal Disclaimer</span>
+            <span class="sidebar-tag">WCAG Levels</span>
+            <span class="sidebar-tag">Templates</span>
+            <span class="sidebar-tag">PDF</span>
+            <span class="sidebar-tag">Video</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Articles</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="accessibility-guidelines.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Accessibility Guidelines: WCAG & Section 508 Explained</div>
+                <div class="related-cat">Accessibility 101</div>
+              </div>
+            </a>
+            <a href="legal-landscape.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">The Legal Landscape: ADA, Section 508, and Government Procurement</div>
+                <div class="related-cat">Legal Landscape</div>
+              </div>
+            </a>
+            <a href="testing-evaluation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Testing & Evaluation: Methods for Measuring Accessibility</div>
+                <div class="related-cat">Testing & Evaluation</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="screen-readers-aria.html" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Previous</div>
+        <div class="article-nav-title">Screen Readers & ARIA</div>
+      </div>
+    </a>
+    <a href="ux-perspectives.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">UX Perspectives</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing & Evaluation</a></li>
+          <li><a href="design-visual.html">Design & Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers & ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT & ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

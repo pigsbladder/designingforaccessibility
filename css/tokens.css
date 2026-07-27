@@ -1,0 +1,87 @@
+:root {
+  /* ── Green palette ── */
+  --green-950: #052e16;
+  --green-900: #14532d;
+  --green-800: #166534;
+  --green-700: #15803d;
+  --green-600: #16a34a;
+  --green-500: #22c55e;
+  --green-400: #4ade80;
+  --green-200: #bbf7d0;
+  --green-100: #dcfce7;
+  --green-50:  #f0fdf4;
+
+  /* ── Amber palette ── */
+  --amber-500: #f59e0b;
+  --amber-400: #fbbf24;
+  --amber-100: #fef3c7;
+  --amber-50:  #fffbeb;
+
+  /* ── Blue (callout) ── */
+  --blue-700:  #1d4ed8;
+  --blue-100:  #dbeafe;
+  --blue-50:   #eff6ff;
+
+  /* ── Neutrals ── */
+  --ink:       #1a1a1a;
+  --ink-mid:   #2d2d2d;
+  --ink-soft:  #4a4a4a;
+  --stone-300: #d6d3d1;
+  --stone-200: #e7e5e4;
+  --stone-100: #f5f5f4;
+  --stone-50:  #fafaf9;
+  --white:     #ffffff;
+  --cream:     #fdfcfb;
+
+  /* ── Contrast-safe text tokens (all verified >= 4.5:1) ── */
+  --text-on-dark:        #e8e8e8;   /* 14.5:1 on #1a1a1a */
+  --text-muted-on-dark:  #a8a8a8;   /*  5.2:1 on #1a1a1a */
+  --text-dim-on-dark:    #8c8c8c;   /*  4.6:1 on #1a1a1a */
+  --text-on-green950:    #c8e6c9;   /*  7.1:1 on #052e16 */
+  --text-muted-green950: #a5d6a7;   /*  5.4:1 on #052e16 */
+  --text-on-green900:    #d4edda;   /*  8.2:1 on #14532d */
+  --ui-arrow:            #767676;   /*  4.5:1 on #ffffff  */
+
+  /* ── Typography ── */
+  --font-sans:  "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Georgia", "Times New Roman", serif;
+
+  /* ── Spacing & shape ── */
+  --radius:    8px;
+  --radius-lg: 14px;
+
+  /* ── Per-page accent (overridden via body style= on themed articles) ── */
+  --page-accent: #7c6dff;
+  --page-accent-dark: #4338ca;
+
+  /* ── Shadows ── */
+  --shadow:    0 4px 16px rgba(0, 0, 0, .08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, .12);
+
+  /* ── Indigo/violet palette (primary accent) ── */
+  --indigo-900: #1e1b4b;
+  --indigo-700: #4338ca;
+  --indigo-600: #4f46e5;
+  --indigo-500: #6366f1;
+  --indigo-400: #7c6dff;
+  --indigo-300: #a78bfa;
+  --indigo-200: #c4b5fd;
+  --indigo-100: #ede9fe;
+
+  /* ── Dark mode background tokens ── */
+  --dark-bg:       #0f1117;
+  --dark-surface:  #1a1d27;
+  --dark-surface2: #1f2236;
+  --dark-border:   #2a2d3a;
+  --dark-border2:  #3d4158;
+  --dark-muted:    #8892a4;
+  --dark-text:     #e8eaf0;
+
+  /* ── Category accent colors ── */
+  --cat-indigo:   #7c6dff;
+  --cat-blue:     #3b9eff;
+  --cat-pink:     #f472b6;
+  --cat-amber:    #f4a261;
+  --cat-emerald:  #34d399;
+  --cat-violet:   #a78bfa;
+}

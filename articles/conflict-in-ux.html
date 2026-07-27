@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handling Conflict in UX: From Design Debate to Real Solutions | Designing for Accessibility</title>
+  <meta name="description" content="How to work through design disagreement without killing momentum. Practical strategies for handling UX conflict with clarity, curiosity, and maturity." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/conflict-in-ux.html" />
+  <meta property="og:title" content="Handling Conflict in UX: From Design Debate to Real Solutions" />
+  <meta property="og:description" content="How to work through design disagreement without killing momentum. Practical strategies for handling UX conflict." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/conflict-in-ux.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Handling Conflict in UX: From Design Debate to Real Solutions",
+    "description": "How to work through design disagreement without killing momentum. Practical strategies for handling UX conflict.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-02-09",
+    "dateModified": "2026-03-09",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/conflict-in-ux.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "UX Perspectives",
+        "item": "https://www.designingforaccessibility.com/articles/ux-perspectives.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Handling Conflict in UX: From Design Debate to Real Solutions",
+        "item": "https://www.designingforaccessibility.com/articles/conflict-in-ux.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics" role="menuitem">Topics</a>
+    <a href="../index.html#articles" role="menuitem">Articles</a>
+    <a href="ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="ux-perspectives.html">UX Perspectives</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Handling Conflict in UX</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> UX Perspective</div>
+    <h1>Handling Conflict in UX</h1>
+    <p class="article-header-sub">
+      From design debate to real solutions: how to work through disagreement without killing momentum.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-09">February 2026</time></strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>7 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <strong>UX Perspective</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="conflict-is-healthy">
+            Conflict is a Sign the Team Cares
+            <a href="#conflict-is-healthy" class="section-anchor" aria-label="Link to Conflict is a Sign the Team Cares section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Conflict in UX (between individuals or teams) isn't a failure. If anything, it's a sign the team cares enough to argue for what they believe is right. The friction comes from trying to balance user experience, product goals, development reality, and opinions. Lots of opinions.
+          </p>
+          <p>
+            The trick isn't avoiding the conflict. It's learning to work through it without killing momentum, burning relationships, or digging in just because that is the UX way.
+          </p>
+          <p>
+            What separates pros from amateurs isn't the absence of conflict. It is how they handle it.
+          </p>
+
+          <h2 id="ux-collaborative">
+            UX is Collaborative, Not Commanding
+            <a href="#ux-collaborative" class="section-anchor" aria-label="Link to UX is Collaborative section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Designing in a vacuum is not UX. It is art. Real UX lives in conversation with stakeholders, developers, product managers, other designers, and actual users. You are going to disagree sometimes. If you never do, someone is not being honest.
+          </p>
+
+          <h2 id="close-icon-example">
+            Example: The Close Icon That Shouldn't Exist
+            <a href="#close-icon-example" class="section-anchor" aria-label="Link to Close Icon Example section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Scenario: There is a modal that the user must complete before proceeding. They cannot dismiss it. Yet someone wants an X icon to close it. You question it: "If the user cannot close it, why show an option pretending they can?"
+          </p>
+          <p>
+            It is a valid point. The other designer disagrees. Suddenly you are in that awkward UX tension zone. Is this a big hill to die on? Probably not. But it is still a UX moment, and how you handle it sets tone and credibility.
+          </p>
+          <p>
+            Instead of going into UX rule mode, try this thought path:
+          </p>
+          <ul>
+            <li>What is the user expectation here?</li>
+            <li>Does this interaction match system behavior?</li>
+            <li>Are we misleading the user or creating false affordance?</li>
+            <li>What is the minimal, clearest path forward?</li>
+          </ul>
+          <p>
+            UX is not about being right. It is about building clarity and reducing friction. So forget ego and frame your POV as principles.
+          </p>
+
+          <h2 id="conflict-strategy">
+            Conflict Strategy: Principles Over Personal Preference
+            <a href="#conflict-strategy" class="section-anchor" aria-label="Link to Conflict Strategy section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            When conflict happens, keep a structure:
+          </p>
+          <p>
+            <strong>Ask why first.</strong> "What's your thinking behind keeping the X?" Understanding motivation matters. Sometimes it is consistency, sometimes it is habit, sometimes it is fear of user pushback.
+          </p>
+          <p>
+            <strong>Ground it in user impact.</strong> "Does showing an unavailable close button create confusion or hesitation?"
+          </p>
+          <p>
+            <strong>Bring in system integrity.</strong> "From the user side, I think this could create uncertainty about whether the action is available."
+          </p>
+          <p>
+            <strong>Suggest a test or alternate.</strong> "What if we remove the X for this flow and monitor feedback? Or add microcopy that explains why action is required?"
+          </p>
+          <p>
+            You are not fighting a person. You are aligning on behavior.
+          </p>
+
+          <h2 id="language-comparison">
+            How You Talk About Conflict Matters
+            <a href="#language-comparison" class="section-anchor" aria-label="Link to Language Comparison section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            You can disagree without turning the room tense. Good UX conflict sounds like:
+          </p>
+          <ul>
+            <li>"Let us explore why this matters."</li>
+            <li>"What is the goal of this pattern here?"</li>
+            <li>"How do we think the user interprets this?"</li>
+            <li>"What is the smallest safe experiment to validate this?"</li>
+          </ul>
+          <p>
+            Bad UX conflict sounds like:
+          </p>
+          <ul>
+            <li>"That is not best practice."</li>
+            <li>"That is not how UX works."</li>
+            <li>"We cannot do it that way."</li>
+            <li>"That is wrong."</li>
+          </ul>
+
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> The Difference</span>
+            <p>One side invites dialogue. The other shuts the door.</p>
+          </div>
+
+          <h2 id="pick-battles">
+            Pick Your Battles
+            <a href="#pick-battles" class="section-anchor" aria-label="Link to Pick Your Battles section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Every design discussion does not need to go full war room. Ask yourself:
+          </p>
+          <ul>
+            <li>Is this blocking the user?</li>
+            <li>Does it create confusion or unnecessary work?</li>
+            <li>Does it break consistency in a meaningful way?</li>
+            <li>Will users even notice?</li>
+          </ul>
+          <p>
+            If the answer is yes, push. If it is minor, make your point, be clear, then move on. This keeps your credibility intact. If you fight every fight, people tune you out fast.
+          </p>
+
+          <h2 id="when-overruled">
+            When You Are Overruled
+            <a href="#when-overruled" class="section-anchor" aria-label="Link to When You Are Overruled section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            It will happen. And that is ok. Say your piece, back it with logic, and if the call goes another way, let it go and move forward. That is maturity.
+          </p>
+          <p>
+            You are hired to improve the product, not win arguments. Nobody remembers who won a design debate. They remember who made the team better to work with.
+          </p>
+          <p>
+            If it turns out your concern was correct later, great. You built credibility. If you throw "I told you so" energy? You lose it.
+          </p>
+
+          <div class="callout callout-green">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Bottom Line</span>
+            <p>
+              UX is not just about designing solutions. It is about navigating humans. Conflict is part of that job. Accept it. Expect it. Handle it with clarity, calm, and curiosity instead of ego. The goal is not being right. The goal is getting it right together.
+            </p>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#conflict-is-healthy" class="toc-link active" id="toc-healthy">
+                <span class="toc-link-dot"></span>Conflict is a Sign the Team Cares
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#ux-collaborative" class="toc-link" id="toc-collaborative">
+                <span class="toc-link-dot"></span>UX is Collaborative
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#close-icon-example" class="toc-link" id="toc-example">
+                <span class="toc-link-dot"></span>Close Icon Example
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#conflict-strategy" class="toc-link" id="toc-strategy">
+                <span class="toc-link-dot"></span>Conflict Strategy
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#language-comparison" class="toc-link" id="toc-language">
+                <span class="toc-link-dot"></span>How You Talk Matters
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#pick-battles" class="toc-link" id="toc-battles">
+                <span class="toc-link-dot"></span>Pick Your Battles
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#when-overruled" class="toc-link" id="toc-overruled">
+                <span class="toc-link-dot"></span>When You Are Overruled
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Perspective</div>
+          <p>Conflict is inevitable in collaborative design work. What matters is whether you handle it with maturity, principles, and respect for the people in the room.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">UX</span>
+            <span class="sidebar-tag">Perspective</span>
+            <span class="sidebar-tag">Real-world</span>
+            <span class="sidebar-tag">Collaboration</span>
+            <span class="sidebar-tag">Teams</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Perspectives</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="the-hill-worth-dying-on.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">The Hill Worth Dying On</div>
+                <div class="related-cat">UX Perspective</div>
+              </div>
+            </a>
+            <a href="reassuring-ux-teams-about-ai.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Reassuring UX Teams About AI</div>
+                <div class="related-cat">UX Perspective</div>
+              </div>
+            </a>
+            <a href="accessibility-quick-wins.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Accessibility Quick Wins</div>
+                <div class="related-cat">UX Perspective</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="the-hill-worth-dying-on.html" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Previous</div>
+        <div class="article-nav-title">The Hill Worth Dying On</div>
+      </div>
+    </a>
+    <a href="reassuring-ux-teams-about-ai.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">Reassuring UX Teams About AI</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Statement | Designing for Accessibility</title>
+  <meta name="description" content="Our commitment to making this site accessible to everyone. WCAG 2.1 Level AA compliance target." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta property="og:title" content="Accessibility Statement" />
+  <meta property="og:description" content="Our commitment to making this site accessible to everyone. WCAG 2.1 Level AA compliance target." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/accessibility-statement.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Accessibility Statement",
+    "description": "Our commitment to making this site accessible to everyone. WCAG 2.1 Level AA compliance target.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#topics">Topics</a></li>
+      <li><a href="index.html#articles">Articles</a></li>
+      <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="index.html#topics" role="menuitem">Topics</a>
+    <a href="index.html#articles" role="menuitem">Articles</a>
+    <a href="articles/ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ACCESSIBILITY STATEMENT HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Accessibility Statement</span>
+    </nav>
+    <div class="article-topic-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Accessibility
+    </div>
+    <h1>Accessibility Statement</h1>
+    <p class="article-header-sub">
+      Our commitment to making this site accessible to everyone.
+    </p>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="980" cy="120" r="55"/>
+    <circle class="acv-ring acv-ring-2" cx="980" cy="120" r="82"/>
+    <circle class="acv-dot acv-dot-1"  cx="80"   cy="60"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="1100" cy="45"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1050" cy="220" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="60"   cy="240" r="3"/>
+    <circle class="acv-dot-amber"      cx="700"  cy="260" r="4"/>
+    <path class="acv-path" d="M 80 270 Q 200 240 320 270 Q 440 300 560 270 Q 680 240 780 270"/>
+  </svg>
+</header>
+
+<!-- ACCESSIBILITY STATEMENT BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <article class="article-content" style="margin-right: 0; max-width: 720px;">
+      <div class="prose">
+
+        <p>
+          <strong>Last reviewed: March 2026</strong>
+        </p>
+
+        <h2>Our Commitment</h2>
+        <p>
+          Designing for Accessibility is dedicated to making our website accessible to all people, regardless of disability or technology. We believe that accessibility is not a feature. It's a fundamental requirement for an inclusive and equitable digital experience.
+        </p>
+        <p>
+          This accessibility statement outlines our commitment, the standards we target, our technical approach, and how to report accessibility issues.
+        </p>
+
+        <h2>Standards We Target</h2>
+        <p>
+          We aim for <strong>WCAG 2.1 Level AA</strong> compliance across all pages and content. WCAG (Web Content Accessibility Guidelines) is the internationally recognized standard for web accessibility, developed by the World Wide Web Consortium (W3C) Web Accessibility Initiative.
+        </p>
+        <p>
+          Level AA represents a good balance between accessibility and practical implementation, and is the standard required by U.S. Section 508, the ADA, and most government and enterprise accessibility requirements.
+        </p>
+
+        <h2>Technical Approach</h2>
+
+        <h3>Semantic HTML</h3>
+        <p>
+          We build our site with semantic HTML5 elements that clearly communicate document structure. Proper heading hierarchy, landmark regions (nav, main, footer), and semantic elements (button, article, section) help assistive technologies understand the page structure.
+        </p>
+
+        <h3>Keyboard Navigation</h3>
+        <p>
+          All interactive elements on this site are fully keyboard accessible. You can navigate the entire site using the Tab key, and interact with buttons, links, and form elements using Enter or Space. Focus indicators are visible on all interactive elements.
+        </p>
+
+        <h3>Screen Reader Testing</h3>
+        <p>
+          We regularly test our site with screen readers, including NVDA (Windows) and VoiceOver (macOS). All content is announced clearly, and interactive elements have proper accessible names and roles.
+        </p>
+
+        <h3>Color Contrast</h3>
+        <p>
+          Text and interactive elements meet WCAG AA color contrast ratios (4.5:1 for normal text, 3:1 for large text). We avoid relying on color alone to communicate information.
+        </p>
+
+        <h3>Responsive Design</h3>
+        <p>
+          Our site is designed to be fully responsive and accessible across all device sizes, from large desktop monitors to mobile phones. Touch targets are appropriately sized for mobile users.
+        </p>
+
+        <h3>ARIA Implementation</h3>
+        <p>
+          Where needed, we use ARIA (Accessible Rich Internet Applications) to add semantic information and improve screen reader experience. ARIA is used judiciously and only where native HTML cannot express the needed semantics.
+        </p>
+
+        <h2>What We Do Well</h2>
+        <ul>
+          <li>Clear, descriptive page titles that indicate page content</li>
+          <li>Proper heading hierarchy (H1, H2, H3, etc.) throughout articles</li>
+          <li>Alternative text for meaningful images</li>
+          <li>Descriptive link text that makes sense out of context</li>
+          <li>Form labels and error messages for all interactive elements</li>
+          <li>Sufficient color contrast throughout the site</li>
+          <li>Skip navigation link to jump to main content</li>
+          <li>Table of contents with linked headings on article pages</li>
+        </ul>
+
+        <h2>Known Limitations</h2>
+        <p>
+          While we strive for full accessibility, there are some known limitations:
+        </p>
+        <ul>
+          <li><strong>Data tables in VPAT documentation.</strong> Complex comparison tables may be challenging for screen reader users. We are working to simplify these or provide alternative formats.</li>
+          <li><strong>Code examples.</strong> Code blocks are presented as plain text, which may be less accessible for some users. We are exploring better ways to present code examples.</li>
+          <li><strong>External content.</strong> Links to external resources (like W3C documentation) may have their own accessibility limitations that are beyond our control.</li>
+        </ul>
+
+        <h2>Feedback & Accessibility Issues</h2>
+        <p>
+          We welcome feedback on the accessibility of this site. If you encounter any barriers to accessing content, please let us know:
+        </p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:hello@designingforaccessibility.com">hello@designingforaccessibility.com</a></li>
+          <li><strong>BlueSky:</strong> <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">@dfaccessibility.bsky.social</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">Designing for Accessibility</a></li>
+        </ul>
+        <p>
+          Please include:
+        </p>
+        <ul>
+          <li>The page or section where you encountered the barrier</li>
+          <li>What assistive technology or browser you're using</li>
+          <li>A description of what you expected vs. what you experienced</li>
+        </ul>
+        <p>
+          We'll investigate your report and work to resolve accessibility issues as quickly as possible.
+        </p>
+
+        <h2>Third-Party Content</h2>
+        <p>
+          This site contains links to external resources and social media. We are not responsible for the accessibility of external websites, but we encourage all linked resources to follow WCAG guidelines.
+        </p>
+
+        <h2>Continuous Improvement</h2>
+        <p>
+          Accessibility is an ongoing commitment, not a destination. We regularly review and test our site for accessibility issues, implement fixes, and stay current with WCAG guidelines and best practices. We update this statement annually, and more frequently if significant changes are made to the site.
+        </p>
+
+      </div>
+    </article>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="articles/accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="articles/legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="articles/testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="articles/design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="articles/screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="articles/vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+
+  <script src="js/search.js"></script>
+</body>
+</html>

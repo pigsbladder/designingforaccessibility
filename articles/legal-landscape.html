@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Landscape: ADA, Section 508 & Accessibility Law | Designing for Accessibility</title>
+  <meta name="description" content="What the law actually says about digital accessibility, who it applies to, and what happens when organizations fail to comply. ADA, Section 508, WCAG 2.2 explained." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/legal-landscape.html" />
+  <meta property="og:title" content="Legal Landscape: ADA, Section 508 & Accessibility Law" />
+  <meta property="og:description" content="What the law actually says about digital accessibility, who it applies to, and what happens when organizations fail to comply." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/legal-landscape.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Legal Landscape: ADA, Section 508 & Accessibility Law",
+    "description": "What the law actually says about digital accessibility, who it applies to, and what happens when organizations fail to comply.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-01-18",
+    "dateModified": "2026-03-09",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/legal-landscape.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I be sued for having an inaccessible website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Private businesses open to the public can face lawsuits under ADA Title III for inaccessible websites. Federal courts have consistently ruled that websites are covered under the ADA. Thousands of web accessibility lawsuits are filed in U.S. federal courts each year. Common triggers include missing alt text, broken keyboard navigation, insufficient color contrast, and inaccessible forms. Settlements typically require both remediation and payment of damages ranging from $5,000 to $50,000 or more depending on organization size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the ADA apply to websites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. While the Americans with Disabilities Act was signed in 1990 before the modern web existed, federal courts have consistently interpreted ADA Title III to cover websites and digital products for businesses open to the public. The landmark case National Federation of the Blind v. Target Corporation (2006) established this precedent. The Department of Justice has also endorsed WCAG 2.1 Level AA as the accepted technical standard for ADA compliance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Section 508 refresh?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Section 508 Refresh refers to the January 2017 update to Section 508 standards, formally called the ICT Accessibility Standards. The original 1998 Section 508 had technology-specific requirements that became outdated. The 2017 refresh replaced them with WCAG 2.0 Level AA as the technical baseline, making Section 508 technology-agnostic and aligning it with international accessibility standards. This means any product meeting WCAG 2.0 AA now meets the core technical requirements of Section 508."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I fail a Section 508 audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your product fails a Section 508 compliance audit, federal contracts may be withheld, revoked, or not renewed. The agency may require a formal remediation plan with specific timelines before awarding or continuing a contract. For organizations that submitted an inaccurate VPAT claiming full compliance when issues exist, there is additional legal exposure. Repeated failures or deliberate misrepresentation can result in being barred from federal contracting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a VPAT for ADA compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A VPAT is specifically a procurement document used to demonstrate Section 508 compliance when selling to U.S. federal agencies and federally funded organizations. The ADA does not require a VPAT. However, maintaining an accessibility statement on your website, documenting your commitment to WCAG standards and your process for handling accessibility complaints, is strongly recommended for ADA compliance as it demonstrates good faith."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a company claim 'undue burden' to avoid accessibility requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Undue burden is a narrow legal exception that rarely succeeds for mid-size or large organizations. To claim undue burden, an organization must demonstrate that making a system accessible would impose disproportionate cost or difficulty relative to the organization's resources. Courts and enforcement agencies interpret this very restrictively. A major federal contractor claiming financial hardship is unlikely to succeed. The exception has been applied mainly to very small nonprofits with extremely limited budgets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changed in WCAG 2.2 compared to WCAG 2.1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG 2.2 (published September 2023) added 9 new success criteria to WCAG 2.1. The key additions are: Focus Not Obscured (2.4.11): the focused element must be at least partially visible; Dragging Movements (2.5.7): drag interactions need single-pointer alternatives; Target Size Minimum (2.5.8): interactive targets must be at least 24×24 CSS pixels; Redundant Entry (3.3.7): users should not re-enter information already provided; Accessible Authentication (3.3.8): no cognitive puzzles required to log in; and Consistent Help (3.2.6): help mechanisms must appear in a consistent location."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Legal Landscape",
+        "item": "https://www.designingforaccessibility.com/index.html#topics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Legal Landscape: ADA, Section 508 & Accessibility Law",
+        "item": "https://www.designingforaccessibility.com/articles/legal-landscape.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body style="--page-accent: #f472b6; --page-accent-dark: #9d174d;">
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics" role="menuitem">Topics</a>
+    <a href="../index.html#articles" role="menuitem">Articles</a>
+    <a href="ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="../index.html#topics">Legal Landscape</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Legal Landscape</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Legal Landscape</div>
+    <h1>Legal Landscape:<br>ADA, Section 508 & Accessibility Law</h1>
+    <p class="article-header-sub">
+      What the law actually says about digital accessibility, who it applies to, and what happens when organisations fail to comply.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-09">Updated March 2026</time></strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>10 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <strong>Legal Landscape</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="who-must-comply">
+            Who Must Comply?
+            <a href="#who-must-comply" class="section-anchor" aria-label="Link to who must comply section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Digital accessibility requirements apply across multiple legal frameworks in the United States and internationally.
+            If you're building products that people depend on, understanding who must comply is the first critical step.
+          </p>
+          <p>
+            <strong>ADA Title III</strong> applies to private businesses that operate as public accommodations. This includes retailers,
+            restaurants, hotels, educational institutions, and any business open to the public. Their websites and digital products
+            must be accessible to people with disabilities.
+          </p>
+          <p>
+            <strong>Section 508 of the Rehabilitation Act</strong> applies to federal agencies and anyone selling technology products or
+            services to the federal government. If your organization contracts with federal agencies, your digital products must comply.
+            Additionally, if your organization receives federal funding or grants (universities, nonprofits, schools), accessibility requirements apply.
+          </p>
+          <p>
+            <strong>State and local government agencies</strong> fall under a subset of the ADA (Title II), and in 2024 the DOJ issued guidance
+            requiring WCAG 2.1 Level AA compliance for state and local government websites and digital services.
+          </p>
+
+          <div class="callout callout-green">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Who We're Talking About</span>
+            <p>
+              The three main audiences for accessibility compliance: (1) federal agencies and their vendors, (2) private businesses
+              serving the public, and (3) state and local government. But there are often nuances based on organizational size, type,
+              and funding source. If you're unsure whether your organization is covered, it's worth consulting accessibility guidance
+              specific to your sector.
+            </p>
+          </div>
+
+          <h2 id="ada-digital">
+            Does the ADA Apply to Websites?
+            <a href="#ada-digital" class="section-anchor" aria-label="Link to ADA digital section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Yes. The ADA applies to websites. While the Americans with Disabilities Act was signed in 1990, before the modern web existed,
+            courts and the Department of Justice have consistently interpreted ADA Title III to cover websites and digital products. Any private
+            business open to the public is required to make its digital services accessible to people with disabilities.
+          </p>
+          <p>
+            While the ADA does not explicitly mention the Web, courts have consistently held that websites are covered. The landmark case
+            <strong>National Federation of the Blind v. Target Corporation (2006)</strong> established that inaccessible websites violate ADA Title III.
+            Target settled for $6 million in damages, a precedent that sent shockwaves through the business community.
+          </p>
+          <p>
+            The ADA does not specify a technical standard like WCAG. However, the Department of Justice has endorsed WCAG 2.1 Level AA as the
+            accepted benchmark for ADA compliance. In 2024, the DOJ strengthened this guidance for state and local government, explicitly requiring
+            WCAG 2.1 AA compliance.
+          </p>
+          <p>
+            Unlike Section 508, the ADA is enforced through private lawsuits and DOJ enforcement actions. This means organizations face legal
+            exposure if they don't take accessibility seriously. Settlements and damages can be substantial, and there's reputational harm.
+          </p>
+
+          <h2 id="section-508-requirements">
+            What Does Section 508 Require?
+            <a href="#section-508-requirements" class="section-anchor" aria-label="Link to What Does Section 508 Require section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Section 508 is part of the Rehabilitation Act of 1973. It requires that federal agencies and federally funded organizations make
+            their electronic and information technology (EIT) accessible to people with disabilities. In 2017, Section 508 was refreshed to
+            incorporate WCAG 2.0 Level AA as its technical standard.
+          </p>
+          <p>
+            <strong>EIT</strong> (Electronic and Information Technology) includes websites, software applications, digital documents, and any
+            technology system that stores or transmits information. It's a broad umbrella that covers nearly everything a modern organization
+            uses internally and shares publicly.
+          </p>
+          <p>
+            One of the key mechanisms for Section 508 compliance is the <strong>VPAT</strong> (Voluntary Product Accessibility Template).
+            A VPAT is a structured document that vendors complete to document how their product meets Section 508 standards. When a federal
+            agency or contractor buys software, they typically ask for a VPAT. It's become the standard proof of accessibility compliance
+            for government procurement.
+          </p>
+          <p>
+            The procuring process is straightforward but critical: a federal agency issues a Request for Proposal (RFP) for a software or
+            service contract. Vendors are asked to provide a completed VPAT. The government evaluates not just the product's features and price,
+            but also its accessibility conformance. If a product fails Level AA, it can be rejected or the vendor must commit to a remediation
+            plan with specific timelines.
+          </p>
+
+          <table class="levels-table" aria-label="Section 508 vs ADA comparison">
+            <thead>
+              <tr>
+                <th scope="col">Aspect</th>
+                <th scope="col">Section 508</th>
+                <th scope="col">ADA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Applies to</strong></td>
+                <td>Federal agencies, federal contractors, federally funded organizations</td>
+                <td>Private businesses and public accommodations open to the public</td>
+              </tr>
+              <tr>
+                <td><strong>Technical standard</strong></td>
+                <td>WCAG 2.0 Level AA (since 2017 refresh)</td>
+                <td>WCAG 2.1 Level AA (endorsed by DOJ; not explicitly required by law)</td>
+              </tr>
+              <tr>
+                <td><strong>Enforcement</strong></td>
+                <td>Compliance audits, VPAT documentation, procurement review</td>
+                <td>Private lawsuits, DOJ enforcement actions, settlements</td>
+              </tr>
+              <tr>
+                <td><strong>Documentation</strong></td>
+                <td>VPAT required for government sales; must be detailed and accurate</td>
+                <td>No specific template required; accessibility statements recommended</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="accessibility-exceptions">
+            Are There Exceptions to Accessibility Law?
+            <a href="#accessibility-exceptions" class="section-anchor" aria-label="Link to exceptions section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Both Section 508 and the ADA have built-in exceptions, but they are narrow and do not work as blanket exemptions. Organizations
+            sometimes claim they are unable to make a system fully accessible, citing "undue burden" or "fundamental alteration." These claims
+            require careful scrutiny and usually do not hold up under legal review.
+          </p>
+          <p>
+            <strong>Undue Burden</strong> is a legitimate exception in some cases. If making a product accessible would require disproportionate
+            cost or effort relative to the organization's budget and resources, the law recognizes this. However, "disproportionate" is interpreted
+            narrowly. A major federal contractor claiming financial hardship to avoid accessibility compliance is unlikely to succeed. Undue burden
+            has been used successfully in rare cases involving small nonprofits with extremely limited budgets, but it's not a common defense.
+          </p>
+          <p>
+            <strong>Fundamental Alteration</strong> is another narrow exception. If making a service accessible would fundamentally change the nature
+            of the service, the organization is not required to do it. For example, a screen reader cannot reasonably be applied to a real-time video
+            game without fundamentally changing the product. But this exception is applied very restrictively in practice.
+          </p>
+          <p>
+            <strong>Archived Content</strong> and <strong>Pre-Existing Third-Party Content</strong> have limited exemptions. Archived content that is
+            no longer actively maintained is sometimes treated differently, though there's growing expectation that even older content should be made
+            accessible if feasible. Third-party content that an organization embeds (e.g., a widget from another vendor) remains the responsibility of
+            the primary organization, even if the vendor is not fully accessible.
+          </p>
+
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Important Note on Exceptions</span>
+            <p>
+              Exceptions do not excuse accessibility entirely. Even if an organization claims undue burden, they must still take reasonable steps
+              to provide alternative access. For example, if a complex financial system cannot be made fully keyboard-navigable, the organization
+              might provide a phone line or alternative interface. Procuring agencies and litigants expect to see documented effort and good-faith
+              remediation, not a simple claim of exemption.
+            </p>
+          </div>
+
+          <h2 id="wcag-22-what-changed">
+            What Changed in WCAG 2.2?
+            <a href="#wcag-22-what-changed" class="section-anchor" aria-label="Link to What Changed in WCAG 2.2 section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            WCAG 2.2 was published in September 2023, building on WCAG 2.1. It adds 9 new success criteria aimed at improving accessibility for
+            people with cognitive disabilities, low vision, and limited motor control. While Section 508 still formally references WCAG 2.0, and
+            courts reference WCAG 2.1, organizations targeting federal contracts and private sector leadership are increasingly adopting WCAG 2.2.
+          </p>
+
+          <table class="levels-table" aria-label="WCAG 2.2 new success criteria">
+            <thead>
+              <tr>
+                <th scope="col">New Criterion</th>
+                <th scope="col">Level</th>
+                <th scope="col">What It Means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Focus Appearance (2.4.11)</strong></td>
+                <td>AA</td>
+                <td>When a user tabs through a page with the keyboard, the focused element must be clearly visible. No hidden focus outlines.</td>
+              </tr>
+              <tr>
+                <td><strong>Dragging Movements (2.5.7)</strong></td>
+                <td>A</td>
+                <td>If drag-and-drop is required, an alternative keyboard method must exist. Not everyone can perform mouse drag operations.</td>
+              </tr>
+              <tr>
+                <td><strong>Target Size (2.5.8)</strong></td>
+                <td>AA</td>
+                <td>Interactive elements must be at least 24x24 CSS pixels. Helps people with motor control issues or using touch devices.</td>
+              </tr>
+              <tr>
+                <td><strong>Redundant Entry (3.3.7)</strong></td>
+                <td>A</td>
+                <td>Users should not have to enter the same info twice in one transaction (unless it's for security, like re-entering a password).</td>
+              </tr>
+              <tr>
+                <td><strong>Accessible Authentication (3.3.8)</strong></td>
+                <td>AA</td>
+                <td>Don't require users to solve cognitive puzzles (e.g., "enter the 3rd character of your password"). Offer simple alternatives.</td>
+              </tr>
+              <tr>
+                <td><strong>Consistent Help (3.3.6)</strong></td>
+                <td>A</td>
+                <td>Help mechanisms (contact forms, live chat) must appear consistently across pages so users can find them easily.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            These additions reflect real pain points that users with disabilities face. Focus visibility and target size directly address usability
+            for people with low vision or motor disabilities. Authentication rules help people with cognitive disabilities. Organizations aiming for
+            best-in-class accessibility are already implementing WCAG 2.2 criteria even if not legally required yet.
+          </p>
+
+          <h2 id="responsibilities">
+            Who Owns Accessibility?
+            <a href="#responsibilities" class="section-anchor" aria-label="Link to responsibilities section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            This is a critical question that organizations often get wrong: <strong>accessibility is not just a developer or QA problem</strong>.
+            It is an organizational responsibility that spans design, product, development, QA, content, and legal teams.
+          </p>
+          <p>
+            <strong>Product and design teams</strong> must build accessibility into the product from the start. Accessible design is easier and
+            cheaper than retrofitting accessibility later. Designers should test prototypes with assistive technologies and understand WCAG criteria
+            during the design phase.
+          </p>
+          <p>
+            <strong>Developers</strong> are responsible for translating accessible design into accessible code. This means using semantic HTML,
+            proper ARIA, keyboard navigation, and testing with screen readers. It's not an afterthought or a QA job; it's a development responsibility.
+          </p>
+          <p>
+            <strong>Content teams</strong> must write accessible content: proper heading structure, descriptive links, alt text for images, captions
+            for videos. Many accessibility issues originate in content decisions, not code decisions.
+          </p>
+          <p>
+            <strong>QA and testing teams</strong> must include accessibility in their test plans. This means manual testing with keyboard-only navigation,
+            screen readers, and assistive technologies. Not just automated tools.
+          </p>
+          <p>
+            <strong>Legal and compliance teams</strong> must understand the regulatory landscape and ensure the organization has documentation and a
+            remediation plan in place. They also need to work with product leadership to allocate time and resources for accessibility work.
+          </p>
+
+          <h2 id="consequences">
+            What Are the Legal Consequences of Inaccessibility?
+            <a href="#consequences" class="section-anchor" aria-label="Link to Legal Consequences of Inaccessibility section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The consequences of accessibility non-compliance are real and escalating. Organizations face legal action, reputational damage, loss of
+            market share, and government procurement blocks.
+          </p>
+          <p>
+            The <strong>Department of Justice</strong> has issued hundreds of settlement agreements with organizations found to violate the ADA.
+            In recent years (2022-2024), the pace of DOJ enforcement has accelerated. Common violations include websites lacking proper alt text,
+            insufficient color contrast, broken keyboard navigation, and missing form labels. Settlement amounts typically require the organization
+            to remediate the issues within 30-120 days and pay damages of $5,000 to $50,000+.
+          </p>
+          <p>
+            <strong>Private lawsuits</strong> have exploded in recent years. Class action lawsuits against retailers, airlines, financial institutions,
+            and tech companies are increasingly common. Many organizations now budget for expected litigation costs as a line item. The cost of a
+            settlement (often $50,000-$500,000 depending on organization size) is typically far higher than the cost of fixing accessibility in the
+            first place.
+          </p>
+          <p>
+            <strong>Government procurement blocks</strong> are another serious consequence. If an organization submits an inaccurate VPAT or fails a
+            Section 508 audit, federal contracts are revoked or not awarded. For large contractors, this can mean millions in lost revenue. Universities
+            and nonprofits receiving federal funding face compliance requirements; failure to meet them can result in funding cuts.
+          </p>
+          <p>
+            <strong>Market impact</strong> should not be overlooked. Consumers are increasingly aware of and supportive of accessible products. An
+            organization known for accessibility has a competitive advantage. Conversely, organizations that face legal action or get called out on
+            social media for inaccessibility suffer reputational harm that affects recruitment, partnerships, and sales.
+          </p>
+
+          <div class="callout callout-green">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> The Business Case</span>
+            <p>
+              Building accessible products from the start is cheaper, faster, and lower-risk than retrofitting or fighting lawsuits. Organizations
+              that prioritize accessibility also report better user satisfaction, easier internationalization, improved SEO, and stronger team morale
+              because everyone knows they're building for everyone.
+            </p>
+          </div>
+
+          <section class="article-faq" id="faq" aria-labelledby="faq-heading">
+            <h2 class="faq-heading" id="faq-heading">Frequently Asked Questions</h2>
+
+            <details class="faq-item">
+              <summary class="faq-question">Can I be sued for having an inaccessible website?</summary>
+              <div class="faq-answer">
+                <p>Yes. Thousands of web accessibility lawsuits are filed in the U.S. every year under the ADA. Any private business open to the public, including e-commerce sites, restaurants, healthcare providers, and financial services, can face legal action if their website is not accessible to people with disabilities.</p>
+                <p>Common targets include broken screen reader flows, missing alt text, inaccessible forms, and unresizable text. Proactively meeting WCAG 2.1 Level AA is the most effective way to reduce legal exposure.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">Does the ADA apply to websites?</summary>
+              <div class="faq-answer">
+                <p>Yes. While the ADA was enacted in 1990 before the modern web existed, federal courts have consistently ruled that websites are covered under ADA Title III. The landmark case <strong>National Federation of the Blind v. Target Corporation (2006)</strong> established this precedent. The Department of Justice has also endorsed WCAG 2.1 Level AA as the accepted technical standard for ADA website compliance.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">What is the Section 508 refresh?</summary>
+              <div class="faq-answer">
+                <p>The Section 508 Refresh refers to a major update to Section 508 standards that took effect in January 2018. The update aligned Section 508 requirements with WCAG 2.0 Level AA and expanded coverage to include all ICT (Information and Communication Technology), not just federal websites, but also software, hardware, kiosks, and electronic documents used by federal agencies and their contractors.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">What happens if I fail a Section 508 audit?</summary>
+              <div class="faq-answer">
+                <p>If a federal agency or federally funded organization fails a Section 508 audit, they may be required to remediate accessibility issues within a defined timeframe. Repeated non-compliance can result in loss of federal contracts, formal complaints to the agency's inspector general, or civil rights complaints filed with the Department of Justice.</p>
+                <p>For vendors selling to the federal government, Section 508 non-compliance can disqualify their product from procurement entirely, which is why VPATs exist as a pre-purchase documentation tool.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">Do I need a VPAT for ADA compliance?</summary>
+              <div class="faq-answer">
+                <p>No. A VPAT is a procurement document used to demonstrate Section 508 compliance when selling to U.S. federal agencies. The ADA does not require a VPAT. However, maintaining a public accessibility statement, documenting your WCAG conformance level and your process for handling accessibility complaints, is strongly recommended as a good-faith demonstration of ADA compliance.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">Can a company claim "undue burden" to avoid accessibility requirements?</summary>
+              <div class="faq-answer">
+                <p>Rarely, and only in narrow circumstances. "Undue burden" is a recognized exception under Section 508 and the ADA, but the bar is high. Courts and regulators interpret it narrowly; a large business or federal contractor claiming financial hardship is unlikely to succeed. The exception has been applied only in cases involving very small nonprofits or organizations with severely limited resources.</p>
+                <p>Even when undue burden is accepted, the organization must still take all <strong>reasonable steps</strong> toward accessibility; it does not excuse non-compliance entirely.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">What changed in WCAG 2.2 compared to WCAG 2.1?</summary>
+              <div class="faq-answer">
+                <p>WCAG 2.2, published in October 2023, added nine new success criteria and removed one (4.1.1 Parsing, which was deprecated). Key additions include:</p>
+                <ul>
+                  <li><strong>2.4.11–2.4.13</strong>: Focus appearance requirements (minimum visible focus indicator size and contrast)</li>
+                  <li><strong>2.5.7</strong>: Dragging Movements (alternatives to drag interactions)</li>
+                  <li><strong>2.5.8</strong>: Target Size Minimum (at least 24×24 CSS pixels for interactive targets)</li>
+                  <li><strong>3.2.6</strong>: Consistent Help (help mechanisms must appear in the same location across pages)</li>
+                  <li><strong>3.3.7–3.3.9</strong>: Accessible Authentication (no cognitive puzzles required to log in)</li>
+                </ul>
+                <p>WCAG 2.1 remains legally cited in most regulations, but WCAG 2.2 is the current recommended standard for new projects.</p>
+              </div>
+            </details>
+
+          </section>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#who-must-comply" class="toc-link active" id="toc-who">
+                <span class="toc-link-dot"></span>Who Must Comply?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#ada-digital" class="toc-link" id="toc-ada">
+                <span class="toc-link-dot"></span>Does the ADA Apply to Websites?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#section-508-requirements" class="toc-link" id="toc-508">
+                <span class="toc-link-dot"></span>What Does Section 508 Require?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#accessibility-exceptions" class="toc-link" id="toc-exceptions">
+                <span class="toc-link-dot"></span>Are There Exceptions to Accessibility Law?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#wcag-22-what-changed" class="toc-link" id="toc-wcag22">
+                <span class="toc-link-dot"></span>What Changed in WCAG 2.2?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#responsibilities" class="toc-link" id="toc-responsibilities">
+                <span class="toc-link-dot"></span>Who Owns Accessibility?
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#consequences" class="toc-link" id="toc-consequences">
+                <span class="toc-link-dot"></span>Legal Consequences of Inaccessibility
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Topic</div>
+          <p>Part of the <strong>Legal Landscape</strong> series: guidance on accessibility laws, regulations, and organizational compliance.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">ADA</span>
+            <span class="sidebar-tag">Section 508</span>
+            <span class="sidebar-tag">WCAG 2.2</span>
+            <span class="sidebar-tag">DOJ</span>
+            <span class="sidebar-tag">Procurement</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Articles</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="accessibility-guidelines.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Accessibility Guidelines: WCAG & Section 508</div>
+                <div class="related-cat">Accessibility 101</div>
+              </div>
+            </a>
+            <a href="vpat-acr-documentation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">VPAT & ACR Documentation</div>
+                <div class="related-cat">VPAT / ACR</div>
+              </div>
+            </a>
+            <a href="testing-evaluation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Testing & Evaluation: How to Audit for Accessibility</div>
+                <div class="related-cat">Testing & Evaluation</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="accessibility-guidelines.html" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Previous</div>
+        <div class="article-nav-title">Accessibility Guidelines</div>
+      </div>
+    </a>
+    <a href="vpat-acr-documentation.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">VPAT & ACR Documentation</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing & Evaluation</a></li>
+          <li><a href="design-visual.html">Design & Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers & ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT & ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

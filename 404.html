@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Designing for Accessibility</title>
+  <meta name="description" content="The page you're looking for doesn't exist or has moved. Browse our accessibility guides and resources." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <style>
+
+    /* ══════════════════════════════════════
+       HERO — dark full-bleed
+    ══════════════════════════════════════ */
+    .e-hero {
+      background: var(--dark-bg);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0 88px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* SVG canvas — fills the entire hero */
+    .e-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Grid lines */
+    .e-grid { stroke: rgba(124,109,255,.045); stroke-width: 1; }
+
+    /* Giant ghost "404" — outline */
+    .e-num-outline {
+      fill: none;
+      stroke: rgba(124,109,255,.18);
+      stroke-width: 1.5;
+      animation: e-num-pulse 5s ease-in-out infinite;
+    }
+    /* Giant ghost "404" — filled glow layer */
+    .e-num-fill {
+      fill: rgba(124,109,255,.06);
+      stroke: none;
+      animation: e-num-pulse 5s ease-in-out infinite .4s;
+    }
+    @keyframes e-num-pulse {
+      0%,100% { opacity: 1; }
+      50%      { opacity: .45; }
+    }
+
+    /* Scan line sweeping top → bottom */
+    .e-scan {
+      animation: e-scan-anim 7s linear infinite;
+    }
+    @keyframes e-scan-anim {
+      0%   { transform: translateY(-460px); opacity: 0; }
+      8%   { opacity: 1; }
+      92%  { opacity: 1; }
+      100% { transform: translateY(460px);  opacity: 0; }
+    }
+
+    /* Accessibility person icon — inside the "0" */
+    .e-a11y-person {
+      animation: e-person-pulse 4s ease-in-out infinite 1s;
+    }
+    @keyframes e-person-pulse {
+      0%,100% { opacity: .22; }
+      50%      { opacity: .55; }
+    }
+
+    /* Floating icons */
+    .e-icon { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .e-f1 { animation: ef1 8s ease-in-out infinite; }
+    .e-f2 { animation: ef2 10s ease-in-out infinite .8s; }
+    .e-f3 { animation: ef3 7s ease-in-out infinite 1.6s; }
+    .e-f4 { animation: ef4 9s ease-in-out infinite 2.4s; }
+    .e-f5 { animation: ef1 11s ease-in-out infinite .4s; }
+    .e-f6 { animation: ef2 8.5s ease-in-out infinite 3s; }
+    .e-f7 { animation: ef3 9.5s ease-in-out infinite 1s; }
+
+    @keyframes ef1 { 0%,100%{transform:translate(0,0) rotate(0deg);opacity:.2}  50%{transform:translate(-9px,-13px) rotate(6deg);opacity:.5}  }
+    @keyframes ef2 { 0%,100%{transform:translate(0,0) rotate(0deg);opacity:.18} 50%{transform:translate(11px,-9px) rotate(-5deg);opacity:.45} }
+    @keyframes ef3 { 0%,100%{transform:translate(0,0) rotate(0deg);opacity:.25} 50%{transform:translate(-7px,12px) rotate(4deg);opacity:.55}  }
+    @keyframes ef4 { 0%,100%{transform:translate(0,0) rotate(0deg);opacity:.15} 50%{transform:translate(8px,-8px) rotate(-3deg);opacity:.4}   }
+
+    /* Connecting dots */
+    .e-dot { animation: e-dot-blink 3s ease-in-out infinite; }
+    .e-dot:nth-child(2n) { animation-delay: 1s; }
+    .e-dot:nth-child(3n) { animation-delay: 2s; }
+    @keyframes e-dot-blink {
+      0%,100% { opacity: .12; r: 3; }
+      50%      { opacity: .5;  r: 4; }
+    }
+
+    /* ── Hero content ── */
+    .e-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .e-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124,109,255,.15);
+      border: 1px solid rgba(124,109,255,.3);
+      color: var(--indigo-400);
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .e-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.18;
+      letter-spacing: -.3px;
+      margin-bottom: 14px;
+    }
+    .e-sub {
+      color: var(--text-muted-on-dark);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+    .e-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-indigo {
+      background: var(--indigo-600);
+      color: var(--white);
+      border-color: var(--indigo-600);
+    }
+    .btn-indigo:hover {
+      background: var(--indigo-700);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(99,102,241,.35);
+      text-decoration: none;
+    }
+    .btn-ghost-dark {
+      background: transparent;
+      color: var(--text-muted-on-dark);
+      border: 2px solid rgba(255,255,255,.15);
+    }
+    .btn-ghost-dark:hover {
+      border-color: rgba(255,255,255,.4);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+
+    /* ══════════════════════════════════════
+       NAVIGATION SECTION
+    ══════════════════════════════════════ */
+    .e-nav-section {
+      background: var(--cream);
+      padding: 72px 0 88px;
+    }
+    .e-nav-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .e-nav-head h2 {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -.3px;
+      margin-bottom: 8px;
+    }
+    .e-nav-head p {
+      font-size: .95rem;
+      color: var(--ink-soft);
+    }
+
+    /* Topic cards */
+    .e-topics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .e-topic {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      text-decoration: none;
+      transition: border-color .18s, box-shadow .18s, transform .18s;
+    }
+    .e-topic:hover {
+      border-color: var(--indigo-500);
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .e-topic-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .e-topic-icon svg { display: block; }
+    .e-topic-body { flex: 1; min-width: 0; }
+    .e-topic-title {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+    .e-topic:hover .e-topic-title { color: var(--indigo-700); }
+    .e-topic-desc {
+      font-size: .78rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+
+    /* Icon bg tints */
+    .ti-indigo  { background: rgba(124,109,255,.1); color: #4338ca; }
+    .ti-blue    { background: rgba(59,158,255,.12); color: #1d6fa8; }
+    .ti-emerald { background: rgba(52,211,153,.12); color: #047857; }
+    .ti-pink    { background: rgba(244,114,182,.12); color: #be185d; }
+    .ti-violet  { background: rgba(167,139,250,.12); color: #6d28d9; }
+    .ti-amber   { background: rgba(245,158,11,.12); color: #92400e; }
+    .ti-teal    { background: rgba(20,184,166,.12); color: #0f766e; }
+    .ti-rose    { background: rgba(251,113,133,.12); color: #be123c; }
+
+    /* Secondary links */
+    .e-secondary {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: 16px;
+    }
+    .e-secondary-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius);
+      padding: 11px 20px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: border-color .18s, color .18s;
+    }
+    .e-secondary-link:hover {
+      border-color: var(--indigo-500);
+      color: var(--indigo-700);
+      text-decoration: none;
+    }
+    .e-secondary-link svg { display: block; flex-shrink: 0; }
+
+    /* Responsive */
+    @media (max-width: 820px) {
+      .e-topics { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .e-topics { grid-template-columns: 1fr; }
+      .e-btns { flex-direction: column; align-items: center; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#topics">Topics</a></li>
+      <li><a href="index.html#articles">Articles</a></li>
+      <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="index.html#topics" role="menuitem">Topics</a>
+    <a href="index.html#articles" role="menuitem">Articles</a>
+    <a href="articles/ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<main id="main-content">
+<section class="e-hero" aria-labelledby="e-heading">
+
+  <!-- Animated background canvas -->
+  <svg class="e-canvas" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="8" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glow-soft" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="18" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <linearGradient id="scan-grad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="rgba(124,109,255,0)" />
+        <stop offset="40%"  stop-color="rgba(124,109,255,0.12)" />
+        <stop offset="50%"  stop-color="rgba(124,109,255,0.22)" />
+        <stop offset="60%"  stop-color="rgba(124,109,255,0.12)" />
+        <stop offset="100%" stop-color="rgba(124,109,255,0)" />
+      </linearGradient>
+    </defs>
+
+    <!-- Grid lines -->
+    <line class="e-grid" x1="0"    y1="55"  x2="1200" y2="55"/>
+    <line class="e-grid" x1="0"    y1="110" x2="1200" y2="110"/>
+    <line class="e-grid" x1="0"    y1="165" x2="1200" y2="165"/>
+    <line class="e-grid" x1="0"    y1="220" x2="1200" y2="220"/>
+    <line class="e-grid" x1="0"    y1="275" x2="1200" y2="275"/>
+    <line class="e-grid" x1="0"    y1="330" x2="1200" y2="330"/>
+    <line class="e-grid" x1="0"    y1="385" x2="1200" y2="385"/>
+    <line class="e-grid" x1="80"   y1="0"   x2="80"   y2="440"/>
+    <line class="e-grid" x1="160"  y1="0"   x2="160"  y2="440"/>
+    <line class="e-grid" x1="240"  y1="0"   x2="240"  y2="440"/>
+    <line class="e-grid" x1="320"  y1="0"   x2="320"  y2="440"/>
+    <line class="e-grid" x1="400"  y1="0"   x2="400"  y2="440"/>
+    <line class="e-grid" x1="480"  y1="0"   x2="480"  y2="440"/>
+    <line class="e-grid" x1="560"  y1="0"   x2="560"  y2="440"/>
+    <line class="e-grid" x1="640"  y1="0"   x2="640"  y2="440"/>
+    <line class="e-grid" x1="720"  y1="0"   x2="720"  y2="440"/>
+    <line class="e-grid" x1="800"  y1="0"   x2="800"  y2="440"/>
+    <line class="e-grid" x1="880"  y1="0"   x2="880"  y2="440"/>
+    <line class="e-grid" x1="960"  y1="0"   x2="960"  y2="440"/>
+    <line class="e-grid" x1="1040" y1="0"   x2="1040" y2="440"/>
+    <line class="e-grid" x1="1120" y1="0"   x2="1120" y2="440"/>
+
+    <!-- Ghost 404 — glow fill layer (behind) -->
+    <text class="e-num-fill" filter="url(#glow-soft)"
+      x="600" y="310"
+      text-anchor="middle"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="280" font-weight="700"
+      letter-spacing="-12">404</text>
+
+    <!-- Ghost 404 — outline layer -->
+    <text class="e-num-outline"
+      x="600" y="310"
+      text-anchor="middle"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="280" font-weight="700"
+      letter-spacing="-12">404</text>
+
+    <!-- Universal accessibility icon — inside the "0" of 404 -->
+    <g class="e-a11y-person" transform="translate(595, 155)" filter="url(#glow)">
+      <!-- Head -->
+      <circle cx="0" cy="-30" r="14" fill="none" stroke="rgba(124,109,255,0.6)" stroke-width="2"/>
+      <!-- Raised arms -->
+      <line x1="-36" y1="-2" x2="0" y2="10" stroke="rgba(124,109,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="36"  y1="-2" x2="0" y2="10" stroke="rgba(124,109,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Body -->
+      <line x1="0" y1="10" x2="0" y2="56" stroke="rgba(124,109,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+      <!-- Legs -->
+      <line x1="0" y1="56" x2="-22" y2="92" stroke="rgba(124,109,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="0" y1="56" x2="22"  y2="92" stroke="rgba(124,109,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Scan line sweeping top to bottom -->
+    <rect class="e-scan" x="0" y="-30" width="1200" height="60" fill="url(#scan-grad)"/>
+
+    <!-- ── Floating accessibility icons ── -->
+
+    <!-- Eye icon (low vision) — top left -->
+    <g class="e-icon e-f1" transform="translate(115, 68)" stroke="rgba(124,109,255,0.5)" stroke-width="1.5">
+      <path d="M-16 0 C-8 -10 8 -10 16 0 C8 10 -8 10 -16 0Z"/>
+      <circle cx="0" cy="0" r="5"/>
+    </g>
+
+    <!-- Keyboard icon (keyboard nav) — bottom left -->
+    <g class="e-icon e-f2" transform="translate(155, 368)" stroke="rgba(167,139,250,0.45)" stroke-width="1.5">
+      <rect x="-20" y="-12" width="40" height="24" rx="3"/>
+      <line x1="-12" y1="-4" x2="-8"  y2="-4"/>
+      <line x1="-2"  y1="-4" x2="2"   y2="-4"/>
+      <line x1="8"   y1="-4" x2="12"  y2="-4"/>
+      <line x1="-12" y1="4"  x2="-8"  y2="4"/>
+      <line x1="-2"  y1="4"  x2="6"   y2="4"/>
+      <line x1="8"   y1="4"  x2="12"  y2="4"/>
+    </g>
+
+    <!-- Headphones (screen reader) — top right -->
+    <g class="e-icon e-f3" transform="translate(1065, 72)" stroke="rgba(124,109,255,0.45)" stroke-width="1.5">
+      <path d="M-14 4 C-14 -8 14 -8 14 4"/>
+      <rect x="-18" y="4"  width="8"  height="12" rx="2"/>
+      <rect x="10"  y="4"  width="8"  height="12" rx="2"/>
+    </g>
+
+    <!-- Check circle (WCAG pass) — bottom right -->
+    <g class="e-icon e-f4" transform="translate(1045, 360)" stroke="rgba(52,211,153,0.45)" stroke-width="1.5">
+      <circle cx="0" cy="0" r="14"/>
+      <polyline points="-7,0 -2,6 8,-6"/>
+    </g>
+
+    <!-- Code brackets (ARIA) — far left mid -->
+    <g class="e-icon e-f5" transform="translate(52, 215)" stroke="rgba(167,139,250,0.4)" stroke-width="1.5">
+      <polyline points="6,-12 -6,0 6,12"/>
+      <polyline points="14,-12 26,0 14,12"/>
+    </g>
+
+    <!-- Magnifying glass (testing) — far right mid -->
+    <g class="e-icon e-f6" transform="translate(1148, 220)" stroke="rgba(124,109,255,0.4)" stroke-width="1.5">
+      <circle cx="-4" cy="-4" r="10"/>
+      <line x1="4" y1="4" x2="13" y2="13"/>
+    </g>
+
+    <!-- Focus ring / tab key — top centre-left -->
+    <g class="e-icon e-f7" transform="translate(310, 52)" stroke="rgba(244,114,182,0.4)" stroke-width="1.5">
+      <rect x="-12" y="-8" width="24" height="16" rx="3"/>
+      <path d="M-5,0 L0,-5 L5,0" stroke="rgba(244,114,182,0.4)" fill="none"/>
+    </g>
+
+    <!-- Scattered node dots -->
+    <circle class="e-dot" fill="rgba(124,109,255,0.35)" cx="220"  cy="110" r="3"/>
+    <circle class="e-dot" fill="rgba(124,109,255,0.35)" cx="980"  cy="165" r="3"/>
+    <circle class="e-dot" fill="rgba(167,139,250,0.35)" cx="400"  cy="385" r="3"/>
+    <circle class="e-dot" fill="rgba(52,211,153,0.4)"   cx="800"  cy="55"  r="3"/>
+    <circle class="e-dot" fill="rgba(124,109,255,0.3)"  cx="1120" cy="330" r="3"/>
+    <circle class="e-dot" fill="rgba(245,158,11,0.4)"   cx="88"   cy="330" r="4"/>
+    <circle class="e-dot" fill="rgba(124,109,255,0.3)"  cx="560"  cy="385" r="3"/>
+
+    <!-- Subtle connecting lines between some dots -->
+    <line x1="220" y1="110" x2="115" y2="68"   stroke="rgba(124,109,255,.07)" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="980" y1="165" x2="1065" y2="72"  stroke="rgba(124,109,255,.07)" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="400" y1="385" x2="310" y2="52"   stroke="rgba(167,139,250,.05)" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="800" y1="55"  x2="1045" y2="360" stroke="rgba(52,211,153,.06)"  stroke-width="1" stroke-dasharray="4 5"/>
+  </svg>
+
+  <!-- Hero text content -->
+  <div class="container">
+    <div class="e-content">
+      <div class="e-badge" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Error 404
+      </div>
+      <h1 class="e-h1" id="e-heading">This page doesn't exist</h1>
+      <p class="e-sub">The URL you followed may be broken, or the page has moved to a new location. The guides are all still here — let's get you back on track.</p>
+      <div class="e-btns">
+        <a href="index.html" class="btn btn-indigo">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Go to Homepage
+        </a>
+        <a href="index.html#articles" class="btn btn-ghost-dark">Browse All Articles</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- NAVIGATION -->
+<section class="e-nav-section" aria-label="Site navigation">
+  <div class="container">
+
+    <div class="e-nav-head">
+      <h2>Where would you like to go?</h2>
+      <p>Everything on the site is free and ad-free. Pick a topic and dive in.</p>
+    </div>
+
+    <div class="e-topics">
+
+      <a href="articles/accessibility-guidelines.html" class="e-topic">
+        <div class="e-topic-icon ti-indigo" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">Accessibility 101</div>
+          <div class="e-topic-desc">WCAG, POUR principles, and where to start</div>
+        </div>
+      </a>
+
+      <a href="articles/legal-landscape.html" class="e-topic">
+        <div class="e-topic-icon ti-blue" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">Legal Landscape</div>
+          <div class="e-topic-desc">ADA, Section 508, EN 301 549, and your obligations</div>
+        </div>
+      </a>
+
+      <a href="articles/testing-evaluation.html" class="e-topic">
+        <div class="e-topic-icon ti-emerald" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">Testing &amp; Evaluation</div>
+          <div class="e-topic-desc">Manual testing, automated tools, and screen readers</div>
+        </div>
+      </a>
+
+      <a href="articles/design-visual.html" class="e-topic">
+        <div class="e-topic-icon ti-pink" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">Design &amp; Visual</div>
+          <div class="e-topic-desc">Colour contrast, focus, typography, and motion</div>
+        </div>
+      </a>
+
+      <a href="articles/screen-readers-aria.html" class="e-topic">
+        <div class="e-topic-icon ti-violet" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3z"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">Screen Readers &amp; ARIA</div>
+          <div class="e-topic-desc">NVDA, VoiceOver, roles, states, and properties</div>
+        </div>
+      </a>
+
+      <a href="articles/vpat-acr-documentation.html" class="e-topic">
+        <div class="e-topic-icon ti-amber" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">VPAT &amp; ACR</div>
+          <div class="e-topic-desc">Writing and reviewing accessibility conformance reports</div>
+        </div>
+      </a>
+
+      <a href="articles/accessibility-quick-wins.html" class="e-topic">
+        <div class="e-topic-icon ti-teal" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">Quick Wins</div>
+          <div class="e-topic-desc">High-impact fixes you can ship in under an hour</div>
+        </div>
+      </a>
+
+      <a href="articles/ux-perspectives.html" class="e-topic">
+        <div class="e-topic-icon ti-rose" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="e-topic-body">
+          <div class="e-topic-title">UX Perspectives</div>
+          <div class="e-topic-desc">Opinion and analysis from a UX accessibility lens</div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Secondary links -->
+    <div class="e-secondary">
+      <a href="index.html" class="e-secondary-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Homepage
+      </a>
+      <a href="index.html#vpat-tool" class="e-secondary-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        VPAT Lookup Tool
+      </a>
+      <a href="contact.html" class="e-secondary-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Work With Me
+      </a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="articles/accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="articles/legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="articles/testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="articles/design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="articles/screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="articles/vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

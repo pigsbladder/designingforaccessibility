@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Guidelines: WCAG & Section 508 Explained | Designing for Accessibility</title>
+  <meta name="description" content="A plain-English guide to WCAG and Section 508: what they are, how they differ, and what they mean for your digital products. Includes POUR principles, conformance levels, and ADA context." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/accessibility-guidelines.html" />
+  <meta property="og:title" content="Accessibility Guidelines: WCAG & Section 508 Explained" />
+  <meta property="og:description" content="Plain-English guide to WCAG and Section 508 for designers, developers, and product teams." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/accessibility-guidelines.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Accessibility Guidelines: WCAG & Section 508 Explained",
+    "description": "A plain-English guide to WCAG and Section 508: what they are, how they differ, and what they mean for your digital products.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-01-10",
+    "dateModified": "2026-03-05",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/accessibility-guidelines.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does WCAG stand for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG stands for Web Content Accessibility Guidelines. It is the internationally recognized standard for digital accessibility, published by the World Wide Web Consortium (W3C). WCAG defines how to make web content, software, and digital products accessible to people with disabilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between WCAG Level AA and Level AAA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG Level AA is the standard most organizations target and the level required by law in most jurisdictions including Section 508 and the ADA. It addresses the most common accessibility barriers without placing an unreasonable burden on content creators. Level AAA is the most comprehensive level, covering additional edge cases that are not feasible for all content types. Level AAA is rarely required for entire sites, but may be applied to specific content or services for particularly vulnerable user populations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between WCAG 2.1 and WCAG 2.2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG 2.2, published in September 2023, builds on WCAG 2.1 by adding 9 new success criteria. The new criteria focus on users with cognitive disabilities, low vision, and limited motor control. Key additions include Focus Not Obscured (2.4.11), Dragging Movements (2.5.7), Target Size Minimum (2.5.8), Redundant Entry (3.3.7), and Accessible Authentication (3.3.8). All WCAG 2.1 criteria still apply in WCAG 2.2."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is WCAG legally required?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WCAG is not itself a law, but it is referenced by laws that are. Section 508 of the Rehabilitation Act requires U.S. federal agencies to meet WCAG 2.0 Level AA. The Americans with Disabilities Act (ADA) does not specify WCAG explicitly, but courts and the Department of Justice have endorsed WCAG 2.1 Level AA as the accepted standard for ADA compliance. In 2024, the DOJ explicitly required WCAG 2.1 AA for state and local government websites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does WCAG apply to mobile apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. WCAG is technology-agnostic and applies to mobile apps, native software, web applications, and digital documents, not just websites. The guidelines cover any digital content or interface, regardless of the platform. Mobile accessibility includes considerations like touch target sizes, gesture alternatives, and screen reader support for iOS (VoiceOver) and Android (TalkBack)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Section 508 and how does it relate to WCAG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Section 508 is an amendment to the Rehabilitation Act of 1973 that requires U.S. federal agencies and their vendors to make electronic and information technology (EIT) accessible to people with disabilities. The 2017 Section 508 Refresh incorporated WCAG 2.0 Level AA as its technical standard. This means meeting WCAG 2.0 AA satisfies the technical requirements of Section 508. Most organizations now target WCAG 2.1 or 2.2 AA to stay current."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the four POUR principles of WCAG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The four POUR principles are the foundation of WCAG: Perceivable (information must be presentable to users in ways they can perceive), Operable (interface components and navigation must be operable by all users), Understandable (information and operation must be understandable), and Robust (content must be robust enough to be interpreted by a wide variety of user agents including assistive technologies). Every WCAG success criterion maps to one of these four principles."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Accessibility 101",
+        "item": "https://www.designingforaccessibility.com/index.html#topics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Accessibility Guidelines: WCAG & Section 508 Explained",
+        "item": "https://www.designingforaccessibility.com/articles/accessibility-guidelines.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="../index.html#ux">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger"
+              aria-label="Toggle menu" aria-expanded="false"
+              aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics"    role="menuitem">Topics</a>
+    <a href="../index.html#articles"  role="menuitem">Articles</a>
+    <a href="ux-perspectives.html"    role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about"     role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="../index.html#topics">Accessibility 101</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Accessibility Guidelines</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Accessibility 101</div>
+    <h1>Accessibility Guidelines:<br>WCAG & Section 508 Explained</h1>
+    <p class="article-header-sub">
+      A plain-English breakdown of the two standards that govern digital accessibility
+      for most products sold to government agencies and enterprise buyers.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-05">Updated March 2026</time></strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>8 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <strong>Accessibility 101</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="wcag">
+            What Is WCAG?
+            <a href="#wcag" class="section-anchor" aria-label="Link to What Is WCAG section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The globally-recognized <strong>Web Content Accessibility Guidelines</strong> (abbreviated to WCAG,
+            sometimes pronounced &ldquo;WhuCAG&rdquo;) are a set of guidelines for making web content more
+            accessible. These guidelines are primarily for people with disabilities and serve as the official standard that
+            countries worldwide look to for digital accessibility.
+          </p>
+          <p>
+            WCAG is published by the <strong>World Wide Web Consortium (W3C)</strong>, the main international
+            standards organization for the Internet. The W3C is the source of authority on how to achieve
+            digital accessibility. Standards are developed transparently and collaboratively, involving
+            contributors from all over the world.
+          </p>
+
+          <h3 id="pour">
+            What Are the WCAG POUR Principles?
+            <a href="#pour" class="section-anchor" aria-label="Link to POUR Principles section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h3>
+          <p>WCAG defines four core principles of web accessibility, presented in the acronym <strong>POUR</strong>:</p>
+
+          <div class="pour-grid" role="list">
+            <div class="pour-card" data-letter="P" role="listitem">
+              <h4>Perceivable</h4>
+              <p>Information and UI components must be presentable to users in ways they can perceive. Nothing should be invisible to all of a user&rsquo;s senses.</p>
+            </div>
+            <div class="pour-card" data-letter="O" role="listitem">
+              <h4>Operable</h4>
+              <p>UI components and navigation must be operable. Users must be able to operate the interface; it cannot require interaction they cannot perform.</p>
+            </div>
+            <div class="pour-card" data-letter="U" role="listitem">
+              <h4>Understandable</h4>
+              <p>Information and the operation of the UI must be understandable. Users must be able to understand both the content and how to use the interface.</p>
+            </div>
+            <div class="pour-card" data-letter="R" role="listitem">
+              <h4>Robust</h4>
+              <p>Content must be robust enough to be reliably interpreted by a wide variety of user agents, including assistive technologies like screen readers.</p>
+            </div>
+          </div>
+
+          <h3 id="conformance-levels">
+            What Are the WCAG Conformance Levels (A, AA, and AAA)?
+            <a href="#conformance-levels" class="section-anchor" aria-label="Link to WCAG Conformance Levels section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h3>
+          <p>
+            There are three degrees of compliance a product can aim for. Most legal requirements (including Section 508 and ADA) require <strong>Level AA</strong>.
+          </p>
+
+          <table class="levels-table" aria-label="WCAG conformance levels">
+            <thead>
+              <tr>
+                <th scope="col">Level</th>
+                <th scope="col">What it means</th>
+                <th scope="col">Required by</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="level-pill pill-a">Level A</span></td>
+                <td>Minimum baseline. Addresses the most critical barriers. A product that fails Level A is essentially unusable for many people with disabilities.</td>
+                <td>Baseline for all WCAG compliance</td>
+              </tr>
+              <tr>
+                <td><span class="level-pill pill-aa">Level AA</span></td>
+                <td>The standard most organizations target. Addresses the most common barriers without placing an unreasonable burden on content creators.</td>
+                <td>Section 508, ADA, EN 301 549 (EU), most government contracts</td>
+              </tr>
+              <tr>
+                <td><span class="level-pill pill-aaa">Level AAA</span></td>
+                <td>The most comprehensive level. Not typically required for entire sites, but can be aspirational or applied to specific content types.</td>
+                <td>Specialized contexts (e.g., government services for people with disabilities)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="wcag-applicability">
+            Does WCAG Apply to Mobile Apps and Software?
+            <a href="#wcag-applicability" class="section-anchor" aria-label="Link to WCAG Applicability section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h3>
+          <p>
+            Unlike standards focused on a single technology, WCAG adapts to different programming languages,
+            browsers, and digital products (including mobile apps, websites, software, and digital content).
+            This technology-agnostic approach is one of its greatest strengths.
+          </p>
+
+          <div class="callout callout-info">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> More from W3C</span>
+            <p>The W3C has produced two additional sets of accessibility guidelines alongside WCAG:</p>
+            <ul>
+              <li><strong>ATAG</strong> (Authoring Tool Accessibility Guidelines): making authoring tools accessible, such as Content Management Systems like WordPress and Drupal.</li>
+              <li><strong>UAAG</strong> (User Agent Accessibility Guidelines): making user agents accessible, such as web browsers, browser extensions, and media players.</li>
+            </ul>
+          </div>
+
+          <h4>Official WCAG Resources</h4>
+          <div class="ext-links">
+            <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">WCAG Overview: W3C WAI</div>
+                <div class="ext-link-desc">The official W3C Web Accessibility Initiative overview of WCAG standards and guidelines.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">WCAG 2.2 Quick Reference</div>
+                <div class="ext-link-desc">How to Meet WCAG: a customizable quick reference to WCAG 2.2 success criteria and techniques.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.w3.org/WAI/WCAG21/Understanding/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">Understanding WCAG 2.1</div>
+                <div class="ext-link-desc">Detailed explanations of the intent, benefits, and examples for each WCAG success criterion.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+
+          <h2 id="section-508">
+            What Is Section 508 and How Does It Relate to WCAG?
+            <a href="#section-508" class="section-anchor" aria-label="Link to Section 508 section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            <strong>Section 508</strong> is a U.S. federal law, specifically an amendment to the Rehabilitation Act of 1973, that requires
+            federal agencies and organizations that receive federal funding to make their electronic and information technology accessible to
+            people with disabilities. Section 508 is not a separate standard from WCAG: its 2017 refresh incorporated <strong>WCAG 2.0 Level AA</strong>
+            as the technical benchmark. If your product meets WCAG AA, it meets the technical requirements of Section 508.
+          </p>
+
+          <h3 id="what-is-508">
+            What is Section 508?
+            <a href="#what-is-508" class="section-anchor" aria-label="Link to what is Section 508 section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h3>
+          <p>
+            <strong>Section 508</strong> is an amendment to the Rehabilitation Act of 1973. It requires federal
+            agencies and organizations that receive federal funding (such as universities) to make
+            their electronic and information technology (EIT) accessible to people with disabilities.
+          </p>
+          <p>
+            In practical terms: if your software, website, or digital product is sold to or used by a U.S.
+            federal agency, it must meet Section 508 requirements. The 2017 refresh of Section 508 incorporated
+            WCAG 2.0 Level AA as its technical standard, meaning <strong>meeting WCAG 2.0 AA is the baseline
+            for Section 508 compliance</strong>.
+          </p>
+
+          <div class="callout callout-green">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Key Takeaway</span>
+            <p>
+              Section 508 and WCAG are not competing standards. Section 508 <em>references</em> WCAG.
+              If your product meets WCAG 2.0 Level AA, it meets the technical requirements of Section 508.
+              Most teams target WCAG 2.1 AA or 2.2 AA to stay current.
+            </p>
+          </div>
+
+          <h3 id="who-needs-508">
+            Who Needs to Comply?
+            <a href="#who-needs-508" class="section-anchor" aria-label="Link to who needs to comply section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h3>
+          <p>Section 508 applies to:</p>
+          <ul>
+            <li><strong>Federal agencies</strong>: all U.S. federal government departments and agencies</li>
+            <li><strong>Federal contractors</strong>: any organization providing technology products or services to federal agencies</li>
+            <li><strong>Federally funded organizations</strong>: universities, nonprofits, and other organizations that receive federal grants or funding</li>
+          </ul>
+          <p>
+            If you&rsquo;re selling SaaS, software, or digital services to any of these entities, a completed
+            VPAT documenting your Section 508 compliance is typically required as part of the procurement process.
+          </p>
+
+          <h3 id="ada">
+            What About the ADA?
+            <a href="#ada" class="section-anchor" aria-label="Link to ADA section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h3>
+          <p>
+            The <strong>Americans with Disabilities Act (ADA)</strong> is a separate civil rights law that
+            prohibits discrimination against people with disabilities. While the ADA doesn&rsquo;t explicitly
+            reference WCAG, courts and the Department of Justice have consistently interpreted it to require
+            accessible websites and digital products for businesses open to the public.
+          </p>
+
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Important Distinction</span>
+            <p><strong>Section 508</strong> applies to federal agencies and their vendors. It has specific technical standards (WCAG 2.0 AA).</p>
+            <p><strong>ADA</strong> applies to private businesses open to the public. It doesn&rsquo;t specify a technical standard, but WCAG AA is the accepted benchmark in litigation.</p>
+            <p>Many organizations target WCAG 2.1 AA to satisfy both simultaneously.</p>
+          </div>
+
+          <h4>Official Section 508 Resources</h4>
+          <div class="ext-links">
+            <a href="https://www.section508.gov/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">Section508.gov</div>
+                <div class="ext-link-desc">The official U.S. government resource for Section 508 compliance guidance, tools, and training.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.access-board.gov/ict/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">ICT Accessibility Standards: U.S. Access Board</div>
+                <div class="ext-link-desc">The full text of the Section 508 standards and Section 255 guidelines for ICT accessibility.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.ada.gov/resources/web-guidance/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 6l7-3 7 3"/><path d="M5 6L2 12h6L5 6z"/><path d="M19 6l-3 6h6l-3-6z"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">ADA Web Accessibility Guidance: ADA.gov</div>
+                <div class="ext-link-desc">The Department of Justice&rsquo;s guidance on web accessibility requirements under the ADA.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+
+          <div class="callout callout-dark">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> Related Tool</span>
+            <p>
+              Need to document your WCAG compliance for a Section 508 procurement? Use the free
+              <a href="../index.html#vpat-tool">VPAT Success Criteria Lookup Tool</a> to look up any
+              WCAG criterion with plain-English explanations and VPAT documentation notes.
+            </p>
+          </div>
+
+        <!-- FAQ SECTION -->
+        <section class="article-faq" id="faq" aria-labelledby="faq-heading">
+          <h2 class="faq-heading" id="faq-heading">Frequently Asked Questions</h2>
+
+          <details class="faq-item">
+            <summary class="faq-question">What does WCAG stand for?</summary>
+            <div class="faq-answer">
+              <p><strong>WCAG</strong> stands for <strong>Web Content Accessibility Guidelines</strong>. It is the internationally recognized standard for digital accessibility, published by the World Wide Web Consortium (W3C). WCAG defines how to make web content, software, and digital products accessible to people with disabilities.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the difference between WCAG Level A, AA, and AAA?</summary>
+            <div class="faq-answer">
+              <p>WCAG has three conformance levels. <strong>Level A</strong> is the minimum baseline; failing it means the product is essentially unusable for many people with disabilities. <strong>Level AA</strong> is the legal standard required by Section 508, the ADA, and most government contracts worldwide. It covers the most common barriers without placing unreasonable burden on content creators. <strong>Level AAA</strong> is the most comprehensive level and covers additional edge cases; it is rarely required for entire sites and is not achievable for all content types.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the difference between WCAG 2.1 and WCAG 2.2?</summary>
+            <div class="faq-answer">
+              <p>WCAG 2.2, published in September 2023, adds 9 new success criteria to the 78 that already existed in WCAG 2.1. The new criteria focus on users with cognitive disabilities, low vision, and limited motor control. Key additions include: <strong>Focus Not Obscured (2.4.11)</strong>: focused elements must be visible; <strong>Dragging Movements (2.5.7)</strong>: drag actions need keyboard alternatives; <strong>Target Size Minimum (2.5.8)</strong>: interactive elements must be at least 24×24px; <strong>Redundant Entry (3.3.7)</strong>: don't make users re-enter data; and <strong>Accessible Authentication (3.3.8)</strong>: don't require users to solve puzzles to log in. All WCAG 2.1 criteria still apply in 2.2.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is WCAG compliance legally required?</summary>
+            <div class="faq-answer">
+              <p>WCAG is not itself a law, but it is referenced and enforced through laws that are. <strong>Section 508</strong> requires U.S. federal agencies to meet WCAG 2.0 Level AA. The <strong>ADA</strong> does not cite WCAG explicitly, but courts and the Department of Justice have endorsed WCAG 2.1 Level AA as the accepted standard. In 2024, the DOJ issued a final rule explicitly requiring WCAG 2.1 AA for state and local government digital services under ADA Title II. The EU's <strong>EN 301 549</strong> standard references WCAG 2.1 AA for public sector websites and apps.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Does WCAG apply to mobile apps?</summary>
+            <div class="faq-answer">
+              <p>Yes. WCAG is intentionally technology-agnostic and applies to websites, web apps, native mobile apps, desktop software, and digital documents. The same success criteria for text alternatives, keyboard operation, and color contrast apply to iOS and Android apps. Apple's VoiceOver and Google's TalkBack are the primary screen readers for mobile testing. Touch target sizing, gesture alternatives, and orientation support are mobile-specific considerations addressed within WCAG 2.2.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is Section 508 and how is it different from WCAG?</summary>
+            <div class="faq-answer">
+              <p><strong>Section 508</strong> is a U.S. federal law requiring federal agencies and their vendors to make electronic and information technology accessible. <strong>WCAG</strong> is the technical standard that Section 508 points to; the 2017 Section 508 Refresh adopted WCAG 2.0 Level AA as its technical baseline. So Section 508 is the legal requirement; WCAG is how you meet it technically. The key difference: Section 508 applies specifically to federal procurement contexts, while WCAG is a global standard used by accessibility laws worldwide.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What are the four POUR principles of WCAG?</summary>
+            <div class="faq-answer">
+              <p>Every WCAG success criterion maps to one of four principles, forming the acronym POUR: <strong>Perceivable</strong>: information must be presentable in ways users can perceive (e.g., alt text for images, captions for video); <strong>Operable</strong>: all functionality must be operable via keyboard and not require interactions users can't perform; <strong>Understandable</strong>: information and UI operation must be clear and predictable; <strong>Robust</strong>: content must be interpreted reliably by assistive technologies across different browsers and platforms.</p>
+            </div>
+          </details>
+
+        </section>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#wcag" class="toc-link active" id="toc-wcag">
+                <span class="toc-link-dot"></span>What Is WCAG?
+              </a>
+              <ul class="toc-sub" role="list">
+                <li class="toc-item"><a href="#pour" class="toc-link" id="toc-pour"><span class="toc-link-dot"></span>What Are the POUR Principles?</a></li>
+                <li class="toc-item"><a href="#conformance-levels" class="toc-link" id="toc-levels"><span class="toc-link-dot"></span>WCAG Conformance Levels</a></li>
+                <li class="toc-item"><a href="#wcag-applicability" class="toc-link" id="toc-applicability"><span class="toc-link-dot"></span>Does WCAG Apply to Mobile?</a></li>
+              </ul>
+            </li>
+            <li class="toc-item">
+              <a href="#section-508" class="toc-link" id="toc-508">
+                <span class="toc-link-dot"></span>What Is Section 508?
+              </a>
+              <ul class="toc-sub" role="list">
+                <li class="toc-item"><a href="#what-is-508" class="toc-link" id="toc-what508"><span class="toc-link-dot"></span>What is Section 508?</a></li>
+                <li class="toc-item"><a href="#who-needs-508" class="toc-link" id="toc-who508"><span class="toc-link-dot"></span>Who Needs to Comply?</a></li>
+                <li class="toc-item"><a href="#ada" class="toc-link" id="toc-ada"><span class="toc-link-dot"></span>What About the ADA?</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Topic</div>
+          <p>Part of the <strong>Accessibility 101</strong> series for foundational concepts covering designers, developers, and product teams.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">WCAG 2.2</span>
+            <span class="sidebar-tag">Section 508</span>
+            <span class="sidebar-tag">ADA</span>
+            <span class="sidebar-tag">POUR</span>
+            <span class="sidebar-tag">Conformance</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Articles</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="vpat-acr-documentation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">VPAT &amp; ACR Documentation: The Complete Guide</div>
+                <div class="related-cat">VPAT / ACR</div>
+              </div>
+            </a>
+            <a href="legal-landscape.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</div>
+                <div class="related-cat">Legal Landscape</div>
+              </div>
+            </a>
+            <a href="testing-evaluation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Testing &amp; Evaluation: How to Audit for Accessibility</div>
+                <div class="related-cat">Testing &amp; Evaluation</div>
+              </div>
+            </a>
+            <a href="screen-readers-aria.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Screen Readers &amp; ARIA: Beyond the Basics</div>
+                <div class="related-cat">Screen Readers &amp; ARIA</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="../index.html#topics" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Back to</div>
+        <div class="article-nav-title">All Topics</div>
+      </div>
+    </a>
+    <a href="legal-landscape.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">Legal Landscape: ADA &amp; Section 508</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing & Evaluation</a></li>
+          <li><a href="design-visual.html">Design & Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers & ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT & ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../index.html#articles">Latest Articles</a></li>
+          <li><a href="../index.html#about">About Dan</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

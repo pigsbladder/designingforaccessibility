@@ -1,0 +1,19 @@
+Options -Indexes
+
+# Redirect old article URLs to /articles/ directory
+Redirect 301 /accessibility-guidelines.html /articles/accessibility-guidelines.html
+Redirect 301 /accessibility-quick-wins.html /articles/accessibility-quick-wins.html
+Redirect 301 /conflict-in-ux.html /articles/conflict-in-ux.html
+Redirect 301 /design-visual.html /articles/design-visual.html
+Redirect 301 /legal-landscape.html /articles/legal-landscape.html
+Redirect 301 /reassuring-ux-teams-about-ai.html /articles/reassuring-ux-teams-about-ai.html
+Redirect 301 /screen-readers-aria.html /articles/screen-readers-aria.html
+Redirect 301 /testing-evaluation.html /articles/testing-evaluation.html
+Redirect 301 /the-hill-worth-dying-on.html /articles/the-hill-worth-dying-on.html
+Redirect 301 /ux-accessibility-fails-design-stage.html /articles/ux-accessibility-fails-design-stage.html
+Redirect 301 /ux-government-saas-sales.html /articles/ux-government-saas-sales.html
+Redirect 301 /ux-perspectives.html /articles/ux-perspectives.html
+Redirect 301 /ux-screen-readers-sighted-ux.html /articles/ux-screen-readers-sighted-ux.html
+Redirect 301 /vpat-acr-documentation.html /articles/vpat-acr-documentation.html
+Redirect 301 /criteria-lookup.html /index.html#vpat-tool
+Redirect 301 /ux-perspective.html /articles/ux-perspectives.html

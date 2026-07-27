@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screen Readers & ARIA: A Practical Guide | Designing for Accessibility</title>
+  <meta name="description" content="Master ARIA roles, labels, live regions, and real screen reader behaviour. These are the advanced topics that separate good accessibility from great accessibility." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/articles/screen-readers-aria.html" />
+  <meta property="og:title" content="Screen Readers & ARIA: A Practical Guide" />
+  <meta property="og:description" content="ARIA roles, labels, live regions, and real screen reader behaviour. These are the advanced topics for accessible design." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/articles/screen-readers-aria.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Screen Readers & ARIA: A Practical Guide",
+    "description": "Master ARIA roles, labels, live regions, and real screen reader behaviour. These are the advanced topics that separate good accessibility from great.",
+    "author": { "@type": "Person", "name": "Dan" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    },
+    "datePublished": "2026-01-25",
+    "dateModified": "2026-03-09",
+    "mainEntityOfPage": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.designingforaccessibility.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Screen Readers & ARIA",
+        "item": "https://www.designingforaccessibility.com/index.html#topics"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Screen Readers & ARIA: A Practical Guide",
+        "item": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use ARIA Correctly in Web Development",
+    "description": "The five rules of ARIA use and practical techniques for labelling, hiding content, and building accessible interactive components.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Follow the First Rule: Use Native HTML Before ARIA",
+        "text": "If a native HTML element or attribute already provides the semantics and behavior you need, use it instead of ARIA. A <button> is always better than a <div role=\"button\">. ARIA should enhance, not replace, semantic HTML.",
+        "url": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html#first-rule"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Apply the Five Rules of ARIA Use",
+        "text": "Follow the W3C ARIA rules: (1) use native HTML first, (2) do not change native semantics unless necessary, (3) all interactive ARIA controls must be keyboard operable, (4) do not use role=\"presentation\" or aria-hidden=\"true\" on focusable elements, (5) all interactive elements must have an accessible name.",
+        "url": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html#five-rules"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Label Elements With ARIA Techniques",
+        "text": "Use aria-label for elements where visible text is absent (e.g., icon buttons). Use aria-labelledby to reference visible text elsewhere in the DOM. Use aria-describedby for supplemental descriptions. Ensure every form input, button, and interactive widget has an accessible name.",
+        "url": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html#aria-labelling"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Control Content Visibility for Screen Readers",
+        "text": "Use aria-hidden=\"true\" to hide decorative elements (icons, spacers) from screen readers. Use the sr-only CSS class pattern to provide text only to screen readers. Never use aria-hidden on focusable elements or their parents.",
+        "url": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html#hiding-showing"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Test With Real Screen Readers",
+        "text": "Test your ARIA implementation with actual screen readers: NVDA (free, Windows), JAWS (paid, Windows), VoiceOver (built-in, Mac/iOS), and TalkBack (Android). Automated tools cannot fully verify ARIA correctness; real screen reader testing is essential.",
+        "url": "https://www.designingforaccessibility.com/articles/screen-readers-aria.html#screen-reader-testing"
+      }
+    ]
+  }
+  </script>
+</head>
+<body style="--page-accent: #f4a261; --page-accent-dark: #c2410c;">
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">
+        Designing for Accessibility
+        <small>Free guides &middot; No paywall</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#topics">Topics</a></li>
+      <li><a href="../index.html#articles">Articles</a></li>
+      <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="../index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="../index.html#topics" role="menuitem">Topics</a>
+    <a href="../index.html#articles" role="menuitem">Articles</a>
+    <a href="ux-perspectives.html" role="menuitem">UX Perspectives</a>
+    <a href="../index.html#vpat-tool" role="menuitem">VPAT Tool</a>
+    <a href="../index.html#about" role="menuitem">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-header" role="banner">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <a href="../index.html#topics">Screen Readers & ARIA</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Screen Readers & ARIA</span>
+    </nav>
+    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg> Screen Readers & ARIA</div>
+    <h1>Screen Readers & ARIA:<br>Beyond the Basics</h1>
+    <p class="article-header-sub">
+      ARIA roles, labels, live regions, and how real screen readers behave. These are the advanced topics that separate good accessibility work from great accessibility work.
+    </p>
+    <div class="article-meta-row">
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-09">Updated March 2026</time></strong></div>
+      <div class="article-meta-item">⏱ <strong>13 min read</strong></div>
+      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg> <strong>Screen Readers & ARIA</strong></div>
+    </div>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
+    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
+    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
+    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
+    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
+  </svg>
+</header>
+
+<!-- ARTICLE BODY -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- CONTENT -->
+      <article class="article-content">
+        <div class="prose">
+
+          <h2 id="aria-first-rule">
+            The First Rule of ARIA
+            <a href="#aria-first-rule" class="section-anchor" aria-label="Link to The First Rule of ARIA section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The Accessible Rich Internet Applications specification was designed to fill gaps where native HTML fell short. But the modern web has evolved significantly, and HTML has become far more capable. The first and most important rule of ARIA: <strong>if a native HTML element or attribute exists, use it</strong>.
+          </p>
+          <p>
+            Native HTML elements have built-in semantics, keyboard functionality, and assistive technology support that's been battle-tested across browsers and screen readers. Using a native <code>&lt;button&gt;</code> element automatically gives you keyboard support (Space and Enter), correct focus management, and proper announcement as a button. A div with <code>role="button"</code> requires you to manually implement all of this functionality.
+          </p>
+          <div class="callout callout-green">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><polyline points="20 6 9 17 4 12"/></svg> Key Rule</span>
+            <p>
+              ARIA never changes visual appearance or behaviour. It only modifies semantic meaning for assistive technology. If you need to change how something looks or works, use HTML and CSS. ARIA supplements, not replaces.
+            </p>
+          </div>
+
+          <h2 id="five-rules">
+            The Five Rules of ARIA Use
+            <a href="#five-rules" class="section-anchor" aria-label="Link to Five Rules section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            The W3C outlines five fundamental rules for responsible ARIA authoring. Understanding these rules prevents common mistakes that can render ARIA harmful rather than helpful.
+          </p>
+          <p>
+            <strong>1. Use native HTML when it exists.</strong> A <code>&lt;button&gt;</code> is better than a div with <code>role="button"</code>. A <code>&lt;nav&gt;</code> is better than a div with <code>role="navigation"</code>. Native elements have proven functionality.
+          </p>
+          <p>
+            <strong>2. Don't change native semantics.</strong> Never write <code>&lt;button role="heading"&gt;</code> or <code>&lt;h2 role="button"&gt;</code>. This creates confusion for assistive technology users and developers.
+          </p>
+          <p>
+            <strong>3. All interactive ARIA controls must be keyboard-operable.</strong> If you build a custom dropdown with <code>role="combobox"</code>, it must respond to keyboard input (arrow keys, Escape, Enter) just like a native select. No mouse-only widgets.
+          </p>
+          <p>
+            <strong>4. Don't hide focusable elements with aria-hidden.</strong> If an element is interactive and keyboard-accessible, don't apply <code>aria-hidden="true"</code> to it. This creates a broken experience where the element is visible and focusable, but screen reader users can't interact with it.
+          </p>
+          <p>
+            <strong>5. All interactive elements must have an accessible name.</strong> Screen readers must be able to announce what a button does, what a link goes to, what a form field expects. Use labels, aria-label, or aria-labelledby to provide these names.
+          </p>
+
+          <h2 id="labelling">
+            ARIA Labelling Techniques
+            <a href="#labelling" class="section-anchor" aria-label="Link to ARIA Labelling section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            When native HTML labels aren't sufficient, three ARIA properties provide alternatives: <code>aria-labelledby</code>, <code>aria-describedby</code>, and <code>aria-label</code>.
+          </p>
+          <p>
+            <code>aria-labelledby</code> references the ID of another element that labels the current element. It has the highest priority for accessible naming. Use it when a visible text element already exists that describes your control:
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;h2 id="dialog-title"&gt;Confirm your action&lt;/h2&gt;
+&lt;div role="dialog" aria-labelledby="dialog-title"&gt;
+  Are you sure you want to delete this item?
+&lt;/div&gt;</code></pre>
+          <p>
+            <code>aria-describedby</code> provides supplemental description beyond the label. Use it for hints, additional context, or error messages:
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;label for="password"&gt;Password&lt;/label&gt;
+&lt;input id="password" type="password" aria-describedby="pwd-hint" /&gt;
+&lt;div id="pwd-hint"&gt;Must be at least 8 characters, including one number.&lt;/div&gt;</code></pre>
+          <p>
+            <code>aria-label</code> provides an inline label string when no visible text exists. Use it sparingly. Visible labels are always preferable for all users:
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>&lt;button aria-label="Close dialog"&gt;&times;&lt;/button&gt;</code></pre>
+
+          <h2 id="buttons-controls">
+            Enhancing Buttons & Controls
+            <a href="#buttons-controls" class="section-anchor" aria-label="Link to Buttons & Controls section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            ARIA properties enhance button and control semantics to communicate state and behaviour to screen readers. <code>aria-expanded</code> indicates whether a control reveals or hides additional content. Use it on accordion headers and disclosure buttons:
+          </p>
+          <p>
+            <code>&lt;button aria-expanded="false" aria-controls="menu"&gt;Menu&lt;/button&gt;</code>
+          </p>
+          <p>
+            <code>aria-pressed</code> indicates toggle button state (active or inactive). Use it for "bold", "italic", "favorite" buttons that maintain a pressed state:
+          </p>
+          <p>
+            <code>&lt;button aria-pressed="false"&gt;Add to favorites&lt;/button&gt;</code>
+          </p>
+          <p>
+            <code>aria-haspopup</code> communicates that a button triggers a popup (menu, dialog, listbox). This primes screen reader users for what will happen:
+          </p>
+          <p>
+            <code>&lt;button aria-haspopup="menu"&gt;Actions&lt;/button&gt;</code>
+          </p>
+
+          <h2 id="hiding-content">
+            Hiding & Showing Content
+            <a href="#hiding-content" class="section-anchor" aria-label="Link to Hiding Content section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            <code>aria-hidden="true"</code> hides an element from screen readers while keeping it visible and interactive. Use it on decorative icons paired with visible text, or elements that would create noise:
+          </p>
+          <p>
+            <code>&lt;button&gt;&lt;span aria-hidden="true"&gt;+&lt;/span&gt; Add item&lt;/button&gt;</code>
+          </p>
+          <p>
+            <code>role="presentation"</code> strips an element of its default semantics, useful for layout tables or elements serving only presentational purposes. Never apply it to elements requiring accessibility. The presence of <code>aria-label</code>, for example, overrides presentation.
+          </p>
+          <p>
+            The visually hidden class pattern keeps content visible to screen readers but hidden from sight. Use it for skip links and sr-only content:
+          </p>
+          <pre style="background:var(--ink);color:var(--text-on-dark);padding:20px 24px;border-radius:var(--radius-lg);overflow-x:auto;font-size:.84rem;line-height:1.7;margin:20px 0"><code>.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}</code></pre>
+
+          <h2 id="link-wording">
+            Writing Accessible Links
+            <a href="#link-wording" class="section-anchor" aria-label="Link to Link Wording section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            WCAG 2.4.4 and 2.4.9 require that link text describe the link's destination without relying on surrounding context. Screen readers can list all links on a page, and users need to understand each link from the text alone.
+          </p>
+          <p>
+            Avoid generic phrases: "click here", "read more", "learn more" don't convey destination or purpose. "Click here for our latest article on accessibility" becomes "Our latest article on accessibility" as link text. Front-load key words. The Nielsen Norman Group found that users focus primarily on the first 11 characters of link text.
+          </p>
+          <div class="callout callout-amber">
+            <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Common Mistake</span>
+            <p>
+              Repeating the same link text with different destinations ("Learn more, Learn more, Learn more") creates ambiguity. Each link should have unique, descriptive text that stands alone.
+            </p>
+          </div>
+
+          <h2 id="live-regions">
+            ARIA Live Regions
+            <a href="#live-regions" class="section-anchor" aria-label="Link to Live Regions section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Live regions announce dynamic content changes to screen reader users without requiring focus to move. <code>aria-live="polite"</code> waits for a pause in speech before announcing updates (ideal for non-urgent messages). <code>aria-live="assertive"</code> interrupts immediately (reserved for errors and time-sensitive information).
+          </p>
+          <p>
+            <code>role="status"</code> (implied polite) and <code>role="alert"</code> (implied assertive) are common live region implementations. A form validation message might use <code>role="alert"</code>, while a shopping cart item count uses <code>role="status"</code>.
+          </p>
+          <p>
+            Common mistake: applying aria-live to elements that don't actually update. If content never changes dynamically, aria-live has no effect. Only use it on regions that update in response to user actions or real-time data.
+          </p>
+
+          <h2 id="testing-screen-readers">
+            Testing With Real Screen Readers
+            <a href="#testing-screen-readers" class="section-anchor" aria-label="Link to Testing section"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </h2>
+          <p>
+            Testing with real screen readers is irreplaceable. Automated tools catch many issues, but human testing reveals UX problems that tools miss. Each screen reader announces content slightly differently, and testing helps identify inconsistencies.
+          </p>
+          <p>
+            <strong>NVDA on Windows + Chrome</strong> is the most accessible testing combination. Key shortcuts: H for headings, Ins+F7 for a list of links, Ins+F1 for current element info, Ins+Down Arrow to read the next line. The NVDA User Guide provides a comprehensive shortcut reference.
+          </p>
+          <p>
+            <strong>VoiceOver on macOS + Safari</strong> uses VO (Control+Option) for commands. VO+U opens the rotor, showing headings and links organized by category. Test using your keyboard rather than mouse. Screen reader users navigate entirely by keyboard.
+          </p>
+          <p>
+            <strong>TalkBack on Android</strong> provides mobile screen reader testing. Swipe right to navigate forward, left to navigate backward. Two-finger swipe to scroll.
+          </p>
+          <p>
+            When testing, verify:
+          </p>
+          <ul>
+            <li>Page title is descriptive and announced first</li>
+            <li>Heading structure is logical (no skipped levels)</li>
+            <li>Link text is descriptive and unique</li>
+            <li>Form labels are properly associated with inputs</li>
+            <li>Dynamic content changes are announced</li>
+            <li>Error messages are clearly communicated</li>
+            <li>All interactive elements are keyboard-accessible</li>
+          </ul>
+
+          <h3>Official Resources</h3>
+          <div class="ext-links">
+            <a href="https://nvaccess.org/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">NVDA Screen Reader</div>
+                <div class="ext-link-desc">Free, open-source screen reader for Windows. Essential testing tool with comprehensive keyboard shortcuts.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">ARIA Authoring Practices Guide</div>
+                <div class="ext-link-desc">W3C official guide to ARIA roles, design patterns, and implementation examples.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://webaim.org/projects/screenreadersurvey/" target="_blank" rel="noopener noreferrer" class="ext-link-card">
+              <div class="ext-link-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+              <div class="ext-link-body">
+                <div class="ext-link-title">Screen Reader Survey</div>
+                <div class="ext-link-desc">WebAIM's annual survey of screen reader usage patterns and assistive technology preferences.</div>
+              </div>
+              <span class="ext-link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="article-sidebar" aria-label="Article navigation and related content">
+
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-header">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span class="toc-header-text">On This Page</span>
+          </div>
+          <ul class="toc-list" role="list">
+            <li class="toc-item">
+              <a href="#aria-first-rule" class="toc-link active" id="toc-first-rule">
+                <span class="toc-link-dot"></span>The First Rule of ARIA
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#five-rules" class="toc-link" id="toc-five-rules">
+                <span class="toc-link-dot"></span>The Five Rules
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#labelling" class="toc-link" id="toc-labelling">
+                <span class="toc-link-dot"></span>ARIA Labelling
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#buttons-controls" class="toc-link" id="toc-buttons">
+                <span class="toc-link-dot"></span>Buttons & Controls
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#hiding-content" class="toc-link" id="toc-hiding">
+                <span class="toc-link-dot"></span>Hiding Content
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#link-wording" class="toc-link" id="toc-links">
+                <span class="toc-link-dot"></span>Link Wording
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#live-regions" class="toc-link" id="toc-live">
+                <span class="toc-link-dot"></span>Live Regions
+              </a>
+            </li>
+            <li class="toc-item">
+              <a href="#testing-screen-readers" class="toc-link" id="toc-testing">
+                <span class="toc-link-dot"></span>Testing Screen Readers
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">About This Topic</div>
+          <p>Part of the <strong>Screen Readers & ARIA</strong> series, providing advanced guidance on creating accessible experiences for assistive technology users.</p>
+          <div class="sidebar-tag-list">
+            <span class="sidebar-tag">ARIA</span>
+            <span class="sidebar-tag">NVDA</span>
+            <span class="sidebar-tag">VoiceOver</span>
+            <span class="sidebar-tag">aria-label</span>
+            <span class="sidebar-tag">aria-live</span>
+            <span class="sidebar-tag">Keyboard</span>
+            <span class="sidebar-tag">Screen Readers</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-card-label">Related Articles</div>
+          <nav class="related-list" aria-label="Related articles">
+            <a href="design-visual.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Design & Visual Elements</div>
+                <div class="related-cat">Design & Visual</div>
+              </div>
+            </a>
+            <a href="accessibility-guidelines.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">Accessibility Guidelines: WCAG &amp; Section 508</div>
+                <div class="related-cat">Accessibility 101</div>
+              </div>
+            </a>
+            <a href="vpat-acr-documentation.html" class="related-item">
+              <span class="related-dot" aria-hidden="true"></span>
+              <div>
+                <div class="related-title">VPAT &amp; ACR Documentation</div>
+                <div class="related-cat">VPAT &amp; ACR</div>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- PREV / NEXT -->
+<nav class="article-footer" aria-label="Article navigation">
+  <div class="container article-footer-inner">
+    <a href="design-visual.html" class="article-nav-btn prev">
+      <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
+      <div>
+        <div class="article-nav-label">Previous</div>
+        <div class="article-nav-title">Design &amp; Visual Elements</div>
+      </div>
+    </a>
+    <a href="vpat-acr-documentation.html" class="article-nav-btn next">
+      <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
+      <div>
+        <div class="article-nav-label">Next</div>
+        <div class="article-nav-title">VPAT &amp; ACR Documentation</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="../index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="../glossary.html">Glossary</a></li>
+          <li><a href="ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="../contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/nav.js"></script>
+<script src="../js/article.js"></script>
+
+  <script src="../js/search.js"></script>
+</body>
+</html>

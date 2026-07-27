@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility Glossary | Plain-Language Definitions | Designing for Accessibility</title>
+  <meta name="description" content="Plain-language definitions of the most common accessibility terms: WCAG, Section 508, ARIA, VPAT, and more. A quick-reference glossary for designers, developers, and product teams." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/glossary.html" />
+  <meta property="og:title" content="Accessibility Glossary | Plain-Language Definitions" />
+  <meta property="og:description" content="Plain-language definitions for common accessibility terms: WCAG, Section 508, ARIA, VPAT, and more." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/glossary.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.designingforaccessibility.com/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Accessibility Glossary | Plain-Language Definitions" />
+  <meta name="twitter:description" content="Plain-language definitions for common accessibility terms: WCAG, Section 508, ARIA, VPAT, and more." />
+  <meta name="twitter:image" content="https://www.designingforaccessibility.com/images/og-image.jpg" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/article.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "name": "Accessibility Glossary",
+    "description": "Plain-language definitions of common accessibility terms including WCAG, Section 508, ARIA, VPAT, and more.",
+    "url": "https://www.designingforaccessibility.com/glossary.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Designing for Accessibility",
+      "url": "https://www.designingforaccessibility.com"
+    }
+  }
+  </script>
+</head>
+<body style="--page-accent: #7c6dff; --page-accent-dark: #4338ca;">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Main navigation" id="main-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Designing for Accessibility home">
+      <div class="nav-logo-mark" aria-hidden="true">DFA</div>
+      <div class="nav-logo-text">Designing for Accessibility</div>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#topics">Topics</a></li>
+      <li><a href="index.html#articles">Articles</a></li>
+      <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+      <li><a href="index.html#vpat-tool">VPAT Tool</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-search-wrap" role="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <label for="nav-q" class="sr-only">Search site</label>
+        <input type="search" id="nav-q" placeholder="Search topics&hellip;" autocomplete="off" />
+      </div>
+      <div class="nav-social" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer"
+          class="nav-social-link" aria-label="LinkedIn (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer"
+          class="nav-social-link" aria-label="BlueSky (opens in new tab)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+          </svg>
+        </a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="mobile-menu">&#9776;</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#topics">Topics</a>
+    <a href="index.html#articles">Articles</a>
+    <a href="articles/ux-perspectives.html">UX Perspectives</a>
+    <a href="index.html#vpat-tool">VPAT Tool</a>
+    <a href="index.html#about">About</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer">BlueSky</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="container">
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
+      <span aria-current="page">Accessibility Glossary</span>
+    </nav>
+    <div class="article-topic-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>
+      Quick Reference
+    </div>
+    <h1>Accessibility Glossary</h1>
+    <p class="article-header-sub">
+      Plain-language definitions for the terms that come up most in accessibility work. 34 entries covering WCAG, Section 508, ARIA, VPAT, and the wider language of digital inclusion.
+    </p>
+  </div>
+  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
+    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
+    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
+    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
+    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
+    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
+    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
+    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
+    <circle class="acv-ring acv-ring-1" cx="980" cy="120" r="55"/>
+    <circle class="acv-ring acv-ring-2" cx="980" cy="120" r="82"/>
+    <circle class="acv-dot acv-dot-1"  cx="80"   cy="60"  r="4"/>
+    <circle class="acv-dot acv-dot-2"  cx="1100" cy="45"  r="3"/>
+    <circle class="acv-dot acv-dot-3"  cx="1050" cy="220" r="5"/>
+    <circle class="acv-dot acv-dot-4"  cx="60"   cy="240" r="3"/>
+    <circle class="acv-dot-amber"      cx="700"  cy="260" r="4"/>
+    <path class="acv-path" d="M 80 270 Q 200 240 320 270 Q 440 300 560 270 Q 680 240 780 270"/>
+  </svg>
+</header>
+
+<!-- MAIN -->
+<main class="article-body" id="main-content">
+  <div class="container">
+    <div class="gloss-wrap">
+
+      <!-- Search -->
+      <div class="gloss-search-bar">
+        <svg class="gloss-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <label for="gloss-search" class="sr-only">Search glossary terms</label>
+        <input type="search" id="gloss-search" class="gloss-search-input"
+          placeholder="Search terms, definitions, or standards&hellip;" autocomplete="off" />
+      </div>
+      <div class="gloss-count" id="gloss-count" aria-live="polite" aria-atomic="true"></div>
+
+      <!-- A–Z Nav -->
+      <nav class="gloss-az-nav" aria-label="Jump to letter">
+        <a href="#gloss-a" class="gloss-az-link">A</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">B</span>
+        <a href="#gloss-c" class="gloss-az-link">C</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">D</span>
+        <a href="#gloss-e" class="gloss-az-link">E</a>
+        <a href="#gloss-f" class="gloss-az-link">F</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">G</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">H</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">I</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">J</span>
+        <a href="#gloss-k" class="gloss-az-link">K</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">L</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">M</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">N</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">O</span>
+        <a href="#gloss-p" class="gloss-az-link">P</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">Q</span>
+        <a href="#gloss-r" class="gloss-az-link">R</a>
+        <a href="#gloss-s" class="gloss-az-link">S</a>
+        <a href="#gloss-t" class="gloss-az-link">T</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">U</span>
+        <a href="#gloss-v" class="gloss-az-link">V</a>
+        <a href="#gloss-w" class="gloss-az-link">W</a>
+        <span class="gloss-az-link disabled" aria-hidden="true">X</span>
+        <span class="gloss-az-link disabled" aria-hidden="true">Y</span>
+        <a href="#gloss-z" class="gloss-az-link">Z</a>
+      </nav>
+
+      <!-- ── A ── -->
+      <div class="gloss-letter-group" id="gloss-a">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with A">A</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Accessibility</dt>
+            <dd class="gloss-def">Making websites, apps, and digital content usable by people with disabilities, including visual, hearing, motor, and cognitive differences. The core idea is that everyone should be able to perceive, understand, navigate, and interact with digital products regardless of ability.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+                <li><span class="gloss-tag">Section 508</span></li>
+                <li><span class="gloss-tag">EAA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Accessibility Audit</dt>
+            <dd class="gloss-def">A structured review of a website or application to identify barriers that prevent people with disabilities from using it effectively. Findings are mapped to WCAG success criteria and typically result in a prioritised remediation plan.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Accessibility Overlay</dt>
+            <dd class="gloss-def">A third-party JavaScript widget that claims to automatically detect and fix accessibility issues on a website. Overlays are generally not sufficient to achieve genuine WCAG conformance and are not accepted as a substitute for proper remediation by most accessibility experts or regulators.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Accessibility Statement</dt>
+            <dd class="gloss-def">A public document where an organisation describes the current accessibility status of a digital product, including the standards it targets, any known barriers, and how users can report issues or request assistance.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">EAA</span></li>
+                <li><span class="gloss-tag">Section 508</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Accessible Product</dt>
+            <dd class="gloss-def">A product that people with disabilities can use effectively and independently. This covers keyboard access, screen reader support, sufficient colour contrast, clear language, and the many other factors addressed by WCAG.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+                <li><span class="gloss-tag">Section 508</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">ADA Compliance</dt>
+            <dd class="gloss-def">Meeting the accessibility requirements of the Americans with Disabilities Act (ADA). The ADA does not specify a technical standard directly, but courts and the Department of Justice have endorsed WCAG 2.1 Level AA as the accepted benchmark for digital ADA compliance.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">ADA</span></li>
+                <li><span class="gloss-tag">WCAG 2.1 AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Alt Text (Alternative Text)</dt>
+            <dd class="gloss-def">A short text description of an image, read aloud by screen readers for users who cannot see it. Essential for any non-decorative image. Decorative images should have an empty alt attribute (<code>alt=""</code>) so screen readers skip them.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.1.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">ARIA (Accessible Rich Internet Applications)</dt>
+            <dd class="gloss-def">A set of HTML attributes (roles, states, and properties) that add semantic meaning to interactive and dynamic content, helping assistive technologies understand it correctly. The first rule of ARIA is to use native HTML elements where possible; ARIA should supplement, not replace, correct markup.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 4.1.2</span></li>
+                <li><span class="gloss-tag">WAI-ARIA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Assistive Technology</dt>
+            <dd class="gloss-def">Hardware or software that helps people with disabilities access and interact with digital content. Common examples include screen readers (NVDA, JAWS, VoiceOver), screen magnifiers, switch access devices, eye-tracking software, and voice control tools like Dragon NaturallySpeaking.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-a -->
+
+      <!-- ── C ── -->
+      <div class="gloss-letter-group" id="gloss-c">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with C">C</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Captions</dt>
+            <dd class="gloss-def">On-screen text that displays the spoken dialogue and relevant non-speech sounds (like [music playing] or [door slams]) in a video, so deaf and hard-of-hearing users can follow along. Closed captions can be turned on or off; open captions are always visible.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.2.2</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Cognitive Accessibility</dt>
+            <dd class="gloss-def">Designing content and interfaces to be understandable and usable by people with cognitive disabilities, including learning difficulties, memory impairments, attention differences, and autism. Practical measures include plain language, consistent navigation, clear error messages, and avoiding time pressure.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 3.1</span></li>
+                <li><span class="gloss-tag">WCAG 3.2</span></li>
+                <li><span class="gloss-tag">WCAG 3.3</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Color Contrast</dt>
+            <dd class="gloss-def">The measured difference in luminance between text and its background. Sufficient contrast ensures text remains readable for users with low vision, colour blindness, or age-related vision changes. WCAG requires a minimum 4.5:1 ratio for normal text and 3:1 for large text at Level AA.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.4.3</span></li>
+                <li><span class="gloss-tag">Level AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Conformance Level (A, AA, AAA)</dt>
+            <dd class="gloss-def">The three tiers of compliance defined by WCAG. Level A is the minimum baseline: failing these criteria creates the most severe barriers. Level AA is the standard required by most laws and regulations and is the accepted industry target. Level AAA is the most comprehensive tier and is not required for entire sites.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+                <li><span class="gloss-tag">Section 508</span></li>
+                <li><span class="gloss-tag">EAA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-c -->
+
+      <!-- ── E ── -->
+      <div class="gloss-letter-group" id="gloss-e">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with E">E</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">EAA (European Accessibility Act)</dt>
+            <dd class="gloss-def">EU legislation requiring companies operating in Europe to make their digital products and services accessible to people with disabilities. Unlike earlier EU directives that focused on the public sector, the EAA covers private sector organisations. Enforcement began June 2025.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">EAA</span></li>
+                <li><span class="gloss-tag">EN 301 549</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Error Messages</dt>
+            <dd class="gloss-def">Descriptive feedback shown to users when something goes wrong in a form or process. Good error messages identify which field has a problem and explain clearly how to correct it, not just that an error occurred.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 3.3.1</span></li>
+                <li><span class="gloss-tag">WCAG 3.3.3</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-e -->
+
+      <!-- ── F ── -->
+      <div class="gloss-letter-group" id="gloss-f">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with F">F</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Focus Indicator</dt>
+            <dd class="gloss-def">A visible highlight (typically an outline or ring) that shows which interactive element on the page currently has keyboard focus. Without a visible focus indicator, keyboard users have no way to see where they are on the page. WCAG 2.2 added the stronger 2.4.11 (Focus Not Obscured) criterion, requiring the focused element to not be hidden by sticky headers or overlays.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.4.7</span></li>
+                <li><span class="gloss-tag">WCAG 2.4.11</span></li>
+                <li><span class="gloss-tag">Level AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Form Labels</dt>
+            <dd class="gloss-def">Visible, programmatically associated text that tells users what a form input field expects. A label must be connected to its input in code (via <code>for</code>/<code>id</code> or <code>aria-label</code>); placeholder text alone does not meet this requirement.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 3.3.2</span></li>
+                <li><span class="gloss-tag">WCAG 1.3.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-f -->
+
+      <!-- ── K ── -->
+      <div class="gloss-letter-group" id="gloss-k">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with K">K</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Keyboard Navigation</dt>
+            <dd class="gloss-def">The ability to access and operate a website or application using only the keyboard, without requiring a mouse or other pointing device. Critical for users with motor disabilities and for screen reader users who navigate almost exclusively by keyboard.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.1.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-k -->
+
+      <!-- ── P ── -->
+      <div class="gloss-letter-group" id="gloss-p">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with P">P</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Plain Language</dt>
+            <dd class="gloss-def">Writing that communicates clearly and concisely, using familiar words and short sentences, so the widest possible audience can understand it on the first read. Particularly important for users with cognitive disabilities, low literacy, or English as a second language.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 3.1.5</span></li>
+                <li><span class="gloss-tag">Level AAA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-p -->
+
+      <!-- ── R ── -->
+      <div class="gloss-letter-group" id="gloss-r">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with R">R</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Remediation</dt>
+            <dd class="gloss-def">The process of fixing accessibility barriers identified through testing or an audit. Remediation can range from HTML markup corrections and colour changes to content rewrites and component redesigns. A remediation plan typically prioritises Level A barriers first, then Level AA.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Responsive Design</dt>
+            <dd class="gloss-def">A design approach that ensures content adapts appropriately to different screen sizes, orientations, and zoom levels, avoiding horizontal scrolling, broken layouts, or loss of content when the viewport changes. Directly relevant to users who increase text size or use mobile devices.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.4.10</span></li>
+                <li><span class="gloss-tag">Level AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-r -->
+
+      <!-- ── S ── -->
+      <div class="gloss-letter-group" id="gloss-s">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with S">S</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Screen Reader</dt>
+            <dd class="gloss-def">Software that converts on-screen content into speech or refreshable braille output, enabling blind and low-vision users to access digital content. Common screen readers include NVDA and JAWS on Windows and VoiceOver on Apple devices. Screen readers rely heavily on correct HTML semantics, ARIA, and logical reading order.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+                <li><span class="gloss-tag">WAI-ARIA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Section 508</dt>
+            <dd class="gloss-def">A US federal law (part of the Rehabilitation Act) requiring that electronic and information technology developed, procured, maintained, or used by federal agencies be accessible to people with disabilities. Agencies must meet the Section 508 standards, which are closely aligned with WCAG 2.0 Level AA. A VPAT is typically required during procurement.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">Section 508</span></li>
+                <li><span class="gloss-tag">WCAG 2.0 AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Seizure Safety</dt>
+            <dd class="gloss-def">Designing digital content to avoid rapid flashing, strobing, or animated patterns that could trigger photosensitive epilepsy or other seizure disorders. Content that flashes more than three times per second, unless below the general and red flash thresholds, fails this criterion.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.3.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Semantic HTML</dt>
+            <dd class="gloss-def">Using HTML elements for their intended purpose and meaning, for example <code>&lt;button&gt;</code> for buttons, <code>&lt;nav&gt;</code> for navigation blocks, and <code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code> for headings in logical order. Correct semantics allow browsers and assistive technologies to interpret page structure without relying on visual cues.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.3.1</span></li>
+                <li><span class="gloss-tag">WCAG 4.1.2</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Skip Link</dt>
+            <dd class="gloss-def">A link near the top of a page (often visually hidden until focused) that lets keyboard users jump past repeated navigation blocks and land directly on the main content. Without a skip link, keyboard users must Tab through every navigation item on every page load.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.4.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Substantial Conformance</dt>
+            <dd class="gloss-def">An informal term describing a product that largely meets WCAG standards but may have minor remaining gaps. It is not an official WCAG conformance level; the recognised levels are A, AA, and AAA. The phrase is commonly used when 100% conformance is difficult to achieve in practice, for example due to third-party content or assistive technology variations outside the organisation&rsquo;s direct control.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-s -->
+
+      <!-- ── T ── -->
+      <div class="gloss-letter-group" id="gloss-t">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with T">T</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Tab Order</dt>
+            <dd class="gloss-def">The sequence in which keyboard focus moves through interactive elements on a page when a user presses the Tab key. Tab order should follow the logical reading order of the content and never trap users in a section with no way to move on.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.4.3</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Time Limits</dt>
+            <dd class="gloss-def">Restrictions on how long users have to complete a task or session before it expires or data is lost. Accessible products allow users to extend or disable time limits where possible, as users with disabilities may need more time to complete tasks.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.2.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Transcripts</dt>
+            <dd class="gloss-def">A written text version of audio-only or audiovisual content, providing access for deaf users, users who cannot play audio in their environment, or users who prefer to read rather than watch. Transcripts also make audio content searchable and indexable.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.2.1</span></li>
+                <li><span class="gloss-tag">Level A</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-t -->
+
+      <!-- ── V ── -->
+      <div class="gloss-letter-group" id="gloss-v">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with V">V</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">VPAT (Voluntary Product Accessibility Template)</dt>
+            <dd class="gloss-def">A standardised document used to describe how accessible a software product is against recognised accessibility standards. A completed VPAT produces an Accessibility Conformance Report (ACR). VPATs are commonly required by US federal agencies and enterprise buyers as part of procurement; a missing or inaccurate VPAT can block a sale.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">Section 508</span></li>
+                <li><span class="gloss-tag">WCAG 2.1 AA</span></li>
+                <li><span class="gloss-tag">ACR</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-v -->
+
+      <!-- ── W ── -->
+      <div class="gloss-letter-group" id="gloss-w">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with W">W</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">WCAG</dt>
+            <dd class="gloss-def">Web Content Accessibility Guidelines: the internationally recognised set of standards published by the W3C that define how to make digital content accessible to people with disabilities. WCAG applies to websites, web apps, documents, and increasingly to mobile apps. Versions 2.0 (2008), 2.1 (2018), and 2.2 (2023) are in active use.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.0</span></li>
+                <li><span class="gloss-tag">WCAG 2.1</span></li>
+                <li><span class="gloss-tag">WCAG 2.2</span></li>
+                <li><span class="gloss-tag">W3C</span></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">WCAG Compliance</dt>
+            <dd class="gloss-def">Meeting the success criteria defined in a given version of WCAG at a given conformance level. Most organisations and regulations target WCAG 2.1 Level AA as the minimum, with WCAG 2.2 AA increasingly required. WCAG 2.2 builds on 2.1 by adding 9 new criteria focused on cognitive disabilities, low vision, and motor control.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 2.1 AA</span></li>
+                <li><span class="gloss-tag">WCAG 2.2 AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-w -->
+
+      <!-- ── Z ── -->
+      <div class="gloss-letter-group" id="gloss-z">
+        <h2 class="gloss-letter-heading" aria-label="Terms starting with Z">Z</h2>
+        <dl>
+
+          <div class="gloss-card">
+            <dt class="gloss-term">Zoom / Scaling</dt>
+            <dd class="gloss-def">The ability for users to resize text or zoom the entire page to 200% (and in some cases 400%) without the content breaking, overflowing horizontally, or requiring two-dimensional scrolling. Many users with low vision rely on browser zoom as their primary accessibility tool.</dd>
+            <dd>
+              <ul class="gloss-tags" aria-label="Related standards">
+                <li><span class="gloss-tag">WCAG 1.4.4</span></li>
+                <li><span class="gloss-tag">WCAG 1.4.10</span></li>
+                <li><span class="gloss-tag">Level AA</span></li>
+              </ul>
+            </dd>
+          </div>
+
+        </dl>
+      </div><!-- /#gloss-z -->
+
+      <!-- Common Misconceptions callout -->
+      <div class="callout callout-info gloss-misconceptions">
+        <div class="callout-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          Common Misconceptions
+        </div>
+        <ul>
+          <li><strong>&ldquo;ADA compliant&rdquo;:</strong> When people use this phrase about websites they almost always mean WCAG 2.1 AA, which is the benchmark courts and the DOJ use to determine what ADA digital compliance looks like in practice. The ADA itself does not specify a technical standard.</li>
+          <li><strong>&ldquo;Screen reader friendly&rdquo; or &ldquo;keyboard accessible&rdquo;:</strong> These describe specific WCAG requirements, not holistic accessibility. A product can satisfy these and still fail Level A in other areas. Full WCAG conformance covers far more than keyboard and screen reader support.</li>
+          <li><strong>&ldquo;Make our site accessible&rdquo;:</strong> This is almost always a multi-step process: audit to find issues, prioritise by severity, remediate the code and content, then retest. There is no widget or one-click solution that achieves genuine WCAG conformance.</li>
+        </ul>
+      </div>
+
+    </div><!-- /.gloss-wrap -->
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">DFA</div>
+          Designing for Accessibility
+        </div>
+        <p>Free, practical accessibility guides for designers, developers, and product teams. WCAG, Section 508, VPAT, ARIA, and more.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer"
+            aria-label="BlueSky (opens in new tab)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Topics</h3>
+        <ul>
+          <li><a href="articles/accessibility-guidelines.html">Accessibility 101</a></li>
+          <li><a href="articles/legal-landscape.html">Legal Landscape</a></li>
+          <li><a href="articles/testing-evaluation.html">Testing &amp; Evaluation</a></li>
+          <li><a href="articles/design-visual.html">Design &amp; Visual</a></li>
+          <li><a href="articles/screen-readers-aria.html">Screen Readers &amp; ARIA</a></li>
+          <li><a href="articles/vpat-acr-documentation.html">VPAT &amp; ACR</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="index.html#vpat-tool">VPAT Lookup Tool</a></li>
+          <li><a href="glossary.html" aria-current="page">Accessibility Glossary</a></li>
+          <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+          <li><a href="contact.html">Work With Me</a></li>
+          <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 DesigningForAccessibility.com &middot; All rights reserved</div>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="accessibility-statement.html">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/search.js"></script>
+<script>
+(function () {
+  const input = document.getElementById('gloss-search');
+  const countEl = document.getElementById('gloss-count');
+  const cards = Array.from(document.querySelectorAll('.gloss-card'));
+  const groups = Array.from(document.querySelectorAll('.gloss-letter-group'));
+  const total = cards.length;
+
+  input.addEventListener('input', function () {
+    const q = this.value.toLowerCase().trim();
+    let visible = 0;
+
+    cards.forEach(function (card) {
+      const match = !q || card.textContent.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+
+    groups.forEach(function (group) {
+      const hasVisible = group.querySelectorAll('.gloss-card:not([style*="display: none"])').length > 0
+        || Array.from(group.querySelectorAll('.gloss-card')).some(c => c.style.display !== 'none');
+      group.style.display = hasVisible ? '' : 'none';
+    });
+
+    if (q) {
+      countEl.textContent = visible + ' term' + (visible !== 1 ? 's' : '') + ' matching “' + this.value.trim() + '”';
+    } else {
+      countEl.textContent = '';
+    }
+  });
+}());
+</script>
+
+</body>
+</html>
