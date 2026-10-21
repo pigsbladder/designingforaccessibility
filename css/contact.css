@@ -1,0 +1,53 @@
+/* ── Contact / Work with me ── */
+.contact-page {
+  --gutter: max(var(--pad-x), calc(50% - 640px + var(--pad-x)));
+  border-top: 1px solid var(--border);
+  padding: 64px var(--gutter) 112px;
+  display: flex; flex-direction: column; gap: 72px;
+}
+.contact-intro { max-width: 700px; }
+.contact-intro p { font: 400 21px/1.65 var(--font-display); color: var(--text-body); text-wrap: pretty; }
+
+.services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.service-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-card); padding: 28px 28px 32px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.service-card h2 { font: 400 30px/1.15 var(--font-display); letter-spacing: -.01em; }
+.service-card > p { font: 400 16px/1.55 var(--font-ui); color: var(--text-muted); }
+.service-includes { font: 500 13px/1.4 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); padding-top: 8px; }
+.service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.service-list li {
+  position: relative; padding-left: 24px;
+  font: 400 15px/1.5 var(--font-ui); color: var(--text-body);
+}
+.service-list li::before { content: "\00B7"; position: absolute; left: 6px; color: var(--accent); font-weight: 600; }
+
+.contact-reach {
+  display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 64px;
+  padding-top: 72px; border-top: 1px solid var(--border);
+}
+.contact-reach h2 { font: 400 44px/1.05 var(--font-display); letter-spacing: -.02em; }
+.contact-reach-body { display: flex; flex-direction: column; gap: 28px; max-width: 700px; align-items: flex-start; }
+.contact-reach-body p { font: 400 21px/1.65 var(--font-display); color: var(--text-body); text-wrap: pretty; }
+.contact-reach-body .btn-slant { margin-left: 8px; }
+.contact-channels { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact-support-note { font: 400 15px/1.55 var(--font-ui); color: var(--text-subtle); max-width: 60ch; }
+.contact-support-note a { color: var(--text); text-decoration-color: var(--accent); }
+
+@media (max-width: 1023px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .contact-reach { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+.contact-reach-body .btn { max-width: 100%; }
+.contact-reach-body .btn > span { overflow-wrap: anywhere; }
+.contact-reach-body .btn-ghost { white-space: normal; }
+@media (max-width: 639px) {
+  .contact-page { padding-top: 40px; padding-bottom: 72px; gap: 56px; }
+  .contact-intro p, .contact-reach-body p { font-size: 19px; }
+  .contact-reach { padding-top: 56px; }
+  .contact-reach h2 { font-size: 36px; }
+  .service-card { padding: 22px 22px 26px; }
+  .service-card h2 { font-size: 26px; }
+}
