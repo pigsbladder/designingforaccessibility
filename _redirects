@@ -1,0 +1,27 @@
+# Cloudflare Pages redirects (https://developers.cloudflare.com/pages/configuration/redirects/)
+# Replaces the redirects in .htaccess, which Cloudflare Pages ignores.
+
+/accessibility-guidelines.html             /articles/accessibility-guidelines.html  301
+/accessibility-quick-wins.html             /articles/accessibility-quick-wins.html  301
+/conflict-in-ux.html                       /articles/conflict-in-ux.html  301
+/design-visual.html                        /articles/design-visual.html  301
+/legal-landscape.html                      /articles/legal-landscape.html  301
+/reassuring-ux-teams-about-ai.html         /articles/reassuring-ux-teams-about-ai.html  301
+/screen-readers-aria.html                  /articles/screen-readers-aria.html  301
+/testing-evaluation.html                   /articles/testing-evaluation.html  301
+/the-hill-worth-dying-on.html              /articles/the-hill-worth-dying-on.html  301
+/ux-accessibility-fails-design-stage.html  /articles/ux-accessibility-fails-design-stage.html  301
+/ux-government-saas-sales.html             /articles/ux-government-saas-sales.html  301
+/ux-perspectives.html                      /articles/ux-perspectives.html  301
+/ux-screen-readers-sighted-ux.html         /articles/ux-screen-readers-sighted-ux.html  301
+/vpat-acr-documentation.html               /articles/vpat-acr-documentation.html  301
+/criteria-lookup.html                      /index.html#lookup  301
+/ux-perspective.html                       /articles/ux-perspectives.html  301
+/accessibility-testing-tools.html          /articles/testing-evaluation.html  301
+/accessibility101.html                     /articles/accessibility-guidelines.html  301
+/classification.html                       /articles/design-visual.html  301
+/color-contrast.html                       /articles/design-visual.html  301
+/color-independence.html                   /articles/design-visual.html  301
+/pre-built-components.html                 /articles/accessibility-guidelines.html  301
+/signifiers.html                           /articles/design-visual.html  301
+/vpat.html                                 /articles/vpat-acr-documentation.html  301
