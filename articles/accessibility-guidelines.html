@@ -148,47 +148,14 @@
   </nav>
 
 <!-- ARTICLE HEADER -->
-<header class="article-header" role="banner">
-  <div class="container">
-    <nav class="article-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
-      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
-      <a href="../index.html#topics">Accessibility 101</a>
-      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
-      <span aria-current="page">Accessibility Guidelines</span>
-    </nav>
-    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Accessibility 101</div>
-    <h1>Accessibility Guidelines:<br>WCAG & Section 508 Explained</h1>
-    <p class="article-header-sub">
-      A plain-English breakdown of the two standards that govern digital accessibility
-      for most products sold to government agencies and enterprise buyers.
-    </p>
-    <div class="article-meta-row">
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-05">Updated March 2026</time></strong></div>
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>8 min read</strong></div>
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <strong>Accessibility 101</strong></div>
-    </div>
-  </div>
-  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
-    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
-    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
-    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
-    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
-    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
-    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
-    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
-    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
-    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
-    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
-    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
-    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
-    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
-    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
-    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
-  </svg>
-</header>
+<div class="path-bar" id="path-bar" hidden></div>
+
+  <header class="article-header">
+    <p class="eyebrow">Accessibility 101</p>
+    <h1>Accessibility Guidelines: WCAG & Section 508 Explained</h1>
+    <p class="dek">A plain-English breakdown of the two standards that govern digital accessibility for most products sold to government agencies and enterprise buyers.</p>
+    <p class="article-meta">Dan &middot; Updated March 2026 &middot; 8 min read</p>
+  </header>
 
 <!-- ARTICLE BODY -->
 <main class="article-body" id="main-content">
@@ -249,7 +216,7 @@
             There are three degrees of compliance a product can aim for. Most legal requirements (including Section 508 and ADA) require <strong>Level AA</strong>.
           </p>
 
-          <table class="levels-table" aria-label="WCAG conformance levels">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="WCAG conformance levels"><table class="levels-table" aria-label="WCAG conformance levels">
             <thead>
               <tr>
                 <th scope="col">Level</th>
@@ -274,7 +241,7 @@
                 <td>Specialized contexts (e.g., government services for people with disabilities)</td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
 
           <h3 id="wcag-applicability">
             Does WCAG Apply to Mobile Apps and Software?
@@ -485,86 +452,47 @@
         </section>
 
         </div>
-      </article>
+      
+          <section class="related" aria-labelledby="related-h">
+            <h2 class="eyebrow" id="related-h">Related guides</h2>
+            <ul>
+            <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR Documentation: The Complete Guide</a></li>
+            <li><a href="legal-landscape.html">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</a></li>
+            <li><a href="testing-evaluation.html">Testing &amp; Evaluation: How to Audit for Accessibility</a></li>
+            <li><a href="screen-readers-aria.html">Screen Readers &amp; ARIA: Beyond the Basics</a></li>
+            </ul>
+          </section>
+</article>
 
       <!-- SIDEBAR -->
-      <aside class="article-sidebar" aria-label="Article navigation and related content">
-
-        <nav class="toc" aria-label="Table of contents">
-          <div class="toc-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
-            <span class="toc-header-text">On This Page</span>
-          </div>
-          <ul class="toc-list" role="list">
+      <aside class="article-sidebar">
+        <nav class="toc" aria-label="On this page">
+          <details class="toc-details" open>
+            <summary class="toc-summary eyebrow">On this page</summary>
+            <ul class="toc-list">
             <li class="toc-item">
-              <a href="#wcag" class="toc-link active" id="toc-wcag">
-                <span class="toc-link-dot"></span>What Is WCAG?
+              <a href="#wcag" class="toc-link active">
+                What Is WCAG?
               </a>
-              <ul class="toc-sub" role="list">
-                <li class="toc-item"><a href="#pour" class="toc-link" id="toc-pour"><span class="toc-link-dot"></span>What Are the POUR Principles?</a></li>
-                <li class="toc-item"><a href="#conformance-levels" class="toc-link" id="toc-levels"><span class="toc-link-dot"></span>WCAG Conformance Levels</a></li>
-                <li class="toc-item"><a href="#wcag-applicability" class="toc-link" id="toc-applicability"><span class="toc-link-dot"></span>Does WCAG Apply to Mobile?</a></li>
+              <ul class="toc-sub">
+                <li class="toc-item"><a href="#pour" class="toc-link">What Are the POUR Principles?</a></li>
+                <li class="toc-item"><a href="#conformance-levels" class="toc-link">WCAG Conformance Levels</a></li>
+                <li class="toc-item"><a href="#wcag-applicability" class="toc-link">Does WCAG Apply to Mobile?</a></li>
               </ul>
             </li>
             <li class="toc-item">
-              <a href="#section-508" class="toc-link" id="toc-508">
-                <span class="toc-link-dot"></span>What Is Section 508?
+              <a href="#section-508" class="toc-link">
+                What Is Section 508?
               </a>
-              <ul class="toc-sub" role="list">
-                <li class="toc-item"><a href="#what-is-508" class="toc-link" id="toc-what508"><span class="toc-link-dot"></span>What is Section 508?</a></li>
-                <li class="toc-item"><a href="#who-needs-508" class="toc-link" id="toc-who508"><span class="toc-link-dot"></span>Who Needs to Comply?</a></li>
-                <li class="toc-item"><a href="#ada" class="toc-link" id="toc-ada"><span class="toc-link-dot"></span>What About the ADA?</a></li>
+              <ul class="toc-sub">
+                <li class="toc-item"><a href="#what-is-508" class="toc-link">What is Section 508?</a></li>
+                <li class="toc-item"><a href="#who-needs-508" class="toc-link">Who Needs to Comply?</a></li>
+                <li class="toc-item"><a href="#ada" class="toc-link">What About the ADA?</a></li>
               </ul>
             </li>
           </ul>
+          </details>
         </nav>
-
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">About This Topic</div>
-          <p>Part of the <strong>Accessibility 101</strong> series for foundational concepts covering designers, developers, and product teams.</p>
-          <div class="sidebar-tag-list">
-            <span class="sidebar-tag">WCAG 2.2</span>
-            <span class="sidebar-tag">Section 508</span>
-            <span class="sidebar-tag">ADA</span>
-            <span class="sidebar-tag">POUR</span>
-            <span class="sidebar-tag">Conformance</span>
-          </div>
-        </div>
-
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">Related Articles</div>
-          <nav class="related-list" aria-label="Related articles">
-            <a href="vpat-acr-documentation.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">VPAT &amp; ACR Documentation: The Complete Guide</div>
-                <div class="related-cat">VPAT / ACR</div>
-              </div>
-            </a>
-            <a href="legal-landscape.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</div>
-                <div class="related-cat">Legal Landscape</div>
-              </div>
-            </a>
-            <a href="testing-evaluation.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">Testing &amp; Evaluation: How to Audit for Accessibility</div>
-                <div class="related-cat">Testing &amp; Evaluation</div>
-              </div>
-            </a>
-            <a href="screen-readers-aria.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">Screen Readers &amp; ARIA: Beyond the Basics</div>
-                <div class="related-cat">Screen Readers &amp; ARIA</div>
-              </div>
-            </a>
-          </nav>
-        </div>
-
       </aside>
     </div>
   </div>
@@ -606,6 +534,7 @@
   </footer>
 
 <script src="../js/nav.js"></script>
-<script src="../js/article.js"></script>
+<script src="../js/guides.js"></script>
+  <script src="../js/article.js"></script>
 </body>
 </html>

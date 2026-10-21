@@ -112,7 +112,7 @@
   }
   </script>
 </head>
-<body style="--page-accent: #34d399; --page-accent-dark: #065f46;">
+<body>
 
 <!-- NAV -->
 <nav class="nav" aria-label="Main navigation">
@@ -129,46 +129,14 @@
   </nav>
 
 <!-- ARTICLE HEADER -->
-<header class="article-header" role="banner">
-  <div class="container">
-    <nav class="article-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
-      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
-      <a href="../index.html#topics">Testing & Evaluation</a>
-      <span class="article-breadcrumb-sep" aria-hidden="true">&#8250;</span>
-      <span aria-current="page">Testing & Evaluation</span>
-    </nav>
-    <div class="article-topic-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg> Testing & Evaluation</div>
-    <h1>Testing & Evaluation:<br>How to Audit for Accessibility</h1>
-    <p class="article-header-sub">
-      A practical guide to finding accessibility issues before your buyers do: automated tools, manual testing, screen readers, and how to build a remediation plan.
-    </p>
-    <div class="article-meta-row">
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> <strong>Dan</strong></div>
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <strong><time datetime="2026-03-09">Updated March 2026</time></strong></div>
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <strong>12 min read</strong></div>
-      <div class="article-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> <strong>Testing & Evaluation</strong></div>
-    </div>
-  </div>
-  <svg class="article-bg-canvas" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-    <line class="acv-grid" x1="0"    y1="75"  x2="1200" y2="75"/>
-    <line class="acv-grid" x1="0"    y1="150" x2="1200" y2="150"/>
-    <line class="acv-grid" x1="0"    y1="225" x2="1200" y2="225"/>
-    <line class="acv-grid" x1="200"  y1="0"   x2="200"  y2="300"/>
-    <line class="acv-grid" x1="400"  y1="0"   x2="400"  y2="300"/>
-    <line class="acv-grid" x1="600"  y1="0"   x2="600"  y2="300"/>
-    <line class="acv-grid" x1="800"  y1="0"   x2="800"  y2="300"/>
-    <line class="acv-grid" x1="1000" y1="0"   x2="1000" y2="300"/>
-    <circle class="acv-ring acv-ring-1" cx="860" cy="130" r="50"/>
-    <circle class="acv-ring acv-ring-2" cx="860" cy="130" r="76"/>
-    <circle class="acv-dot acv-dot-1"  cx="120"  cy="55"  r="4"/>
-    <circle class="acv-dot acv-dot-2"  cx="980"  cy="40"  r="3"/>
-    <circle class="acv-dot acv-dot-3"  cx="1100" cy="200" r="5"/>
-    <circle class="acv-dot acv-dot-4"  cx="50"   cy="230" r="3"/>
-    <circle class="acv-dot-amber"      cx="750"  cy="265" r="4"/>
-    <path class="acv-path" d="M 100 260 Q 200 230 300 260 Q 400 290 500 260 Q 600 230 700 260"/>
-  </svg>
-</header>
+<div class="path-bar" id="path-bar" hidden></div>
+
+  <header class="article-header">
+    <p class="eyebrow">Testing &amp; Evaluation</p>
+    <h1>Testing & Evaluation: How to Audit for Accessibility</h1>
+    <p class="dek">A practical guide to finding accessibility issues before your buyers do: automated tools, manual testing, screen readers, and how to build a remediation plan.</p>
+    <p class="article-meta">Dan &middot; Updated March 2026 &middot; 12 min read</p>
+  </header>
 
 <!-- ARTICLE BODY -->
 <main class="article-body" id="main-content">
@@ -493,103 +461,62 @@
           </p>
 
         </div>
-      </article>
+      
+          <section class="related" aria-labelledby="related-h">
+            <h2 class="eyebrow" id="related-h">Related guides</h2>
+            <ul>
+            <li><a href="accessibility-guidelines.html">Accessibility Guidelines: WCAG &amp; Section 508</a></li>
+            <li><a href="legal-landscape.html">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</a></li>
+            <li><a href="design-visual.html">Design &amp; Visual Elements</a></li>
+            <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR Documentation</a></li>
+            </ul>
+          </section>
+</article>
 
       <!-- SIDEBAR -->
-      <aside class="article-sidebar" aria-label="Article navigation and related content">
-
-        <nav class="toc" aria-label="Table of contents">
-          <div class="toc-header">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
-            <span class="toc-header-text">On This Page</span>
-          </div>
-          <ul class="toc-list" role="list">
+      <aside class="article-sidebar">
+        <nav class="toc" aria-label="On this page">
+          <details class="toc-details" open>
+            <summary class="toc-summary eyebrow">On this page</summary>
+            <ul class="toc-list">
             <li class="toc-item">
-              <a href="#testing-approach" class="toc-link active" id="toc-approach">
-                <span class="toc-link-dot"></span>Start With a Strategy
+              <a href="#testing-approach" class="toc-link active">
+                Start With a Strategy
               </a>
             </li>
             <li class="toc-item">
-              <a href="#automated-tools" class="toc-link" id="toc-automated">
-                <span class="toc-link-dot"></span>Automated Testing Tools
+              <a href="#automated-tools" class="toc-link">
+                Automated Testing Tools
               </a>
             </li>
             <li class="toc-item">
-              <a href="#manual-testing" class="toc-link" id="toc-manual">
-                <span class="toc-link-dot"></span>Manual Testing Techniques
+              <a href="#manual-testing" class="toc-link">
+                Manual Testing Techniques
               </a>
             </li>
             <li class="toc-item">
-              <a href="#grayscale-testing" class="toc-link" id="toc-grayscale">
-                <span class="toc-link-dot"></span>Grayscale Testing
+              <a href="#grayscale-testing" class="toc-link">
+                Grayscale Testing
               </a>
             </li>
             <li class="toc-item">
-              <a href="#screen-reader-testing" class="toc-link" id="toc-screenreader">
-                <span class="toc-link-dot"></span>Screen Reader Testing
+              <a href="#screen-reader-testing" class="toc-link">
+                Screen Reader Testing
               </a>
             </li>
             <li class="toc-item">
-              <a href="#quick-wins" class="toc-link" id="toc-quickwins">
-                <span class="toc-link-dot"></span>Quick Wins Under an Hour
+              <a href="#quick-wins" class="toc-link">
+                Quick Wins Under an Hour
               </a>
             </li>
             <li class="toc-item">
-              <a href="#mitigation-plan" class="toc-link" id="toc-mitigation">
-                <span class="toc-link-dot"></span>Building a Mitigation Plan
+              <a href="#mitigation-plan" class="toc-link">
+                Building a Mitigation Plan
               </a>
             </li>
           </ul>
+          </details>
         </nav>
-
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">About This Topic</div>
-          <p>Part of the <strong>Testing & Evaluation</strong> series: practical tools and techniques for finding and fixing accessibility issues.</p>
-          <div class="sidebar-tag-list">
-            <span class="sidebar-tag">WAVE</span>
-            <span class="sidebar-tag">axe</span>
-            <span class="sidebar-tag">NVDA</span>
-            <span class="sidebar-tag">VoiceOver</span>
-            <span class="sidebar-tag">Manual Testing</span>
-            <span class="sidebar-tag">Keyboard</span>
-            <span class="sidebar-tag">WCAG AA</span>
-          </div>
-        </div>
-
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">Related Articles</div>
-          <nav class="related-list" aria-label="Related articles">
-            <a href="accessibility-guidelines.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">Accessibility Guidelines: WCAG & Section 508</div>
-                <div class="related-cat">Accessibility 101</div>
-              </div>
-            </a>
-            <a href="legal-landscape.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">Legal Landscape: ADA, Section 508 & Accessibility Law</div>
-                <div class="related-cat">Legal Landscape</div>
-              </div>
-            </a>
-            <a href="design-visual.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">Design & Visual Elements</div>
-                <div class="related-cat">Design & Visual</div>
-              </div>
-            </a>
-            <a href="vpat-acr-documentation.html" class="related-item">
-              <span class="related-dot" aria-hidden="true"></span>
-              <div>
-                <div class="related-title">VPAT & ACR Documentation</div>
-                <div class="related-cat">VPAT / ACR</div>
-              </div>
-            </a>
-          </nav>
-        </div>
-
       </aside>
     </div>
   </div>
@@ -631,6 +558,7 @@
   </footer>
 
 <script src="../js/nav.js"></script>
-<script src="../js/article.js"></script>
+<script src="../js/guides.js"></script>
+  <script src="../js/article.js"></script>
 </body>
 </html>
