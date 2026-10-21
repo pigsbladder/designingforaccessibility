@@ -61,10 +61,16 @@
   color: var(--text-body);
 }
 .prose h2 {
-  margin-top: 24px; scroll-margin-top: 24px;
+  margin-top: 40px; scroll-margin-top: 24px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border-strong);
   font: 400 34px/1.15 var(--font-display); letter-spacing: -.015em;
 }
-.prose h3 { font: 400 27px/1.25 var(--font-display); letter-spacing: -.01em; scroll-margin-top: 24px; margin-top: 8px; }
+.prose > h2:first-child { margin-top: 0; }
+.prose h3 { font: 400 27px/1.25 var(--font-display); letter-spacing: -.01em; scroll-margin-top: 24px; margin-top: 24px; }
+.prose h3::before {
+  content: ""; display: block; width: 32px; height: 2px;
+  background: var(--accent); margin-bottom: 14px;
+}
 .prose h4 { font: 500 14px/1.4 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-top: 8px; }
 .prose strong { font-weight: 500; color: var(--text); }
 .prose a {
