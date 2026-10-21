@@ -90,3 +90,22 @@ img { max-width: 100%; display: block; }
 .btn-slant > span { display: block; transform: skewX(18deg); }
 .btn-ghost  { background: transparent; color: var(--text-pill); border-color: var(--border-strong); }
 .btn-ghost:hover { border-color: var(--text-muted); color: var(--text); }
+
+/* ── Back to top (added by nav.js on long pages) ── */
+.back-to-top {
+  position: fixed; z-index: 50;
+  right: max(var(--pad-x), calc(50% - 640px + var(--pad-x)));
+  bottom: calc(24px + var(--btt-lift, 0px));
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-radius: var(--radius-pill);
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border-strong);
+  font: 500 14px/1.2 var(--font-ui); cursor: pointer;
+}
+.back-to-top[hidden] { display: none; }
+.back-to-top:hover { border-color: var(--text-muted); }
+.back-to-top span { color: var(--accent); font-size: 16px; line-height: 1; }
+@media (max-width: 639px) {
+  .back-to-top { padding: 9px 14px; bottom: calc(16px + var(--btt-lift, 0px)); }
+}
+
