@@ -1,0 +1,38 @@
+/* ── About ── */
+.about-page {
+  --gutter: max(var(--pad-x), calc(50% - 640px + var(--pad-x)));
+}
+.about, .support {
+  display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 64px;
+  padding: 64px var(--gutter);
+  border-top: 1px solid var(--border);
+}
+.about { padding-bottom: 96px; }
+.support { padding-top: 80px; padding-bottom: 112px; }
+
+.about-avatar img {
+  width: 100%; max-width: 280px; height: auto; aspect-ratio: 1; object-fit: cover;
+  border-radius: var(--radius-card); border: 1px solid var(--border);
+}
+
+.about-text { display: flex; flex-direction: column; gap: 24px; max-width: 700px; }
+.about-text p { font: 400 21px/1.65 var(--font-display); color: var(--text-body); text-wrap: pretty; }
+.about-links { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 8px; }
+
+.support-intro { display: flex; flex-direction: column; gap: 12px; }
+.support h2 { font: 400 44px/1.05 var(--font-display); letter-spacing: -.02em; }
+.support-body { display: flex; flex-direction: column; gap: 28px; max-width: 700px; align-items: flex-start; }
+.support-body p { font: 400 21px/1.65 var(--font-display); color: var(--text-body); text-wrap: pretty; }
+.support-body .note { font: 400 14px/1.5 var(--font-ui); color: var(--text-faint); }
+.support-body .btn-slant { margin-left: 8px; }
+
+@media (max-width: 1023px) {
+  .about, .support { grid-template-columns: 1fr; gap: 32px; }
+  .about-avatar img { max-width: 200px; }
+}
+@media (max-width: 639px) {
+  .about { padding-top: 40px; padding-bottom: 64px; }
+  .support { padding-top: 56px; padding-bottom: 72px; }
+  .about-text p, .support-body p { font-size: 19px; }
+  .support h2 { font-size: 36px; }
+}

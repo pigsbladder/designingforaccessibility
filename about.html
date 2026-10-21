@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Designing for Accessibility</title>
+  <meta name="description"
+    content="Hi, I'm Dan. A UX and accessibility advocate writing free, practical accessibility guides for the people who actually have to implement them." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://www.designingforaccessibility.com/about.html" />
+  <meta property="og:title" content="About | Designing for Accessibility" />
+  <meta property="og:description"
+    content="A UX and accessibility advocate writing free, practical accessibility guides." />
+  <meta property="og:url" content="https://www.designingforaccessibility.com/about.html" />
+  <meta property="og:type" content="profile" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/article.css" />
+  <link rel="stylesheet" href="css/about.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Dan",
+      "url": "https://www.designingforaccessibility.com/about.html",
+      "image": "https://www.designingforaccessibility.com/images/dan-avatar.jpg",
+      "jobTitle": "Accessibility Designer & UX Specialist",
+      "sameAs": [
+        "https://www.linkedin.com/in/danpeacock/",
+        "https://bsky.app/profile/dfaccessibility.bsky.social"
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Designing for Accessibility</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#paths">Paths</a></li>
+        <li><a href="index.html#lookup">Lookup</a></li>
+        <li><a href="articles/index.html">Articles</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="article-header">
+    <p class="eyebrow">About</p>
+    <h1>Hi, I&rsquo;m Dan.</h1>
+  </header>
+
+  <main class="about-page" id="main-content">
+
+    <section class="about" aria-label="About Dan">
+      <div class="about-avatar">
+        <img src="images/dan-avatar.jpg" width="300" height="323"
+          alt="Dan, accessibility designer and UX specialist" />
+      </div>
+      <div class="about-text">
+        <p>I&rsquo;m a UX and accessibility advocate. With years of experience working directly with product and
+          engineering teams, I specialize in simplifying complex workflows, improving usability in enterprise
+          environments, and ensuring accessibility standards aren&rsquo;t just met, but understood and maintained.</p>
+        <p>Everything here is free. No paywalls, no upsells. Just practical guidance written for the people who
+          actually have to implement it.</p>
+        <div class="about-links">
+          <a href="contact.html" class="btn btn-ghost">Work with me</a>
+          <a href="articles/index.html" class="btn btn-ghost">Browse all articles</a>
+          <a href="https://www.linkedin.com/in/danpeacock/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-ghost">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+          <a href="https://bsky.app/profile/dfaccessibility.bsky.social" target="_blank" rel="noopener noreferrer"
+            class="btn btn-ghost">Bluesky<span class="sr-only"> (opens in new tab)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="support" aria-labelledby="support-h">
+      <div class="support-intro">
+        <p class="eyebrow">Support the site</p>
+        <h2 id="support-h">Find this useful?</h2>
+      </div>
+      <div class="support-body">
+        <p>Everything on this site is free and always will be. If these guides have saved you time or helped your team
+          ship more accessible products, a coffee goes a long way toward keeping it going.</p>
+        <a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer"
+          class="btn btn-accent btn-slant"><span>Buy me a coffee on Ko-fi<span class="sr-only"> (opens in new tab)</span></span></a>
+        <p class="note">No account needed. One-time or recurring, your choice.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>Free, practical accessibility guides by Dan. No paywall.</p>
+      <ul class="footer-links">
+        <li><a href="articles/ux-perspectives.html">UX Perspectives</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="contact.html">Work with me</a></li>
+        <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Ko-fi<span class="sr-only"> (opens in new tab)</span></a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="accessibility-statement.html">Accessibility statement</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+
+</html>
