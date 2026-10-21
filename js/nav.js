@@ -1,20 +1,23 @@
 /* nav.js — shared mobile menu behaviour */
 (function () {
-  var hamburger = document.getElementById("nav-hamburger");
-  var mobileMenu = document.getElementById("mobile-menu");
-  if (!hamburger || !mobileMenu) return;
+  var toggle = document.getElementById("nav-toggle");
+  var links = document.getElementById("nav-links");
+  if (!toggle || !links) return;
 
-  hamburger.addEventListener("click", function () {
-    var isOpen = mobileMenu.classList.toggle("open");
-    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    hamburger.innerHTML = isOpen ? "&#10005;" : "&#9776;";
+  function setOpen(open) {
+    links.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.textContent = open ? "Close" : "Menu";
+  }
+
+  toggle.addEventListener("click", function () {
+    setOpen(!links.classList.contains("open"));
   });
 
-  mobileMenu.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      mobileMenu.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-      hamburger.innerHTML = "&#9776;";
-    });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && links.classList.contains("open")) {
+      setOpen(false);
+      toggle.focus();
+    }
   });
 })();

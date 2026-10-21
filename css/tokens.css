@@ -1,3 +1,36 @@
+/* ═══ Redesign tokens (Direction 1b, "Editorial dark") ═══ */
+:root {
+  /* ── Colour ── */
+  --bg:            #121211;
+  --surface:       #1a1a18;
+  --border:        #2c2b28;
+  --border-strong: #3a3935;
+  --text:          #ecebe6;
+  --text-body:     #d6d4cc;
+  --text-muted:    #b3b1a9;
+  --text-subtle:   #a3a199;
+  --text-faint:    #97958d;
+  --text-pill:     #cfcdc5;
+  --link-underline:#55534d;
+  --accent:        oklch(0.82 0.12 75);   /* amber, approx #e8b04a */
+  --on-accent:     #121211;
+
+  /* ── Typography ── */
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-ui:      "Geist", "Segoe UI", system-ui, sans-serif;
+
+  /* ── Layout ── */
+  --pad-x:   64px;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --focus-ring: 2px solid var(--accent);
+}
+@media (max-width: 1023px) { :root { --pad-x: 32px; } }
+@media (max-width: 639px)  { :root { --pad-x: 20px; } }
+
+/* ═══ LEGACY tokens ═══
+   Pre-redesign values, kept only so pages that haven't been migrated yet
+   still resolve their variables. Delete as each page moves to the tokens above. */
 :root {
   /* ── Green palette ── */
   --green-950: #052e16;
@@ -43,7 +76,7 @@
   --ui-arrow:            #767676;   /*  4.5:1 on #ffffff  */
 
   /* ── Typography ── */
-  --font-sans:  "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-sans:  var(--font-ui);
   --font-serif: "Georgia", "Times New Roman", serif;
 
   /* ── Spacing & shape ── */
