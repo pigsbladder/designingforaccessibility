@@ -195,6 +195,21 @@
 .prose h2:hover .section-anchor, .prose h3:hover .section-anchor,
 .section-anchor:focus-visible { opacity: 1; }
 
+/* ── Document pages (Privacy, Accessibility statement): heading column + reading column ── */
+.article-content.doc-article { max-width: none; }
+.doc-section {
+  display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 64px;
+  padding: 48px 0; border-top: 1px solid var(--border);
+}
+.doc-section:first-child { border-top: 0; padding-top: 0; }
+.doc-section > h2 {
+  font: 400 30px/1.15 var(--font-display); letter-spacing: -.015em;
+  scroll-margin-top: 24px;
+}
+.doc-intro .doc-body { grid-column: 2; }
+.doc-body { max-width: 760px; }
+.doc-body > :first-child { margin-top: 0; }
+
 /* ── Related guides ── */
 .related { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--border); }
 .related ul { list-style: none; margin-top: 16px; }
@@ -236,6 +251,8 @@
 
 /* ── Responsive ── */
 @media (max-width: 1023px) {
+  .doc-section { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 36px 0; }
+  .doc-intro .doc-body { grid-column: 1; }
   .article-header { padding-top: 64px; }
   .article-header h1 { font-size: 56px; }
   .article-layout { grid-template-columns: 1fr; gap: 32px; }
