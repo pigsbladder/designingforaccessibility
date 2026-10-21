@@ -32,8 +32,16 @@ a.gloss-az-link:hover { border-color: var(--text-muted); color: var(--text); tex
   scroll-margin-top: 24px;
 }
 .gloss-letter-heading { font: 400 64px/1 var(--font-display); color: var(--accent); letter-spacing: -.02em; }
-.gloss-letter-group dl { display: flex; flex-direction: column; max-width: 760px; }
-.gloss-card { padding: 28px 0; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; }
+.gloss-letter-group dl { display: flex; flex-direction: column; }
+/* Each entry: term on the left, definition and tags in a readable column on the right */
+.gloss-card {
+  padding: 28px 0; border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: 260px minmax(0, 1fr); column-gap: 32px; row-gap: 10px;
+  align-items: start;
+}
+.gloss-card > .gloss-term { grid-column: 1; grid-row: 1 / span 2; }
+.gloss-card > .gloss-def { grid-column: 2; grid-row: 1; }
+.gloss-card > dd:last-child { grid-column: 2; grid-row: 2; }
 .gloss-card:first-child { border-top: 0; padding-top: 0; }
 .gloss-term { font: 400 26px/1.2 var(--font-display); }
 .gloss-def { font: 400 16px/1.6 var(--font-ui); color: var(--text-muted); }
@@ -52,6 +60,10 @@ a.gloss-az-link:hover { border-color: var(--text-muted); color: var(--text); tex
 @media (max-width: 1023px) {
   .gloss-letter-group { grid-template-columns: 1fr; gap: 16px; }
   .gloss-letter-heading { font-size: 48px; }
+}
+@media (max-width: 767px) {
+  .gloss-card { grid-template-columns: minmax(0, 1fr); }
+  .gloss-card > .gloss-term, .gloss-card > .gloss-def, .gloss-card > dd:last-child { grid-column: 1; grid-row: auto; }
 }
 @media (max-width: 639px) {
   .gloss-az-link { width: 36px; height: 36px; }
