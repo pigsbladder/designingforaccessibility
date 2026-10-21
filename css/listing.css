@@ -42,6 +42,10 @@
 .listing-desc { font: 400 15px/1.5 var(--font-ui); color: var(--text-subtle); max-width: 60ch; }
 .listing-meta { font: 400 14px/1.4 var(--font-ui); color: var(--text-faint); text-align: right; white-space: nowrap; }
 
+/* Row of actions in a page header (404) */
+.error-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 4px; max-width: none; }
+.error-actions .btn-slant { margin-right: 14px; }
+
 @media (max-width: 1023px) {
   .listing-section { grid-template-columns: 1fr; gap: 24px; }
   .listing-page { gap: 56px; }
