@@ -274,3 +274,38 @@
 
   renderLookup();
 })();
+
+/* ── Hero parallax: the background image scrolls more slowly than the page ── */
+(function () {
+  var hero = document.querySelector(".hero");
+  var img = hero && hero.querySelector(".hero-img");
+  if (!img) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduce.matches) return; /* no motion for people who ask for none */
+
+  var RATE = 0.25; /* must match the 25% overhang in .hero-parallax */
+  var ticking = false;
+  hero.classList.add("hero-parallax");
+
+  function update() {
+    ticking = false;
+    var r = hero.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    img.style.transform = "translate3d(0," + (Math.max(0, -r.top) * RATE).toFixed(1) + "px,0)";
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  reduce.addEventListener && reduce.addEventListener("change", function () {
+    if (reduce.matches) {
+      hero.classList.remove("hero-parallax");
+      img.style.transform = "";
+    } else {
+      hero.classList.add("hero-parallax");
+      update();
+    }
+  });
+  update();
+})();
