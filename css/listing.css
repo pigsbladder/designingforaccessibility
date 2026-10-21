@@ -1,0 +1,55 @@
+/* ── Listing pages (Articles, UX Perspectives): rows grouped under topic headings ── */
+.listing-page {
+  --gutter: max(var(--pad-x), calc(50% - 640px + var(--pad-x)));
+  border-top: 1px solid var(--border);
+  padding: 64px var(--gutter) 112px;
+  display: flex; flex-direction: column; gap: 72px;
+}
+.listing-intro { max-width: 700px; display: flex; flex-direction: column; gap: 20px; }
+.listing-intro p { font: 400 21px/1.65 var(--font-display); color: var(--text-body); text-wrap: pretty; }
+
+.topic-jump { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; max-width: 960px; }
+.topic-jump a {
+  display: inline-block; padding: 8px 16px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong); text-decoration: none;
+  font: 500 14px/1.2 var(--font-ui); color: var(--text-pill);
+}
+.topic-jump a:hover { border-color: var(--text-muted); color: var(--text); }
+
+.listing-section {
+  display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 64px;
+  scroll-margin-top: 24px;
+}
+.listing-section > h2 {
+  font: 400 34px/1.1 var(--font-display); letter-spacing: -.02em;
+}
+.listing-section > h2 .count {
+  display: block; margin-top: 10px;
+  font: 400 14px/1.4 var(--font-ui); letter-spacing: 0; color: var(--text-faint);
+}
+
+.listing { list-style: none; }
+.listing li { border-top: 1px solid var(--border); }
+.listing li:last-child { border-bottom: 1px solid var(--border); }
+.listing-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; align-items: baseline;
+  padding: 24px 0; text-decoration: none;
+}
+.listing-row:hover, .listing-row:focus-visible { background: var(--surface); text-decoration: none; }
+.listing-row:hover .listing-title { text-decoration: underline; text-underline-offset: 4px; }
+.listing-main { display: flex; flex-direction: column; gap: 8px; }
+.listing-title { font: 400 26px/1.2 var(--font-display); }
+.listing-desc { font: 400 15px/1.5 var(--font-ui); color: var(--text-subtle); max-width: 60ch; }
+.listing-meta { font: 400 14px/1.4 var(--font-ui); color: var(--text-faint); text-align: right; white-space: nowrap; }
+
+@media (max-width: 1023px) {
+  .listing-section { grid-template-columns: 1fr; gap: 24px; }
+  .listing-page { gap: 56px; }
+}
+@media (max-width: 639px) {
+  .listing-page { padding-top: 40px; padding-bottom: 72px; }
+  .listing-row { grid-template-columns: 1fr; }
+  .listing-meta { text-align: left; }
+  .listing-title { font-size: 23px; }
+  .listing-intro p { font-size: 19px; }
+}
