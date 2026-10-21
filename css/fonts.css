@@ -1,0 +1,26 @@
+/* Self-hosted fonts (no requests to Google). Both families are licensed under the SIL Open Font License 1.1.
+   Latin subset only, which covers English text. Files are variable fonts, so one file serves every weight. */
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("../fonts/newsreader-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/newsreader-italic-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/geist-latin.woff2") format("woff2");
+}
