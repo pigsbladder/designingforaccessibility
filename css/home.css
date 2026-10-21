@@ -32,7 +32,7 @@
 }
 .hero h1 em { color: var(--accent); }
 
-.search { max-width: 880px; display: flex; flex-direction: column; }
+.search { display: flex; flex-direction: column; }
 .search-row {
   display: flex; align-items: center; gap: 20px;
   border-bottom: 1.5px solid var(--text);
@@ -44,6 +44,8 @@
   font: 400 30px/1.2 var(--font-display);
   -webkit-appearance: none; appearance: none;
 }
+/* The slanted button's top-right corner overhangs by ~7px; pull it in so the corner lines up with the underline's end */
+.search-row .btn-slant { margin-right: 7px; }
 .search-input::placeholder { color: var(--text-faint); opacity: 1; }
 .search-input::-webkit-search-cancel-button { display: none; }
 /* The input has no border of its own, so the focus ring wraps the whole row */
