@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accessibility Guidelines: WCAG & Section 508 Explained | Designing for Accessibility</title>
-  <meta name="description" content="A plain-English guide to WCAG and Section 508: what they are, how they differ, and what they mean for your digital products. Includes POUR principles, conformance levels, and ADA context." />
+  <title>Accessibility Guidelines: WCAG & Section 508 Explained</title>
+  <meta name="description" content="A plain-English guide to WCAG and Section 508: what they are, how they differ, and what they mean for your digital products." />
   <link rel="icon" type="image/svg+xml" sizes="any" href="../favicon.svg" />
   <link rel="icon" href="../favicon.ico" sizes="32x32" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <link rel="canonical" href="https://designingforaccessibility.com/articles/accessibility-guidelines.html" />
+  <link rel="canonical" href="https://designingforaccessibility.com/articles/accessibility-guidelines" />
   <meta property="og:title" content="Accessibility Guidelines: WCAG & Section 508 Explained" />
   <meta property="og:image" content="https://designingforaccessibility.com/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://designingforaccessibility.com/images/og-image.jpg" />
   <meta property="og:description" content="Plain-English guide to WCAG and Section 508 for designers, developers, and product teams." />
-  <meta property="og:url" content="https://designingforaccessibility.com/articles/accessibility-guidelines.html" />
+  <meta property="og:url" content="https://designingforaccessibility.com/articles/accessibility-guidelines" />
   <meta property="og:type" content="article" />
 
   <link rel="preload" href="../fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -34,7 +34,11 @@
     "@type": "Article",
     "headline": "Accessibility Guidelines: WCAG & Section 508 Explained",
     "description": "A plain-English guide to WCAG and Section 508: what they are, how they differ, and what they mean for your digital products.",
-    "author": { "@type": "Person", "name": "Dan" },
+    "author": {
+      "@type": "Person",
+      "name": "Dan",
+      "url": "https://designingforaccessibility.com/about"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Designing for Accessibility",
@@ -42,7 +46,8 @@
     },
     "datePublished": "2026-01-10",
     "dateModified": "2026-03-05",
-    "mainEntityOfPage": "https://designingforaccessibility.com/articles/accessibility-guidelines.html"
+    "mainEntityOfPage": "https://designingforaccessibility.com/articles/accessibility-guidelines",
+    "image": "https://designingforaccessibility.com/images/og-image.jpg"
   }
   </script>
 
@@ -126,13 +131,13 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Accessibility 101",
-        "item": "https://designingforaccessibility.com/articles/index.html"
+        "item": "https://designingforaccessibility.com/articles/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Accessibility Guidelines: WCAG & Section 508 Explained",
-        "item": "https://designingforaccessibility.com/articles/accessibility-guidelines.html"
+        "item": "https://designingforaccessibility.com/articles/accessibility-guidelines"
       }
     ]
   }
@@ -145,13 +150,13 @@
 <!-- NAV -->
 <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">Designing for Accessibility</a>
+      <a href="../" class="nav-logo">Designing for Accessibility</a>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="../index.html#paths">Paths</a></li>
-        <li><a href="../index.html#lookup">Lookup</a></li>
-        <li><a href="../articles/index.html" aria-current="page">Articles</a></li>
-        <li><a href="../about.html">About</a></li>
+        <li><a href="../#paths">Paths</a></li>
+        <li><a href="../#lookup">Lookup</a></li>
+        <li><a href="../articles/" aria-current="page">Articles</a></li>
+        <li><a href="../about">About</a></li>
       </ul>
     </div>
   </nav>
@@ -400,7 +405,7 @@
             <span class="callout-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg> Related Tool</span>
             <p>
               Need to document your WCAG compliance for a Section 508 procurement? Use the free
-              <a href="../index.html#lookup">VPAT Success Criteria Lookup Tool</a> to look up any
+              <a href="../#lookup">VPAT Success Criteria Lookup Tool</a> to look up any
               WCAG criterion with plain-English explanations and VPAT documentation notes.
             </p>
           </div>
@@ -465,10 +470,10 @@
           <section class="related" aria-labelledby="related-h">
             <h2 class="eyebrow" id="related-h">Related guides</h2>
             <ul>
-            <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR Documentation: The Complete Guide</a></li>
-            <li><a href="legal-landscape.html">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</a></li>
-            <li><a href="testing-evaluation.html">Testing &amp; Evaluation: How to Audit for Accessibility</a></li>
-            <li><a href="screen-readers-aria.html">Screen Readers &amp; ARIA: Beyond the Basics</a></li>
+            <li><a href="vpat-acr-documentation">VPAT &amp; ACR Documentation: The Complete Guide</a></li>
+            <li><a href="legal-landscape">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</a></li>
+            <li><a href="testing-evaluation">Testing &amp; Evaluation: How to Audit for Accessibility</a></li>
+            <li><a href="screen-readers-aria">Screen Readers &amp; ARIA: Beyond the Basics</a></li>
             </ul>
           </section>
 </article>
@@ -510,14 +515,14 @@
 <!-- PREV / NEXT -->
 <nav class="article-footer" aria-label="Article navigation">
   <div class="container article-footer-inner">
-    <a href="index.html" class="article-nav-btn prev">
+    <a href="./" class="article-nav-btn prev">
       <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
       <div>
         <div class="article-nav-label">Back to</div>
         <div class="article-nav-title">All articles</div>
       </div>
     </a>
-    <a href="legal-landscape.html" class="article-nav-btn next">
+    <a href="legal-landscape" class="article-nav-btn next">
       <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
       <div>
         <div class="article-nav-label">Next</div>
@@ -532,12 +537,12 @@
     <div class="footer-inner">
       <p>Free, practical accessibility guides.</p>
       <ul class="footer-links">
-        <li><a href="../articles/ux-perspectives.html">UX Perspectives</a></li>
-        <li><a href="../glossary.html">Glossary</a></li>
-        <li><a href="../contact.html">Work with me</a></li>
+        <li><a href="../articles/ux-perspectives">UX Perspectives</a></li>
+        <li><a href="../glossary">Glossary</a></li>
+        <li><a href="../contact">Work with me</a></li>
         <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Ko-fi<span class="sr-only"> (opens in new tab)</span></a></li>
-        <li><a href="../privacy.html">Privacy</a></li>
-        <li><a href="../accessibility-statement.html">Accessibility statement</a></li>
+        <li><a href="../privacy">Privacy</a></li>
+        <li><a href="../accessibility-statement">Accessibility statement</a></li>
       </ul>
     </div>
   </footer>

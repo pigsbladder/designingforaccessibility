@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing & Evaluation: How to Test for WCAG AA Compliance | Designing for Accessibility</title>
+  <title>Testing & Evaluation: How to Test for WCAG AA Compliance</title>
   <meta name="description" content="A practical guide to finding accessibility issues before your buyers do. Automated tools, manual testing, screen readers, and building a remediation plan." />
   <link rel="icon" type="image/svg+xml" sizes="any" href="../favicon.svg" />
   <link rel="icon" href="../favicon.ico" sizes="32x32" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-  <link rel="canonical" href="https://designingforaccessibility.com/articles/testing-evaluation.html" />
+  <link rel="canonical" href="https://designingforaccessibility.com/articles/testing-evaluation" />
   <meta property="og:title" content="Testing & Evaluation: How to Audit for Accessibility" />
   <meta property="og:image" content="https://designingforaccessibility.com/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://designingforaccessibility.com/images/og-image.jpg" />
   <meta property="og:description" content="Practical guide to finding accessibility issues using automated tools, manual testing, screen readers, and remediation planning." />
-  <meta property="og:url" content="https://designingforaccessibility.com/articles/testing-evaluation.html" />
+  <meta property="og:url" content="https://designingforaccessibility.com/articles/testing-evaluation" />
   <meta property="og:type" content="article" />
 
   <link rel="preload" href="../fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -34,7 +34,11 @@
     "@type": "Article",
     "headline": "Testing & Evaluation: How to Audit for Accessibility",
     "description": "A practical guide to finding accessibility issues before your buyers do using automated tools, manual testing, screen readers, and building remediation plans.",
-    "author": { "@type": "Person", "name": "Dan" },
+    "author": {
+      "@type": "Person",
+      "name": "Dan",
+      "url": "https://designingforaccessibility.com/about"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Designing for Accessibility",
@@ -42,7 +46,8 @@
     },
     "datePublished": "2026-01-22",
     "dateModified": "2026-03-09",
-    "mainEntityOfPage": "https://designingforaccessibility.com/articles/testing-evaluation.html"
+    "mainEntityOfPage": "https://designingforaccessibility.com/articles/testing-evaluation",
+    "image": "https://designingforaccessibility.com/images/og-image.jpg"
   }
   </script>
 
@@ -61,13 +66,13 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Testing & Evaluation",
-        "item": "https://designingforaccessibility.com/articles/index.html"
+        "item": "https://designingforaccessibility.com/articles/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Testing & Evaluation: How to Audit for Accessibility",
-        "item": "https://designingforaccessibility.com/articles/testing-evaluation.html"
+        "item": "https://designingforaccessibility.com/articles/testing-evaluation"
       }
     ]
   }
@@ -85,35 +90,35 @@
         "position": 1,
         "name": "Start With an Accessibility Testing Strategy",
         "text": "Define your scope before testing. Identify the key user journeys, target WCAG conformance level (AA for most organizations), and which assistive technologies you will test with. Automated tools find roughly 30-40% of issues; the rest require manual testing.",
-        "url": "https://designingforaccessibility.com/articles/testing-evaluation.html#strategy"
+        "url": "https://designingforaccessibility.com/articles/testing-evaluation#strategy"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Run Automated Testing Tools",
         "text": "Use automated scanners such as axe DevTools, WAVE, or Lighthouse to establish a baseline of issues. These tools quickly identify missing alt text, insufficient color contrast, missing form labels, and other detectable violations. Integrate them into your CI/CD pipeline for ongoing coverage.",
-        "url": "https://designingforaccessibility.com/articles/testing-evaluation.html#automated-tools"
+        "url": "https://designingforaccessibility.com/articles/testing-evaluation#automated-tools"
       },
       {
         "@type": "HowToStep",
         "position": 3,
         "name": "Perform Manual Testing Techniques",
         "text": "Manually test keyboard navigation by tabbing through every interactive element. Check reading order, focus visibility, and logical heading structure. Test with browser zoom at 200% and 400%. Verify that color is not the only means of conveying information using grayscale mode.",
-        "url": "https://designingforaccessibility.com/articles/testing-evaluation.html#manual-testing"
+        "url": "https://designingforaccessibility.com/articles/testing-evaluation#manual-testing"
       },
       {
         "@type": "HowToStep",
         "position": 4,
         "name": "Test With Screen Readers",
         "text": "Test with at least one screen reader: NVDA with Firefox on Windows, VoiceOver with Safari on Mac and iOS, or TalkBack on Android. Navigate the page by headings, links, and landmarks. Verify that all interactive elements are announced correctly and that dynamic content updates are communicated.",
-        "url": "https://designingforaccessibility.com/articles/testing-evaluation.html#screen-reader-testing"
+        "url": "https://designingforaccessibility.com/articles/testing-evaluation#screen-reader-testing"
       },
       {
         "@type": "HowToStep",
         "position": 5,
         "name": "Build a Mitigation Plan",
         "text": "Document all identified issues with their WCAG success criterion, severity, and affected component. Prioritize by user impact and fix complexity. Assign owners and timelines. Track progress in your existing issue management system and retest after each fix.",
-        "url": "https://designingforaccessibility.com/articles/testing-evaluation.html#mitigation-plan"
+        "url": "https://designingforaccessibility.com/articles/testing-evaluation#mitigation-plan"
       }
     ]
   }
@@ -126,13 +131,13 @@
 <!-- NAV -->
 <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">Designing for Accessibility</a>
+      <a href="../" class="nav-logo">Designing for Accessibility</a>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="../index.html#paths">Paths</a></li>
-        <li><a href="../index.html#lookup">Lookup</a></li>
-        <li><a href="../articles/index.html" aria-current="page">Articles</a></li>
-        <li><a href="../about.html">About</a></li>
+        <li><a href="../#paths">Paths</a></li>
+        <li><a href="../#lookup">Lookup</a></li>
+        <li><a href="../articles/" aria-current="page">Articles</a></li>
+        <li><a href="../about">About</a></li>
       </ul>
     </div>
   </nav>
@@ -474,10 +479,10 @@
           <section class="related" aria-labelledby="related-h">
             <h2 class="eyebrow" id="related-h">Related guides</h2>
             <ul>
-            <li><a href="accessibility-guidelines.html">Accessibility Guidelines: WCAG &amp; Section 508</a></li>
-            <li><a href="legal-landscape.html">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</a></li>
-            <li><a href="design-visual.html">Design &amp; Visual Elements</a></li>
-            <li><a href="vpat-acr-documentation.html">VPAT &amp; ACR Documentation</a></li>
+            <li><a href="accessibility-guidelines">Accessibility Guidelines: WCAG &amp; Section 508</a></li>
+            <li><a href="legal-landscape">Legal Landscape: ADA, Section 508 &amp; Accessibility Law</a></li>
+            <li><a href="design-visual">Design &amp; Visual Elements</a></li>
+            <li><a href="vpat-acr-documentation">VPAT &amp; ACR Documentation</a></li>
             </ul>
           </section>
 </article>
@@ -534,14 +539,14 @@
 <!-- PREV / NEXT -->
 <nav class="article-footer" aria-label="Article navigation">
   <div class="container article-footer-inner">
-    <a href="legal-landscape.html" class="article-nav-btn prev">
+    <a href="legal-landscape" class="article-nav-btn prev">
       <span class="article-nav-icon" aria-hidden="true">&#8592;</span>
       <div>
         <div class="article-nav-label">Previous</div>
         <div class="article-nav-title">Legal Landscape</div>
       </div>
     </a>
-    <a href="design-visual.html" class="article-nav-btn next">
+    <a href="design-visual" class="article-nav-btn next">
       <span class="article-nav-icon" aria-hidden="true">&#8594;</span>
       <div>
         <div class="article-nav-label">Next</div>
@@ -556,12 +561,12 @@
     <div class="footer-inner">
       <p>Free, practical accessibility guides.</p>
       <ul class="footer-links">
-        <li><a href="../articles/ux-perspectives.html">UX Perspectives</a></li>
-        <li><a href="../glossary.html">Glossary</a></li>
-        <li><a href="../contact.html">Work with me</a></li>
+        <li><a href="../articles/ux-perspectives">UX Perspectives</a></li>
+        <li><a href="../glossary">Glossary</a></li>
+        <li><a href="../contact">Work with me</a></li>
         <li><a href="https://ko-fi.com/G2G33PFMJ" target="_blank" rel="noopener noreferrer">Ko-fi<span class="sr-only"> (opens in new tab)</span></a></li>
-        <li><a href="../privacy.html">Privacy</a></li>
-        <li><a href="../accessibility-statement.html">Accessibility statement</a></li>
+        <li><a href="../privacy">Privacy</a></li>
+        <li><a href="../accessibility-statement">Accessibility statement</a></li>
       </ul>
     </div>
   </footer>

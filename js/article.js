@@ -16,7 +16,7 @@
   if (bar) {
     bar.textContent = "";
     var link = document.createElement("a");
-    link.href = "../index.html#paths";
+    link.href = "../#paths";
     link.textContent = path.title;
     var pos = document.createElement("strong");
     pos.textContent = " · " + (index + 1) + " / " + path.guides.length;
@@ -28,14 +28,14 @@
   var nextSlug = path.guides[index + 1];
   if (!nextSlug) return;
   var next = (window.GUIDES || []).filter(function (g) {
-    return g.url === "articles/" + nextSlug + ".html";
+    return g.url === "articles/" + nextSlug;
   })[0];
   var prose = document.querySelector(".article-content");
   if (!next || !prose) return;
 
   var a = document.createElement("a");
   a.className = "path-next";
-  a.href = nextSlug + ".html?path=" + path.slug;
+  a.href = nextSlug + "?path=" + path.slug;
   var label = document.createElement("span");
   label.className = "path-next-label";
   label.textContent = "Next in path →";
@@ -51,7 +51,7 @@
 
   /* Keep the path when moving through the prev/next links at the bottom */
   document.querySelectorAll(".article-nav-btn").forEach(function (l) {
-    if (/\/index\.html$|^\.\.\/index\.html/.test(l.getAttribute("href"))) return;
+    if (/\/$/.test(l.getAttribute("href"))) return; /* skip links to the home and articles index pages */
     l.href = l.getAttribute("href") + "?path=" + path.slug;
   });
 })();

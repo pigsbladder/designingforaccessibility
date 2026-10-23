@@ -28,12 +28,18 @@ To preview locally, run `python -m http.server 8080` in this folder and open htt
 | `js/criteria.js` | WCAG success criteria for the lookup and search |
 | `js/home.js`, `article.js`, `nav.js` | Page behaviour |
 | `_redirects` | Cloudflare Pages redirects for old URLs (`.htaccess` is not used by Cloudflare) |
+| `_headers` | Cache rules: fonts for a year, images for a week |
 
 ## Adding an article
 
 1. Copy an existing file in `articles/` and edit it. The header (topic, title, summary, date and read time) and the "On this page" list are plain HTML.
 2. Add it to `js/guides.js` (`GUIDES`) so it appears in search, and to the right section of `articles/index.html`.
-3. Add it to `sitemap.xml`.
+3. Add it to `sitemap.xml` with the date it was last changed.
+4. Keep the `<title>` to 60 characters or fewer and the meta description to about 155.
+
+## Clean URLs
+
+Cloudflare Pages serves `about.html` at `/about` and redirects the `.html` address there. So every canonical tag, `og:url`, sitemap entry and internal link uses the clean form (`/about`, `/articles/`, `/articles/legal-landscape`), never `.html`. The site's own files are still named `*.html`.
 
 ## Learning paths
 

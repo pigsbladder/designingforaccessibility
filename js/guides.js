@@ -16,7 +16,7 @@ window.GUIDES = [
       "guidelines",
       "compliance"
     ],
-    "url": "articles/accessibility-guidelines.html"
+    "url": "articles/accessibility-guidelines"
   },
   {
     "title": "VPAT & ACR Documentation: The Complete Guide",
@@ -32,7 +32,7 @@ window.GUIDES = [
       "iti",
       "pdf"
     ],
-    "url": "articles/vpat-acr-documentation.html"
+    "url": "articles/vpat-acr-documentation"
   },
   {
     "title": "Legal Landscape: ADA, Section 508 & Accessibility Law",
@@ -48,7 +48,7 @@ window.GUIDES = [
       "compliance",
       "law"
     ],
-    "url": "articles/legal-landscape.html"
+    "url": "articles/legal-landscape"
   },
   {
     "title": "Screen Readers & ARIA: A Practical Guide",
@@ -64,7 +64,7 @@ window.GUIDES = [
       "screen readers",
       "roles"
     ],
-    "url": "articles/screen-readers-aria.html"
+    "url": "articles/screen-readers-aria"
   },
   {
     "title": "Testing & Evaluation: How to Test for WCAG AA Compliance",
@@ -80,7 +80,7 @@ window.GUIDES = [
       "wcag aa",
       "audit"
     ],
-    "url": "articles/testing-evaluation.html"
+    "url": "articles/testing-evaluation"
   },
   {
     "title": "Design & Visual Elements for Accessibility",
@@ -95,7 +95,7 @@ window.GUIDES = [
       "typography",
       "figma"
     ],
-    "url": "articles/design-visual.html"
+    "url": "articles/design-visual"
   },
   {
     "title": "Designing for Screen Readers Without Breaking Sighted UX",
@@ -109,7 +109,7 @@ window.GUIDES = [
       "sighted ux",
       "balance"
     ],
-    "url": "articles/ux-screen-readers-sighted-ux.html"
+    "url": "articles/ux-screen-readers-sighted-ux"
   },
   {
     "title": "Why Accessibility Fails at the Design Stage",
@@ -124,7 +124,7 @@ window.GUIDES = [
       "aria",
       "ux"
     ],
-    "url": "articles/ux-accessibility-fails-design-stage.html"
+    "url": "articles/ux-accessibility-fails-design-stage"
   },
   {
     "title": "Government SaaS: Accessibility as a Sales Requirement",
@@ -138,7 +138,7 @@ window.GUIDES = [
       "section 508",
       "enterprise"
     ],
-    "url": "articles/ux-government-saas-sales.html"
+    "url": "articles/ux-government-saas-sales"
   },
   {
     "title": "Accessibility Quick Wins: Five Improvements in Under an Hour",
@@ -153,7 +153,7 @@ window.GUIDES = [
       "wcag",
       "easy"
     ],
-    "url": "articles/accessibility-quick-wins.html"
+    "url": "articles/accessibility-quick-wins"
   },
   {
     "title": "Handling Conflict in UX: From Design Debate to Real Solutions",
@@ -167,7 +167,7 @@ window.GUIDES = [
       "process",
       "design debate"
     ],
-    "url": "articles/conflict-in-ux.html"
+    "url": "articles/conflict-in-ux"
   },
   {
     "title": "The Hill Worth Dying On: When to Fight for UX",
@@ -181,7 +181,7 @@ window.GUIDES = [
       "stakeholders",
       "strategy"
     ],
-    "url": "articles/the-hill-worth-dying-on.html"
+    "url": "articles/the-hill-worth-dying-on"
   },
   {
     "title": "Reassuring UX Teams About AI: What It Can't Replace",
@@ -195,7 +195,7 @@ window.GUIDES = [
       "research",
       "strategy"
     ],
-    "url": "articles/reassuring-ux-teams-about-ai.html"
+    "url": "articles/reassuring-ux-teams-about-ai"
   },
   {
     "title": "Getting Started with Accessibility Conformance Reports (ACRs)",
@@ -208,7 +208,7 @@ window.GUIDES = [
       "beginner",
       "conformance report"
     ],
-    "url": "articles/getting-started-with-acrs.html"
+    "url": "articles/getting-started-with-acrs"
   },
   {
     "title": "Accessible Forms: Labels, Errors, Grouping & Autocomplete",
@@ -222,7 +222,7 @@ window.GUIDES = [
       "validation",
       "required"
     ],
-    "url": "articles/accessible-forms.html"
+    "url": "articles/accessible-forms"
   }
 ];
 
