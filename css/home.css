@@ -19,6 +19,12 @@
 /* Parallax: home.js adds .hero-parallax. The image is made taller than the hero (by the same
    fraction it can travel) and shifted with scroll, so it moves slower than the page. */
 .hero-parallax .hero-img { top: -25%; height: 125%; will-change: transform; }
+/* Film grain over the photo (under the fade, so it never leaves a seam above the page background) */
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -2; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: .07;
+}
 .hero-overlay {
   position: absolute; inset: 0; pointer-events: none; z-index: -1;
   background:
@@ -46,7 +52,7 @@
 }
 /* The slanted button's top-right corner overhangs by ~7px; pull it in so the corner lines up with the underline's end */
 .search-row .btn-slant { margin-right: 7px; }
-.search-input::placeholder { color: var(--text-faint); opacity: 1; }
+.search-input::placeholder { color: var(--text-muted); opacity: 1; } /* one step lighter than faint: it sits over the photo */
 .search-input::-webkit-search-cancel-button { display: none; }
 /* The input has no border of its own, so the focus ring wraps the whole row */
 .search-input:focus-visible { outline: none; }
